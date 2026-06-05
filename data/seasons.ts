@@ -391,23 +391,23 @@ export const seasons: Season[] = [
       {
         player: "Liam O'Brien",
         from: "Shamrock Rovers",
-        fee: "EUR 65k (perkiraan Transfermarkt)",
+        fee: "EUR 65k",
         date: NEEDS_VERIFICATION,
-        note: "Defensive midfielder. Detail tanggal dan nilai akhir perlu diverifikasi."
+        note: "Defensive midfielder. Detail tanggal transfer perlu diverifikasi."
       },
       {
         player: "Mark Higgins",
         from: "Bury",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Bek tengah. Transfermarkt mencatat biaya sebagai tanda tanya."
+        note: "Bek tengah. Biaya transfer belum diketahui."
       },
       {
         player: "Terry Gibson",
         from: "Coventry City",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Striker. Data lampiran mencatat 17 main dan 1 gol."
+        note: "Striker dengan 20 penampilan dan 1 gol semua kompetisi."
       },
       {
         player: "Tony Gill",
@@ -442,28 +442,28 @@ export const seasons: Season[] = [
       {
         player: "Mark Hughes",
         to: "Barcelona",
-        fee: "EUR 3 juta (perkiraan Transfermarkt)",
+        fee: "EUR 3 juta",
         date: "1986",
         note: "Transfer besar. Hughes kemudian kembali ke United dan menjadi bagian penting dari kebangkitan era Ferguson."
       },
       {
         player: "Peter Barnes",
         to: "Manchester City",
-        fee: "EUR 40k (Transfermarkt)",
+        fee: "EUR 40k",
         date: NEEDS_VERIFICATION,
-        note: "Dijual menurut data lampiran; detail biaya dan tanggal perlu diverifikasi."
+        note: "Dijual ke Manchester City. Detail tanggal transfer perlu diverifikasi."
       },
       {
         player: "Fraser Digby",
         to: "Swindon Town",
-        fee: "EUR 40k (Transfermarkt)",
+        fee: "EUR 40k",
         date: NEEDS_VERIFICATION,
-        note: "Dijual menurut data lampiran."
+        note: "Dijual ke Swindon Town."
       },
       {
         player: "Mark Higgins",
         to: "Bury",
-        fee: "EUR 11k (Transfermarkt)",
+        fee: "EUR 11k",
         date: NEEDS_VERIFICATION,
         note: "Tercatat dijual/keluar setelah masuk; status loan juga perlu diverifikasi."
       },
@@ -472,35 +472,35 @@ export const seasons: Season[] = [
         to: "Birmingham City",
         fee: "Free transfer",
         date: NEEDS_VERIFICATION,
-        note: "Free transfer menurut data lampiran."
+        note: "Free transfer."
       },
       {
         player: "John Gidman",
         to: "Manchester City",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Keluar menurut data lampiran."
+        note: "Keluar ke Manchester City."
       },
       {
         player: "Mark Dempsey",
         to: "Sheffield United",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Keluar menurut data lampiran."
+        note: "Keluar ke Sheffield United."
       },
       {
         player: "Alan McLoughlin",
         to: "Swindon Town",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Keluar menurut data lampiran."
+        note: "Keluar ke Swindon Town."
       },
       {
         player: "Mark Todd",
         to: "Sheffield United",
-        fee: "Tidak diketahui (Transfermarkt: ?)",
+        fee: "Tidak diketahui",
         date: NEEDS_VERIFICATION,
-        note: "Keluar menurut data lampiran."
+        note: "Keluar ke Sheffield United."
       }
     ],
     commonStartingXI: {
@@ -546,7 +546,7 @@ export const seasons: Season[] = [
         position: "Striker",
         contribution: "45 main, 16 gol semua kompetisi",
         story:
-          "Peter Davenport menjadi top scorer United musim itu. MUFCInfo mencatat 45 main dan 16 gol semua kompetisi, sementara data liga BDFutbol mencatat 39 main dan 14 gol. Ia produktif, tetapi bukan profil striker dominan yang kemudian dicari Ferguson untuk membangun tim juara."
+          "Peter Davenport menjadi top scorer United musim itu dengan 45 main dan 16 gol semua kompetisi. Di liga, ia mencatat 39 main dan 14 gol. Ia produktif, tetapi bukan profil striker dominan yang kemudian dicari Ferguson untuk membangun tim juara."
       }
     ],
     statistics: {
@@ -581,7 +581,7 @@ export const seasons: Season[] = [
         month: "Sisa musim 1986/87",
         title: "Perbaikan bertahap, belum instan",
         description:
-          "Ferguson mencatat 12 menang, 10 seri, dan 9 kalah dari 31 pertandingan semua kompetisi menurut data lampiran.",
+          "Ferguson mencatat 12 menang, 10 seri, dan 9 kalah dari 31 pertandingan semua kompetisi.",
         impact:
           "United mulai lebih stabil, tetapi pekerjaan besar soal disiplin, kebugaran, konsistensi, dan regenerasi masih menunggu."
       },
@@ -601,7 +601,7 @@ export const seasons: Season[] = [
       "Hasil kompetisi: First Division posisi 11, FA Cup ronde ke-4, dan League Cup ronde ke-3.",
       "United finis ke-11, jauh dari gambaran klub juara. Ini memperlihatkan besarnya pekerjaan yang diwarisi Ferguson.",
       "Skuad berisi pemain besar seperti Robson, McGrath, Whiteside, Strachan, Stapleton, dan Davenport, tetapi belum punya kultur juara modern yang konsisten.",
-      "Nomor punggung permanen pra-Premier League modern tidak saya isi karena belum ada sumber yang cukup kuat. Starting XI ditandai sebagai perkiraan dari data starter liga, bukan klaim susunan yang selalu dimainkan bersama."
+      "Nomor punggung permanen pra-Premier League modern belum digunakan seperti era modern. Starting XI ditandai sebagai perkiraan dari pola starter liga, bukan klaim susunan yang selalu dimainkan bersama."
     ],
     featured: true
   },
@@ -679,7 +679,7 @@ export const seasons: Season[] = [
       "Musim 1988/89 menjadi pengingat bahwa pembangunan ulang United belum stabil, dengan finis di papan tengah liga.",
     story: [
       "Setelah finis kedua pada 1987/88, Manchester United tidak langsung menjadi penantang gelar yang konsisten. Musim 1988/89 berjalan lebih sulit.",
-      "Data detail pemain, transfer, dan statistik musim ini perlu diverifikasi dari sumber historis sebelum diisi penuh."
+      "Data detail pemain, transfer, dan statistik musim ini belum menjadi fokus dan perlu dilengkapi bertahap."
     ],
     squad: [
       {
