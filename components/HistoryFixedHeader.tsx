@@ -63,10 +63,11 @@ export function HistoryFixedHeader({ seasonLabel }: HistoryFixedHeaderProps) {
         >
           {[
             ["#statistik", "Statistik"],
+            ["#cerita", "Cerita"],
             ["#starting-xi", "XI"],
             ["#skuad", "Skuad"],
             ["#transfer", "Transfer"],
-            ["#cerita", "Cerita"]
+            ["#trivia", "Trivia"]
           ].map(([href, label]) => (
             <a
               key={href}

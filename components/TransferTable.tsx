@@ -18,15 +18,19 @@ interface TransferTableProps {
   type: "in" | "out";
 }
 
-type SortKey = "player" | "club" | "fee" | "date" | "note";
+type SortKey = "player" | "club" | "fee" | "note";
 type SortDirection = "asc" | "desc";
 
 export function TransferTable({ records, type }: TransferTableProps) {
-  const [sortKey, setSortKey] = useState<SortKey>("player");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [sortKey, setSortKey] = useState<SortKey>("fee");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
 
   const sortedRecords = useMemo(() => {
     return [...records].sort((a, b) => {
+      if (sortKey === "fee") {
+        return compareFees(a, b, sortDirection);
+      }
+
       const first = getComparableValue(a, type, sortKey);
       const second = getComparableValue(b, type, sortKey);
       const modifier = sortDirection === "asc" ? 1 : -1;
@@ -45,7 +49,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
     }
 
     setSortKey(key);
-    setSortDirection("asc");
+    setSortDirection(key === "fee" ? "desc" : "asc");
   }
 
   if (!records.length) {
@@ -54,10 +58,13 @@ export function TransferTable({ records, type }: TransferTableProps) {
 
   return (
     <div className="max-h-[360px] overflow-auto rounded-lg border bg-card shadow-sm">
-      <Table className="min-w-[760px]">
-        <TableHeader className="sticky top-0 z-10 bg-card">
+      <Table className="min-w-[740px]">
+        <TableHeader>
           <TableRow className="bg-muted/70 hover:bg-muted/70">
-            <TableHead>
+            <TableHead className="sticky top-0 z-20 w-16 bg-muted">
+              No
+            </TableHead>
+            <TableHead className="sticky top-0 z-20 bg-muted">
               <SortableHeader
                 active={sortKey === "player"}
                 direction={sortDirection}
@@ -65,7 +72,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("player")}
               />
             </TableHead>
-            <TableHead>
+            <TableHead className="sticky top-0 z-20 bg-muted">
               <SortableHeader
                 active={sortKey === "club"}
                 direction={sortDirection}
@@ -73,7 +80,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("club")}
               />
             </TableHead>
-            <TableHead>
+            <TableHead className="sticky top-0 z-20 bg-muted">
               <SortableHeader
                 active={sortKey === "fee"}
                 direction={sortDirection}
@@ -81,15 +88,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("fee")}
               />
             </TableHead>
-            <TableHead>
-              <SortableHeader
-                active={sortKey === "date"}
-                direction={sortDirection}
-                label="Tanggal"
-                onClick={() => handleSort("date")}
-              />
-            </TableHead>
-            <TableHead>
+            <TableHead className="sticky top-0 z-20 bg-muted">
               <SortableHeader
                 active={sortKey === "note"}
                 direction={sortDirection}
@@ -100,18 +99,20 @@ export function TransferTable({ records, type }: TransferTableProps) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {sortedRecords.map((record) => (
+          {sortedRecords.map((record, index) => (
             <TableRow key={`${record.player}-${record.date}-${record.note}`}>
+              <TableCell className="font-medium text-muted-foreground">
+                {index + 1}
+              </TableCell>
               <TableCell className="font-semibold text-foreground">
                 {record.player}
               </TableCell>
               <TableCell>
-                {type === "in" ? record.from : record.to}
+                {formatTableValue(type === "in" ? record.from : record.to)}
               </TableCell>
-              <TableCell>{record.fee}</TableCell>
-              <TableCell>{record.date}</TableCell>
+              <TableCell>{formatFee(record.fee)}</TableCell>
               <TableCell className="max-w-md text-muted-foreground">
-                {record.note}
+                {formatTableValue(record.note)}
               </TableCell>
             </TableRow>
           ))}
@@ -158,6 +159,111 @@ function getComparableValue(
   }
 
   return record[key];
+}
+
+function compareFees(
+  firstRecord: TransferRecord,
+  secondRecord: TransferRecord,
+  direction: SortDirection
+) {
+  const first = getFeeSortValue(firstRecord.fee);
+  const second = getFeeSortValue(secondRecord.fee);
+
+  if (first.category !== second.category) {
+    return first.category - second.category;
+  }
+
+  if (first.category === 0) {
+    return direction === "asc"
+      ? first.amount - second.amount
+      : second.amount - first.amount;
+  }
+
+  return firstRecord.player.localeCompare(secondRecord.player, "id", {
+    numeric: true,
+    sensitivity: "base"
+  });
+}
+
+function getFeeSortValue(fee: string) {
+  if (/promosi internal/i.test(fee)) {
+    return { amount: 0, category: 3 };
+  }
+
+  if (isUnknownValue(fee)) {
+    return { amount: 0, category: 2 };
+  }
+
+  if (/free transfer|loan transfer/i.test(fee)) {
+    return { amount: 0, category: 1 };
+  }
+
+  const amount = parseFeeAmount(fee);
+
+  if (amount !== undefined) {
+    return { amount, category: 0 };
+  }
+
+  return { amount: 0, category: 4 };
+}
+
+function parseFeeAmount(fee: string) {
+  const normalizedFee = fee.replace(/^\u20ac/u, "EUR ");
+  const match = normalizedFee.match(/^EUR\s+([\d.]+)\s*(k|m|juta)?$/i);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const value = Number(match[1]);
+  const unit = match[2]?.toLowerCase();
+
+  if (Number.isNaN(value)) {
+    return undefined;
+  }
+
+  if (unit === "k") {
+    return value * 1000;
+  }
+
+  if (unit === "m" || unit === "juta") {
+    return value * 1000000;
+  }
+
+  return value;
+}
+
+function formatFee(fee: string) {
+  if (isUnknownValue(fee)) {
+    return "-";
+  }
+
+  if (fee === "Free transfer") {
+    return "Free";
+  }
+
+  if (/^EUR\s+/i.test(fee)) {
+    return fee.replace(/^EUR\s+/i, "\u20ac").replace(/\s*juta$/i, "m");
+  }
+
+  return fee;
+}
+
+function formatTableValue(value: string | undefined) {
+  if (value === undefined || isUnknownValue(value)) {
+    return "-";
+  }
+
+  return value;
+}
+
+function isUnknownValue(value: string) {
+  return (
+    value === "" ||
+    value === "Tidak diketahui" ||
+    value === "Data belum tersedia" ||
+    value === "Data perlu diverifikasi"
+  );
 }
 
 function EmptyTableState({ label }: { label: string }) {

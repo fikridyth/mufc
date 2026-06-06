@@ -48,7 +48,7 @@ export function SeasonCard({ season }: SeasonCardProps) {
           <div className="flex justify-between gap-4 border-t pt-3">
             <dt className="text-muted-foreground">Trofi</dt>
             <dd className="text-right font-semibold">
-              {season.trophies.length ? season.trophies.join(", ") : "Tanpa trofi"}
+              {season.trophies.length ? season.trophies.join(", ") : "-"}
             </dd>
           </div>
         </dl>

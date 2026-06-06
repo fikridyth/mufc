@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
+  ArrowRight,
+  BookOpenText,
   CalendarDays,
   Sparkles,
   Star,
@@ -65,11 +67,19 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
     notFound();
   }
 
+  const currentSeasonIndex = seasons.findIndex((item) => item.id === season.id);
+  const previousSeason =
+    currentSeasonIndex > 0 ? seasons[currentSeasonIndex - 1] : undefined;
+  const nextSeason =
+    currentSeasonIndex >= 0 && currentSeasonIndex < seasons.length - 1
+      ? seasons[currentSeasonIndex + 1]
+      : undefined;
+
   return (
     <main className="bg-background">
       <HistoryFixedHeader seasonLabel={season.label} />
 
-      <section className="relative mb-2 overflow-visible bg-united-black text-white">
+      <section className="relative mb-2 overflow-hidden bg-united-black text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(212,175,55,0.28),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(179,18,28,0.72),transparent_34%),linear-gradient(135deg,#0b0b0d_0%,#7f0611_52%,#120609_100%)]" />
         <div className="absolute inset-x-0 -bottom-24 h-48 bg-gradient-to-t from-background via-background/80 to-transparent" />
         <div className="absolute -right-16 top-12 h-72 w-72 rounded-full border border-white/10" />
@@ -90,16 +100,16 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                   ))
                 ) : (
                   <Badge variant="outline" className="border-white/30 text-white">
-                    Tanpa trofi
+                    -
                   </Badge>
                 )}
               </div>
               <div className="space-y-4">
-                <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-united-gold">
+                <p className="inline-flex items-center gap-2 text-base font-bold uppercase tracking-[0.22em] text-united-gold">
                   <Sparkles className="h-4 w-4" />
                   Chapter awal era Ferguson
                 </p>
-                <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-7xl">
+                <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
                   {season.title}
                 </h1>
                 <p className="max-w-3xl text-lg leading-8 text-white/76">
@@ -139,7 +149,6 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 <dl className="grid gap-4 text-sm">
                   <SummaryItem label="Manajer" value={season.managers.join(" / ")} />
                   <SummaryItem label="Kompetisi" value={season.competitions.join(", ")} />
-                  <SummaryItem label="Posisi liga" value={season.leaguePosition} />
                   <SummaryItem
                     label="Skuad"
                     value={`${season.squad.length} pemain`}
@@ -147,7 +156,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                   />
                   <SummaryItem
                     label="Trofi"
-                    value={season.trophies.length ? season.trophies.join(", ") : "Tanpa trofi"}
+                    value={season.trophies.length ? season.trophies.join(", ") : "-"}
                   />
                 </dl>
               </CardContent>
@@ -166,6 +175,37 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
         </DetailSection>
 
         <DetailSection
+          id="cerita"
+          title="Cerita musim"
+          description="Narasi utama musim ini dalam urutan singkat."
+        >
+          {season.story.length ? (
+            <div className="grid gap-4">
+              {season.story.map((story, index) => (
+                <Card
+                  key={`${index}-${story}`}
+                  className="overflow-hidden border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-archive"
+                >
+                  <div className="h-1 bg-gradient-to-r from-united-red to-united-gold" />
+                  <CardContent className="flex gap-4 p-5">
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-united-gold/20 text-united-red">
+                      <BookOpenText className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-sm leading-6 text-foreground/80">
+                        {index + 1}. {story}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <EmptyState label="Cerita musim belum tersedia" />
+          )}
+        </DetailSection>
+
+        <DetailSection
           id="starting-xi"
           title="Starting eleven"
           description="Susunan visual berdasarkan pola starter yang paling kuat sepanjang musim."
@@ -176,7 +216,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
         <DetailSection
           id="skuad"
           title="Skuad pemain"
-          description="Tabel memiliki tinggi tetap dan bisa discroll. Klik header untuk mengurutkan data."
+          description="Data keseluruhan pemain."
         >
           <SeasonSquadTable players={season.squad} />
         </DetailSection>
@@ -184,7 +224,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
         <DetailSection
           id="transfer"
           title="Transfer"
-          description="Transfer masuk dan keluar dibuat ringkas dengan scroll internal agar halaman tidak terlalu panjang."
+          description="Transfer masuk dan keluar."
         >
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="space-y-3">
@@ -198,36 +238,13 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           </div>
         </DetailSection>
 
-        <DetailSection
-          id="cerita"
-          title="Cerita musim"
-          description="Narasi utama musim transisi yang mengubah arah klub."
-        >
-          <div className="grid gap-4 lg:grid-cols-2">
-            {season.story.map((paragraph, index) => (
-              <article
-                key={paragraph}
-                className="group relative overflow-hidden rounded-lg border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-archive"
-              >
-                <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-united-gold to-united-red" />
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-united-red">
-                  Bagian {index + 1}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {paragraph}
-                </p>
-              </article>
-            ))}
-          </div>
-        </DetailSection>
-
         <DetailSection title="Momen penting">
           <ImportantMoments moments={season.importantMoments} />
         </DetailSection>
 
         <DetailSection title="Pemain kunci">
           {season.keyPlayers.length ? (
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-2">
               {season.keyPlayers.map((player) => (
                 <Card
                   key={player.name}
@@ -254,12 +271,12 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           )}
         </DetailSection>
 
-        <DetailSection title="Info penting lainnya">
+        <DetailSection id="trivia" title="Trivia">
           {season.additionalInfo.length ? (
-            <div className="grid gap-3 md:grid-cols-2">
+            <div className="grid gap-3">
               {season.additionalInfo.map((info, index) => (
                 <div
-                  key={info}
+                  key={`${index}-${info}`}
                   className="flex gap-4 rounded-lg border bg-card p-5 text-sm leading-6 shadow-sm"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-united-gold/20 text-united-red">
@@ -280,6 +297,79 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
             <EmptyState label="Data belum tersedia" />
           )}
         </DetailSection>
+
+        <nav
+          aria-label="Navigasi musim"
+          className="grid gap-4 border-t pt-8 md:grid-cols-2"
+        >
+          {previousSeason ? (
+            <Button
+              asChild
+              variant="outline"
+              className="h-auto justify-start px-4 py-4 text-left"
+            >
+              <Link href={`/history/${previousSeason.id}`}>
+                <ArrowLeft className="h-4 w-4" />
+                <span className="min-w-0">
+                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                    Tahun sebelumnya
+                  </span>
+                  <span className="mt-1 block truncate font-black">
+                    {previousSeason.label}
+                  </span>
+                </span>
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              disabled
+              className="h-auto justify-start px-4 py-4 text-left"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>
+                <span className="block text-xs font-bold uppercase tracking-[0.16em]">
+                  Tahun sebelumnya
+                </span>
+                <span className="mt-1 block font-black">-</span>
+              </span>
+            </Button>
+          )}
+
+          {nextSeason ? (
+            <Button
+              asChild
+              variant="gold"
+              className="h-auto justify-end px-4 py-4 text-right"
+            >
+              <Link href={`/history/${nextSeason.id}`}>
+                <span className="min-w-0">
+                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-united-black/70">
+                    Tahun selanjutnya
+                  </span>
+                  <span className="mt-1 block truncate font-black">
+                    {nextSeason.label}
+                  </span>
+                </span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              disabled
+              className="h-auto justify-end px-4 py-4 text-right"
+            >
+              <span>
+                <span className="block text-xs font-bold uppercase tracking-[0.16em]">
+                  Tahun selanjutnya
+                </span>
+                <span className="mt-1 block font-black">-</span>
+              </span>
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          )}
+        </nav>
       </div>
     </main>
   );

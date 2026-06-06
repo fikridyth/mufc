@@ -25,18 +25,20 @@ type SortKey =
   | "country"
   | "appearances"
   | "goals"
+  | "assists"
   | "status";
 
 type SortDirection = "asc" | "desc";
 
 const columns: Array<{ key: SortKey; label: string }> = [
-  { key: "shirtNumber", label: "No punggung" },
   { key: "name", label: "Nama pemain" },
+  { key: "shirtNumber", label: "No punggung" },
   { key: "position", label: "Posisi" },
   { key: "age", label: "Umur" },
   { key: "country", label: "Negara" },
   { key: "appearances", label: "Main" },
   { key: "goals", label: "Gol" },
+  { key: "assists", label: "Assist" },
   { key: "status", label: "Status" }
 ];
 
@@ -68,7 +70,11 @@ export function SeasonSquadTable({ players }: SeasonSquadTableProps) {
     }
 
     setSortKey(key);
-    setSortDirection(key === "appearances" || key === "goals" ? "desc" : "asc");
+    setSortDirection(
+      key === "appearances" || key === "goals" || key === "assists"
+        ? "desc"
+        : "asc"
+    );
   }
 
   if (!players.length) {
@@ -77,11 +83,14 @@ export function SeasonSquadTable({ players }: SeasonSquadTableProps) {
 
   return (
     <div className="max-h-[520px] overflow-auto rounded-lg border bg-card shadow-sm">
-      <Table className="min-w-[860px]">
-        <TableHeader className="sticky top-0 z-10 bg-card">
+      <Table className="min-w-[980px]">
+        <TableHeader>
           <TableRow className="bg-muted/70 hover:bg-muted/70">
+            <TableHead className="sticky top-0 z-20 w-16 bg-muted">
+              No
+            </TableHead>
             {columns.map((column) => (
-              <TableHead key={column.key}>
+              <TableHead key={column.key} className="sticky top-0 z-20 bg-muted">
                 <SortableHeader
                   active={sortKey === column.key}
                   direction={sortDirection}
@@ -93,18 +102,24 @@ export function SeasonSquadTable({ players }: SeasonSquadTableProps) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {sortedPlayers.map((player) => (
+          {sortedPlayers.map((player, index) => (
             <TableRow key={player.name}>
-              <TableCell className="font-medium">{player.shirtNumber}</TableCell>
+              <TableCell className="font-medium text-muted-foreground">
+                {index + 1}
+              </TableCell>
               <TableCell className="font-semibold text-foreground">
                 {player.name}
               </TableCell>
-              <TableCell>{player.position}</TableCell>
-              <TableCell>{player.age}</TableCell>
-              <TableCell>{player.country}</TableCell>
-              <TableCell>{player.appearances ?? "Data belum tersedia"}</TableCell>
-              <TableCell>{player.goals ?? "Data belum tersedia"}</TableCell>
-              <TableCell>{player.status}</TableCell>
+              <TableCell className="font-medium">
+                {formatTableValue(player.shirtNumber)}
+              </TableCell>
+              <TableCell>{formatTableValue(player.position)}</TableCell>
+              <TableCell>{formatTableValue(player.age)}</TableCell>
+              <TableCell>{formatTableValue(player.country)}</TableCell>
+              <TableCell>{formatTableValue(player.appearances)}</TableCell>
+              <TableCell>{formatTableValue(player.goals)}</TableCell>
+              <TableCell>{formatTableValue(player.assists)}</TableCell>
+              <TableCell>{formatTableValue(player.status)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -149,6 +164,20 @@ function getComparableValue(player: SquadPlayer, key: SortKey) {
 
   if (value === undefined) {
     return "";
+  }
+
+  return value;
+}
+
+function formatTableValue(value: number | string | undefined) {
+  if (
+    value === undefined ||
+    value === "" ||
+    value === "Tidak diketahui" ||
+    value === "Data belum tersedia" ||
+    value === "Data perlu diverifikasi"
+  ) {
+    return "-";
   }
 
   return value;

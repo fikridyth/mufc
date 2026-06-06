@@ -37,25 +37,10 @@ export function HeroSection() {
             >
               <Link href="#era">
                 <Shield className="h-4 w-4" />
-                Mulai dari Era Sir Alex Ferguson
+                Lihat Kategori Era Klub
               </Link>
             </Button>
           </div>
-        </div>
-        <div className="mt-16 grid gap-4 md:grid-cols-3">
-          {[
-            ["3", "contoh musim awal"],
-            ["1986", "awal kedatangan Ferguson"],
-            ["Lokal", "data mudah ditambah manual"]
-          ].map(([value, label]) => (
-            <div
-              key={label}
-              className="rounded-lg border border-white/12 bg-white/8 p-5 backdrop-blur"
-            >
-              <p className="text-3xl font-black text-united-gold">{value}</p>
-              <p className="mt-1 text-sm text-white/72">{label}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

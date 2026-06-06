@@ -12,7 +12,7 @@ export function FeaturedSeasons({ seasons }: FeaturedSeasonsProps) {
       <SectionHeader
         eyebrow="Featured seasons"
         title="Musim yang menjadi titik balik"
-        description="Saat ini arsip hanya memuat 3 contoh musim awal agar struktur data rapi dan mudah dilanjutkan tanpa mengarang data historis."
+        description="Awal kedatangan Sir Alex Ferguson."
       />
       <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {seasons.map((season) => (
