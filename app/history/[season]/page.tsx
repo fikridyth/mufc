@@ -76,8 +76,8 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
       : undefined;
 
   return (
-    <main className="bg-background">
-      <HistoryFixedHeader seasonLabel={season.label} />
+    <main className="bg-background pb-28">
+      <HistoryFixedHeader seasonLabel={season.label} seasonEra={season.era} />
 
       <section className="relative mb-2 overflow-hidden bg-united-black text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(212,175,55,0.28),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(179,18,28,0.72),transparent_34%),linear-gradient(135deg,#0b0b0d_0%,#7f0611_52%,#120609_100%)]" />
@@ -89,9 +89,6 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           <div className="grid gap-8 py-10 lg:grid-cols-[1fr_390px] lg:items-end">
             <div className="space-y-7">
               <div className="flex flex-wrap gap-2">
-                <Badge variant="gold" className="border-united-gold bg-united-gold text-united-black">
-                  {season.era}
-                </Badge>
                 {season.trophies.length ? (
                   season.trophies.map((trophy) => (
                     <Badge key={trophy} variant="outline" className="border-white/30 text-white">
@@ -107,7 +104,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
               <div className="space-y-4">
                 <p className="inline-flex items-center gap-2 text-base font-bold uppercase tracking-[0.22em] text-united-gold">
                   <Sparkles className="h-4 w-4" />
-                  Chapter awal era Ferguson
+                  {season.era}
                 </p>
                 <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
                   {season.title}
@@ -298,79 +295,74 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           )}
         </DetailSection>
 
+      </div>
+
+      <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-united-gold/25 bg-gradient-to-r from-united-black/95 via-united-red/95 to-united-black/95 px-3 py-3 shadow-[0_-14px_38px_rgba(10,10,12,0.34)] backdrop-blur-xl">
         <nav
           aria-label="Navigasi musim"
-          className="grid gap-4 border-t pt-8 md:grid-cols-2"
+          className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3"
         >
-          {previousSeason ? (
-            <Button
-              asChild
-              variant="outline"
-              className="h-auto justify-start px-4 py-4 text-left"
-            >
-              <Link href={`/history/${previousSeason.id}`}>
-                <ArrowLeft className="h-4 w-4" />
-                <span className="min-w-0">
-                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                    Tahun sebelumnya
+          <div className="flex justify-start">
+            {previousSeason ? (
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="max-w-[42vw] justify-start rounded-full border-white/20 bg-white/10 px-3 text-left font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:px-4"
+              >
+                <Link href={`/history/${previousSeason.id}`}>
+                  <ArrowLeft className="h-4 w-4 shrink-0" />
+                  <span className="min-w-0 truncate">
+                    Sebelumnya - {previousSeason.label}
                   </span>
-                  <span className="mt-1 block truncate font-black">
-                    {previousSeason.label}
-                  </span>
-                </span>
-              </Link>
-            </Button>
-          ) : (
-            <Button
-              variant="outline"
-              disabled
-              className="h-auto justify-start px-4 py-4 text-left"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              <span>
-                <span className="block text-xs font-bold uppercase tracking-[0.16em]">
-                  Tahun sebelumnya
-                </span>
-                <span className="mt-1 block font-black">-</span>
-              </span>
-            </Button>
-          )}
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                size="sm"
+                disabled
+                className="justify-start rounded-full border-white/10 bg-white/5 px-3 text-left text-white/50 sm:px-4"
+              >
+                <ArrowLeft className="h-4 w-4 shrink-0" />
+                <span className="hidden sm:inline">Sebelumnya</span>
+              </Button>
+            )}
+          </div>
 
-          {nextSeason ? (
-            <Button
-              asChild
-              variant="gold"
-              className="h-auto justify-end px-4 py-4 text-right"
-            >
-              <Link href={`/history/${nextSeason.id}`}>
-                <span className="min-w-0">
-                  <span className="block text-xs font-bold uppercase tracking-[0.16em] text-united-black/70">
-                    Tahun selanjutnya
+          <p className="rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-center text-xs font-black uppercase tracking-[0.22em] text-united-gold shadow-sm">
+            @beta
+          </p>
+
+          <div className="flex justify-end">
+            {nextSeason ? (
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="max-w-[42vw] justify-end rounded-full border-white/20 bg-white/10 px-3 text-right font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:px-4"
+              >
+                <Link href={`/history/${nextSeason.id}`}>
+                  <span className="min-w-0 truncate">
+                    Selanjutnya - {nextSeason.label}
                   </span>
-                  <span className="mt-1 block truncate font-black">
-                    {nextSeason.label}
-                  </span>
-                </span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          ) : (
-            <Button
-              variant="outline"
-              disabled
-              className="h-auto justify-end px-4 py-4 text-right"
-            >
-              <span>
-                <span className="block text-xs font-bold uppercase tracking-[0.16em]">
-                  Tahun selanjutnya
-                </span>
-                <span className="mt-1 block font-black">-</span>
-              </span>
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          )}
+                  <ArrowRight className="h-4 w-4 shrink-0" />
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                size="sm"
+                disabled
+                className="justify-end rounded-full border-white/10 bg-white/5 px-3 text-right text-white/50 sm:px-4"
+              >
+                <span className="hidden sm:inline">Selanjutnya</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
+              </Button>
+            )}
+          </div>
         </nav>
-      </div>
+      </footer>
     </main>
   );
 }

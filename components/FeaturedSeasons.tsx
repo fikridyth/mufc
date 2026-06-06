@@ -8,7 +8,7 @@ interface FeaturedSeasonsProps {
 
 export function FeaturedSeasons({ seasons }: FeaturedSeasonsProps) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section id="featured-season" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <SectionHeader
         eyebrow="Featured seasons"
         title="Musim yang menjadi titik balik"

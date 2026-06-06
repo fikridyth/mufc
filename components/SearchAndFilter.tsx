@@ -56,11 +56,11 @@ export function SearchAndFilter({ seasons, eras }: SearchAndFilterProps) {
       <SectionHeader
         eyebrow="Cari arsip"
         title="Search dan filter musim"
-        description="Cari berdasarkan musim, pemain, manajer, atau trofi. Filter era dibuat sejak awal agar data bisa tumbuh secara bertahap."
+        description="Cari berdasarkan musim, pemain, manajer, atau trofi."
       />
 
       <div className="mt-8 rounded-lg border bg-white p-4 shadow-sm">
-        <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-4">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input

@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface HistoryFixedHeaderProps {
+interface DashboardFixedHeaderProps {
   seasonLabel: string;
   seasonEra: string;
 }
 
-export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeaderProps) {
+export function DashboardFixedHeader() {
   const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
@@ -50,14 +50,6 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
             <Link href="/" className="hover:text-current">
               Beranda
             </Link>
-            <span>/</span>
-            <Link href="/#arsip-musim" className="hover:text-current">
-              History
-            </Link>
-            <span>/</span>
-            <span className={isLight ? "truncate text-foreground" : "truncate text-white"}>
-              {seasonLabel}
-            </span>
           </nav>
         </div>
         <nav
@@ -67,12 +59,10 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
           ].join(" ")}
         >
           {[
-            ["#statistik", "Statistik"],
-            ["#cerita", "Cerita"],
-            ["#starting-xi", "XI"],
-            ["#skuad", "Skuad"],
-            ["#transfer", "Transfer"],
-            ["#trivia", "Trivia"]
+            ["#featured-season", "Highlight"],
+            ["#arsip-musim", "Arsip Musim"],
+            ["#timeline", "Timeline"],
+            ["#era", "Kategori Era"],
           ].map(([href, label]) => (
             <a
               key={href}
@@ -96,7 +86,7 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
                 : "hover:bg-white/10 hover:text-white"
             ].join(" ")}
           >
-            {seasonEra}
+            Manchester United
           </p>
         </div>
       </div>

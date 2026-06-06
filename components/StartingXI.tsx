@@ -164,7 +164,65 @@ const playerPhotos: Record<string, string> = {
   "Antonio Valencia":
     "https://img.a.transfermarkt.technology/portrait/header/33544-1484662583.jpg?lm=1",
   "Nani":
-    "https://img.a.transfermarkt.technology/portrait/header/33706-1779104952.png?lm=1"
+    "https://img.a.transfermarkt.technology/portrait/header/33706-1779104952.png?lm=1",
+  "Rafael":
+    "https://img.a.transfermarkt.technology/portrait/header/61892-1563889964.jpg?lm=1",
+  "Javier Hernandez":
+    "https://img.a.transfermarkt.technology/portrait/header/50935-1678022181.jpg?lm=1",
+  "Jonny Evans":
+    "https://img.a.transfermarkt.technology/portrait/header/42412-1699471667.jpg?lm=1",
+  "Phil Jones":
+    "https://img.a.transfermarkt.technology/portrait/header/117996-1469631370.jpg?lm=1",
+  "Danny Welbeck":
+    "https://img.a.transfermarkt.technology/portrait/header/67063-1746437656.jpg?lm=1",
+  "Robin van Persie":
+    "https://img.a.transfermarkt.technology/portrait/header/4380-1707301752.jpg?lm=1",
+  "David de Gea":
+    "https://img.a.transfermarkt.technology/portrait/header/59377-1667548362.jpg?lm=1",
+  "Shinji Kagawa":
+    "https://img.a.transfermarkt.technology/portrait/header/81785-1772817092.jpg?lm=1",
+  "Tom Cleverley":
+    "https://img.a.transfermarkt.technology/portrait/header/73484-1410950625.jpg?lm=1",
+  "Adnan Januzaj":
+    "https://img.a.transfermarkt.technology/portrait/header/177847-1685115304.png?lm=1",
+  "Daley Blind":
+    "https://img.a.transfermarkt.technology/portrait/header/12282-1718096647.jpg?lm=1",
+  "Chris Smalling":
+    "https://img.a.transfermarkt.technology/portrait/header/103427-1765232730.png?lm=1",
+  "Marcos Rojo":
+    "https://img.a.transfermarkt.technology/portrait/header/93176-1739889892.jpg?lm=1",
+  "Ashley Young":
+    "https://img.a.transfermarkt.technology/portrait/header/14086-1700736434.jpg?lm=1",
+  "Ander Herrera":
+    "https://img.a.transfermarkt.technology/portrait/header/99343-1709675915.png?lm=1",
+  "Juan Mata":
+    "https://img.a.transfermarkt.technology/portrait/header/44068-1671102342.png?lm=1",
+  "Marouane Fellaini":
+    "https://img.a.transfermarkt.technology/portrait/header/39679-1549036391.jpg?lm=1",
+  "Angel Di Maria":
+    "https://img.a.transfermarkt.technology/portrait/header/45320-1700648952.jpg?lm=1",
+  "Senne Lammens":
+    "https://img.a.transfermarkt.technology/portrait/header/503883-1755675220.jpg?lm=1",
+  "Luke Shaw":
+    "https://img.a.transfermarkt.technology/portrait/header/183288-1668500175.jpg?lm=1",
+  "Harry Maguire":
+    "https://img.a.transfermarkt.technology/portrait/header/177907-1663841733.jpg?lm=1",
+  "Leny Yoro":
+    "https://img.a.transfermarkt.technology/portrait/header/923831-1747857948.jpg?lm=1",
+  "Diogo Dalot":
+    "https://img.a.transfermarkt.technology/portrait/header/357147-1727785546.jpg?lm=1",
+  "Matheus Cunha":
+    "https://img.a.transfermarkt.technology/portrait/header/517894-1780390711.jpg?lm=1",
+  "Casemiro":
+    "https://img.a.transfermarkt.technology/portrait/header/16306-1699018876.jpg?lm=1",
+  "Kobbie Mainoo":
+    "https://img.a.transfermarkt.technology/portrait/header/820374-1719349758.jpg?lm=1",
+  "Bryan Mbeumo":
+    "https://img.a.transfermarkt.technology/portrait/header/413039-1769532496.jpg?lm=1",
+  "Bruno Fernandes":
+    "https://img.a.transfermarkt.technology/portrait/header/240306-1683882766.jpg?lm=1",
+  "Benjamin Sesko":
+    "https://img.a.transfermarkt.technology/portrait/header/627442-1779803478.jpg?lm=1"
 };
 
 const positions = [

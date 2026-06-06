@@ -1,13 +1,22 @@
 export type VerificationText = "Data perlu diverifikasi" | "Data belum tersedia";
 
 export type SeasonEra =
-  | "Pra Sir Alex Ferguson"
+  | "Era Newton Heath"
+  | "Era Ernest Mangnall"
+  | "Era masa sulit sebelum Busby"
+  | "Era Busby Babes & Tragedi Munich"
+  | "Era Matt Busby"
+  | "Era transisi pasca-Busby"
+  | "Era Tommy Docherty"
+  | "Era Dave Sexton"
+  | "Era Ron Atkinson"
   | "Era awal Sir Alex Ferguson"
   | "Era Premier League awal"
   | "Era Treble"
   | "Era Ronaldo & Rooney"
+  | "Era akhir Sir Alex Ferguson"
   | "Era pasca Sir Alex Ferguson"
-  | "Era modern";
+  | "Era awal Michael Carrick";
 
 export interface SquadPlayer {
   name: string;
@@ -18,7 +27,7 @@ export interface SquadPlayer {
   appearances?: number | VerificationText;
   goals?: number | VerificationText;
   assists?: number | VerificationText;
-  status: "Pemain utama" | "Cadangan" | "Pemain muda" | VerificationText;
+  status: "Pemain utama" | "Cadangan" | "Pemain senior" | "Pemain muda" | "Legenda utama" | "Pemain rotasi" | VerificationText;
 }
 
 export interface TransferRecord {
@@ -97,12 +106,7 @@ export interface Season {
 }
 
 export interface EraGroup {
-  name:
-  | SeasonEra
-  | "Era Newton Heath"
-  | "Era Matt Busby"
-  | "Era Tommy Docherty"
-  | "Era Ron Atkinson";
+  name: SeasonEra;
   description: string;
   seasonIds: string[];
 }
@@ -129,6 +133,2228 @@ const emptyStartingXI: StartingXI = {
 };
 
 export const seasons: Season[] = [
+  {
+    id: "1878-79",
+    label: "1878/79",
+    title: "Newton Heath LYR Musim 1878/79",
+    era: "Era Newton Heath",
+    managers: [NEEDS_VERIFICATION],
+    competitions: ["Friendly Matches"],
+    leaguePosition: "Belum mengikuti liga resmi",
+    trophies: [],
+    summary:
+      "Musim 1878/79 dianggap sebagai titik awal sejarah klub. Tim dibentuk oleh pekerja Lancashire and Yorkshire Railway di Newton Heath, Manchester, dengan nama Newton Heath LYR Football Club. Klub ini belum menjadi Manchester United dan belum bermain dalam kompetisi liga profesional seperti era modern.",
+    story: [
+      "Newton Heath LYR Football Club dibentuk pada tahun 1878 oleh pekerja Lancashire and Yorkshire Railway. Nama LYR berasal dari Lancashire and Yorkshire Railway, perusahaan kereta api yang menjadi asal komunitas awal klub.",
+      "Pada masa ini, klub belum memiliki struktur profesional seperti Manchester United modern. Tim lebih berperan sebagai klub pekerja dan komunitas lokal.",
+      "Musim 1878/79 penting bukan karena trofi atau pencapaian liga, tetapi karena menjadi fondasi lahirnya klub yang kemudian berubah nama menjadi Manchester United pada tahun 1902.",
+      "Karena masih berada di era sangat awal sepak bola Inggris, data detail seperti skuad lengkap, statistik penampilan, pencetak gol, transfer, dan susunan utama belum tersedia secara lengkap."
+    ],
+    squad: [],
+    transfersIn: [],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: NEEDS_VERIFICATION,
+      players: {
+        GK: NEEDS_VERIFICATION,
+        RB: NEEDS_VERIFICATION,
+        CB1: NEEDS_VERIFICATION,
+        CB2: NEEDS_VERIFICATION,
+        LB: NEEDS_VERIFICATION,
+        RM: NEEDS_VERIFICATION,
+        CM1: NEEDS_VERIFICATION,
+        CM2: NEEDS_VERIFICATION,
+        LM: NEEDS_VERIFICATION,
+        ST1: NEEDS_VERIFICATION,
+        ST2: NEEDS_VERIFICATION
+      }
+    },
+    keyPlayers: [],
+    statistics: {
+      leaguePosition: "Belum mengikuti liga resmi",
+      matches: NOT_AVAILABLE,
+      wins: NOT_AVAILABLE,
+      draws: NOT_AVAILABLE,
+      losses: NOT_AVAILABLE,
+      goalsFor: NOT_AVAILABLE,
+      goalsAgainst: NOT_AVAILABLE,
+      topScorer: "-",
+      topAssist: "-",
+      mostAppearances: "-"
+    },
+    importantMoments: [
+      {
+        month: "1878",
+        title: "Newton Heath LYR Football Club dibentuk",
+        description:
+          "Klub dibentuk oleh pekerja Lancashire and Yorkshire Railway di kawasan Newton Heath, Manchester.",
+        impact:
+          "Menjadi awal sejarah klub yang kelak berkembang menjadi Manchester United."
+      },
+      {
+        month: "Musim 1878/79",
+        title: "Awal identitas klub pekerja",
+        description:
+          "Newton Heath LYR belum menjadi klub profesional besar. Tim ini lahir dari lingkungan pekerja kereta api dan komunitas lokal.",
+        impact:
+          "Membentuk akar historis Manchester United sebagai klub yang tumbuh dari komunitas lokal."
+      }
+    ],
+    additionalInfo: [
+      "Pada periode ini klub masih bernama Newton Heath LYR Football Club, bukan Manchester United.",
+      "Nama Manchester United baru digunakan pada tahun 1902 setelah perubahan besar dalam identitas klub.",
+      "Data detail musim seperti skuad, transfer, statistik pertandingan, dan starting XI belum tersedia lengkap untuk era ini.",
+      "Musim ini sebaiknya diperlakukan sebagai data historis pendirian klub, bukan data musim kompetitif seperti era liga modern."
+    ],
+    featured: true
+  },
+  {
+    id: "1907-08",
+    label: "1907/08",
+    title: "Manchester United Musim 1907/08",
+    era: "Era Ernest Mangnall",
+    managers: ["Ernest Mangnall"],
+    competitions: ["First Division", "FA Cup"],
+    leaguePosition: "1st First Division",
+    trophies: ["First Division"],
+    summary:
+      "Musim 1907/08 adalah salah satu musim paling penting dalam sejarah awal Manchester United. Di bawah Ernest Mangnall, United meraih gelar liga pertama klub setelah finis sebagai juara First Division. Musim ini menandai lahirnya Manchester United sebagai kekuatan besar sepak bola Inggris.",
+    story: [
+      "Manchester United memasuki musim 1907/08 sebagai klub yang sedang berkembang pesat setelah sebelumnya masih membangun identitas baru pasca-era Newton Heath.",
+      "Ernest Mangnall menjadi tokoh utama dalam perubahan ini. Ia membangun tim yang lebih kompetitif, lebih terorganisir, dan mampu bersaing di level tertinggi sepak bola Inggris.",
+      "Musim ini menjadi titik balik besar karena Manchester United berhasil memenangkan First Division untuk pertama kalinya dalam sejarah klub.",
+      "Gelar liga 1907/08 sangat penting karena menjadi trofi besar pertama Manchester United sebagai klub modern. Ini membuka jalan bagi keberhasilan berikutnya, termasuk FA Cup 1908/09 dan gelar liga lagi pada 1910/11.",
+      "Era Mangnall penting karena ia bukan hanya membawa trofi, tetapi juga membantu membentuk fondasi reputasi Manchester United sebagai klub besar."
+    ],
+    squad: [
+      {
+        name: "Harry Moger",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "George Stacey",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Dick Duckworth",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Half-back",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Charlie Roberts",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kapten, half-back",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Alex Bell",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Half-back",
+        age: NEEDS_VERIFICATION,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Billy Meredith",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kanan",
+        age: NEEDS_VERIFICATION,
+        country: "Wales",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Sandy Turnbull",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: NEEDS_VERIFICATION,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jimmy Turnbull",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: NEEDS_VERIFICATION,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "George Wall",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kiri",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      }
+    ],
+    transfersIn: [],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "2-3-5",
+      players: {
+        GK: "Harry Moger",
+        RB: NEEDS_VERIFICATION,
+        CB1: NEEDS_VERIFICATION,
+        CB2: "Charlie Roberts",
+        LB: "George Stacey",
+        RM: "Dick Duckworth",
+        CM1: "Alex Bell",
+        CM2: NEEDS_VERIFICATION,
+        LM: "George Wall",
+        ST1: "Sandy Turnbull",
+        ST2: "Jimmy Turnbull"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Ernest Mangnall",
+        position: "Manajer",
+        contribution: "Membawa Manchester United meraih gelar liga pertama",
+        story:
+          "Ernest Mangnall adalah manajer besar pertama Manchester United. Ia membangun fondasi tim juara dan menjadikan United sebagai kekuatan baru di sepak bola Inggris."
+      },
+      {
+        name: "Charlie Roberts",
+        position: "Kapten, half-back",
+        contribution: "Pemimpin utama tim juara",
+        story:
+          "Charlie Roberts adalah kapten penting dalam era awal kejayaan United. Ia dikenal sebagai pemimpin kuat di lapangan dan menjadi simbol tim Mangnall."
+      },
+      {
+        name: "Billy Meredith",
+        position: "Winger kanan",
+        contribution: "Salah satu bintang terbesar sepak bola Inggris era itu",
+        story:
+          "Billy Meredith adalah pemain bintang yang sangat berpengaruh. Kehadirannya memberi United kualitas, pengalaman, dan reputasi besar pada masa awal klub."
+      },
+      {
+        name: "Sandy Turnbull",
+        position: "Penyerang",
+        contribution: "Salah satu penyerang penting dalam skuad juara",
+        story:
+          "Sandy Turnbull menjadi bagian penting dari lini depan United pada era Mangnall. Ia juga termasuk pemain yang berperan besar dalam kesuksesan awal klub."
+      }
+    ],
+    statistics: {
+      leaguePosition: "1st First Division",
+      matches: 38,
+      wins: 23,
+      draws: 6,
+      losses: 9,
+      goalsFor: 81,
+      goalsAgainst: 48,
+      topScorer: "Sandy Turnbull",
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Musim 1907/08",
+        title: "Manchester United menjadi juara liga untuk pertama kali",
+        description:
+          "United finis di posisi pertama First Division dan meraih gelar liga pertama dalam sejarah klub.",
+        impact:
+          "Menjadi titik awal status Manchester United sebagai klub besar di sepak bola Inggris."
+      },
+      {
+        month: "1907/08",
+        title: "Ernest Mangnall membangun fondasi kejayaan awal",
+        description:
+          "Mangnall menyusun tim yang kuat, kompetitif, dan mampu bersaing di level tertinggi.",
+        impact:
+          "Fondasi ini berlanjut ke keberhasilan berikutnya, termasuk FA Cup 1908/09 dan gelar liga 1910/11."
+      },
+      {
+        month: "1907/08",
+        title: "Manchester United keluar dari bayang-bayang Newton Heath",
+        description:
+          "Setelah perubahan identitas dari Newton Heath menjadi Manchester United pada 1902, musim ini menjadi bukti nyata transformasi klub.",
+        impact:
+          "United tidak lagi hanya klub yang bertahan dari krisis, tetapi mulai menjadi klub juara."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1907/08 adalah gelar liga pertama Manchester United.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi umum sepak bola Inggris pada era tersebut masih banyak memakai pola 2-3-5, bukan 4-4-2 atau 4-3-3 seperti era modern.",
+      "Detail lengkap seperti assist, menit bermain, nomor punggung, dan data transfer era ini tidak tersedia selengkap era modern.",
+      "Era Ernest Mangnall sangat penting karena menghasilkan tiga pencapaian besar awal: First Division 1907/08, FA Cup 1908/09, dan First Division 1910/11.",
+      "Musim ini cocok dijadikan featured season untuk Era Ernest Mangnall karena menjadi awal kejayaan besar Manchester United."
+    ],
+    featured: true
+  },
+  {
+    id: "1930-31",
+    label: "1930/31",
+    title: "Manchester United Musim 1930/31",
+    era: "Era masa sulit sebelum Busby",
+    managers: ["Herbert Bamlett"],
+    competitions: ["First Division", "FA Cup"],
+    leaguePosition: "22nd First Division",
+    trophies: [],
+    summary:
+      "Musim 1930/31 adalah salah satu musim paling kelam dalam sejarah Manchester United. Di bawah Herbert Bamlett, United finis di dasar klasemen First Division dan terdegradasi ke Second Division. Musim ini menggambarkan betapa beratnya periode sebelum kedatangan Matt Busby.",
+    story: [
+      "Manchester United memasuki musim 1930/31 dalam kondisi yang sulit. Klub belum memiliki stabilitas besar seperti era modern dan masih sering mengalami naik-turun performa.",
+      "Musim ini berjalan sangat buruk sejak awal. United mengalami rangkaian kekalahan panjang dan tidak mampu keluar dari tekanan kompetisi First Division.",
+      "Di akhir musim, Manchester United finis di posisi ke-22, posisi terbawah liga. Hasil itu membuat klub terdegradasi ke Second Division.",
+      "Musim 1930/31 penting karena memperlihatkan titik rendah klub sebelum era Matt Busby. United belum menjadi klub dominan dan masih jauh dari identitas besar yang kemudian dibangun setelah Perang Dunia II.",
+      "Era ini juga menjadi pengingat bahwa sejarah Manchester United tidak selalu tentang kejayaan. Sebelum Busby dan Ferguson, klub pernah melewati masa krisis, degradasi, dan ketidakstabilan."
+    ],
+    squad: [
+      {
+        name: "Jack Mew",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jack Silcock",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Charlie Roberts",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek/Half-back",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "Frank Barson",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek/Half-back",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "Joe Spence",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Hugh McLenahan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Half-back",
+        age: NEEDS_VERIFICATION,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Billy Dale",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: NEEDS_VERIFICATION,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      }
+    ],
+    transfersIn: [],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "2-3-5",
+      players: {
+        GK: "Jack Mew",
+        RB: NEEDS_VERIFICATION,
+        CB1: NEEDS_VERIFICATION,
+        CB2: "Jack Silcock",
+        LB: NEEDS_VERIFICATION,
+        RM: NEEDS_VERIFICATION,
+        CM1: "Hugh McLenahan",
+        CM2: NEEDS_VERIFICATION,
+        LM: NEEDS_VERIFICATION,
+        ST1: "Joe Spence",
+        ST2: "Billy Dale"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Herbert Bamlett",
+        position: "Manajer",
+        contribution: "Memimpin United pada salah satu musim tersulit klub",
+        story:
+          "Herbert Bamlett berada di kursi manajer saat Manchester United mengalami salah satu musim terburuknya. Musim ini berakhir dengan degradasi dan menjadi simbol masa sulit sebelum era Busby."
+      },
+      {
+        name: "Joe Spence",
+        position: "Penyerang",
+        contribution: "Salah satu pemain penting United pada masa sulit",
+        story:
+          "Joe Spence adalah salah satu nama penting dalam sejarah awal United. Meski klub sedang mengalami periode berat, ia tetap dikenal sebagai salah satu penyerang besar United sebelum era Busby."
+      },
+      {
+        name: "Jack Mew",
+        position: "Kiper",
+        contribution: "Kiper United pada periode sulit",
+        story:
+          "Jack Mew menjadi bagian dari skuad United pada masa ketika klub kesulitan bersaing di First Division. Musim 1930/31 sangat berat bagi lini belakang dan penjaga gawang United."
+      },
+      {
+        name: "Jack Silcock",
+        position: "Bek",
+        contribution: "Bek senior dalam skuad United",
+        story:
+          "Jack Silcock adalah salah satu pemain belakang yang berada di skuad United pada periode antar-perang. Ia menjadi bagian dari generasi yang mengalami naik-turun besar sebelum klub dibangun ulang pada era Busby."
+      }
+    ],
+    statistics: {
+      leaguePosition: "22nd First Division",
+      matches: 42,
+      wins: 7,
+      draws: 8,
+      losses: 27,
+      goalsFor: 53,
+      goalsAgainst: 115,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Awal musim 1930",
+        title: "Start buruk Manchester United",
+        description:
+          "United memulai musim dengan rangkaian hasil buruk yang membuat tim langsung terjebak di papan bawah.",
+        impact:
+          "Membuat tekanan besar kepada klub dan menjadi awal dari musim yang sangat berat."
+      },
+      {
+        month: "Musim 1930/31",
+        title: "Pertahanan sangat rapuh",
+        description:
+          "United kebobolan sangat banyak gol sepanjang musim liga. Ini menjadi salah satu indikator utama buruknya performa tim.",
+        impact:
+          "Menunjukkan lemahnya struktur tim dan perlunya perubahan besar."
+      },
+      {
+        month: "Akhir musim 1930/31",
+        title: "Manchester United terdegradasi",
+        description:
+          "United finis di posisi ke-22 First Division dan harus turun ke Second Division.",
+        impact:
+          "Menjadi salah satu titik terendah klub sebelum era Matt Busby."
+      },
+      {
+        month: "Setelah musim 1930/31",
+        title: "Klub memasuki masa krisis lebih dalam",
+        description:
+          "Degradasi memperburuk kondisi klub yang sudah tidak stabil secara performa dan finansial.",
+        impact:
+          "Masa ini menjadi latar penting sebelum Manchester United kemudian dibangun ulang pada era Matt Busby."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1930/31 cocok dijadikan featured season untuk Era masa sulit sebelum Busby karena menggambarkan titik rendah klub.",
+      "Manchester United finis di posisi terbawah First Division dan terdegradasi ke Second Division.",
+      "Catatan liga 1930/31: 42 pertandingan, 7 menang, 8 seri, 27 kalah, 53 gol, dan 115 kebobolan.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi sepak bola Inggris pada masa itu masih banyak menggunakan pola 2-3-5.",
+      "Detail skuad lengkap, assist, nomor punggung, dan statistik individu era ini tidak tersedia selengkap era modern.",
+      "Era ini penting untuk menunjukkan bahwa sebelum Busby dan Ferguson, Manchester United pernah mengalami masa degradasi, krisis, dan ketidakstabilan panjang."
+    ],
+    featured: true
+  },
+  {
+    id: "1957-58",
+    label: "1957/58",
+    title: "Manchester United Musim 1957/58",
+    era: "Era Busby Babes & Tragedi Munich",
+    managers: ["Matt Busby", "Jimmy Murphy"],
+    competitions: ["First Division", "FA Cup", "European Cup", "FA Charity Shield"],
+    leaguePosition: "9th First Division",
+    trophies: ["FA Charity Shield"],
+    summary:
+      "Musim 1957/58 adalah salah satu musim paling emosional dan menentukan dalam sejarah Manchester United. Tim Busby Babes sedang berkembang sebagai salah satu kekuatan terbaik Inggris dan Eropa, tetapi tragedi Munich pada 6 Februari 1958 mengubah arah klub selamanya. Meski kehilangan banyak pemain dan staf, United tetap melanjutkan musim dan mencapai final FA Cup.",
+    story: [
+      "Manchester United memasuki musim 1957/58 sebagai juara bertahan First Division dan salah satu tim muda paling menjanjikan di Eropa.",
+      "Skuad ini dikenal sebagai Busby Babes, generasi muda yang dibangun Matt Busby dengan keberanian, teknik, dan visi jangka panjang.",
+      "United tampil di European Cup dan berhasil melewati Red Star Belgrade untuk mencapai semifinal. Namun, dalam perjalanan pulang dari Beograd, pesawat yang membawa rombongan tim mengalami kecelakaan di Munich pada 6 Februari 1958.",
+      "Tragedi Munich menewaskan banyak orang, termasuk delapan pemain Manchester United. Peristiwa ini menjadi luka terbesar dalam sejarah klub.",
+      "Matt Busby mengalami cedera serius dan harus menjalani pemulihan. Jimmy Murphy kemudian mengambil alih tugas memimpin tim sebagai caretaker.",
+      "Dengan skuad yang hancur secara emosional dan jumlah pemain yang sangat terbatas, United tetap melanjutkan musim. Mereka bahkan berhasil mencapai final FA Cup 1958.",
+      "United kalah dari Bolton Wanderers di final FA Cup, tetapi perjalanan mereka setelah tragedi menjadi simbol keberanian, ketahanan, dan semangat Manchester United.",
+      "Musim ini penting bukan karena trofi utama, tetapi karena membentuk salah satu identitas terbesar klub: bangkit dari tragedi dan terus melawan."
+    ],
+    squad: [
+      {
+        name: "Harry Gregg",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 25,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Bill Foulkes",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan/Bek tengah",
+        age: 26,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Roger Byrne",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kapten, bek kiri",
+        age: 28,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Mark Jones",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 24,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jackie Blanchflower",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek/Gelandang",
+        age: 24,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Duncan Edwards",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 21,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Eddie Colman",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 21,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Bobby Charlton",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang serang/Penyerang",
+        age: 20,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain muda"
+      },
+      {
+        name: "Dennis Viollet",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 24,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Tommy Taylor",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 26,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Liam Whelan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 22,
+        country: "Republic of Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "David Pegg",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kiri",
+        age: 22,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      }
+    ],
+    transfersIn: [],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "4-2-4",
+      players: {
+        GK: "Harry Gregg",
+        RB: "Bill Foulkes",
+        CB1: "Mark Jones",
+        CB2: "Jackie Blanchflower",
+        LB: "Roger Byrne",
+        RM: "Eddie Colman",
+        CM1: "Duncan Edwards",
+        CM2: "Bobby Charlton",
+        LM: "David Pegg",
+        ST1: "Tommy Taylor",
+        ST2: "Dennis Viollet"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Matt Busby",
+        position: "Manajer",
+        contribution: "Arsitek Busby Babes dan simbol kebangkitan United",
+        story:
+          "Matt Busby membangun tim muda yang sangat berbakat dan berani. Tragedi Munich hampir merenggut hidupnya, tetapi ia kemudian kembali dan membangun ulang Manchester United hingga mencapai kejayaan Eropa pada 1968."
+      },
+      {
+        name: "Jimmy Murphy",
+        position: "Caretaker manager",
+        contribution: "Memimpin United setelah tragedi Munich",
+        story:
+          "Jimmy Murphy mengambil tanggung jawab besar ketika Matt Busby menjalani pemulihan. Ia memimpin tim yang hancur secara emosional dan tetap membawa United sampai final FA Cup 1958."
+      },
+      {
+        name: "Duncan Edwards",
+        position: "Gelandang",
+        contribution: "Salah satu talenta terbesar dalam sejarah sepak bola Inggris",
+        story:
+          "Duncan Edwards adalah simbol terbesar Busby Babes. Ia dikenal sebagai pemain luar biasa lengkap, kuat, dan matang meski masih sangat muda. Kepergiannya menjadi salah satu kehilangan terbesar dalam sejarah United."
+      },
+      {
+        name: "Bobby Charlton",
+        position: "Gelandang serang/Penyerang",
+        contribution: "Penyintas Munich dan simbol kebangkitan United",
+        story:
+          "Bobby Charlton selamat dari tragedi Munich dan kemudian menjadi salah satu legenda terbesar klub. Ia menjadi jembatan antara Busby Babes, tragedi Munich, dan gelar European Cup 1968."
+      },
+      {
+        name: "Harry Gregg",
+        position: "Kiper",
+        contribution: "Penyintas dan pahlawan penyelamatan setelah kecelakaan",
+        story:
+          "Harry Gregg dikenang bukan hanya sebagai kiper hebat, tetapi juga sebagai sosok pemberani yang membantu menyelamatkan beberapa korban setelah kecelakaan Munich."
+      },
+      {
+        name: "Roger Byrne",
+        position: "Kapten, bek kiri",
+        contribution: "Kapten Busby Babes",
+        story:
+          "Roger Byrne adalah kapten United dan salah satu pemimpin utama generasi Busby Babes. Ia termasuk salah satu pemain yang gugur dalam tragedi Munich."
+      }
+    ],
+    statistics: {
+      leaguePosition: "9th First Division",
+      matches: 42,
+      wins: NEEDS_VERIFICATION,
+      draws: NEEDS_VERIFICATION,
+      losses: NEEDS_VERIFICATION,
+      goalsFor: NEEDS_VERIFICATION,
+      goalsAgainst: NEEDS_VERIFICATION,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Awal musim 1957/58",
+        title: "Busby Babes memulai musim sebagai kekuatan besar",
+        description:
+          "United memasuki musim sebagai juara bertahan liga dan kembali bersaing di European Cup.",
+        impact:
+          "Menegaskan status Busby Babes sebagai salah satu tim muda paling menjanjikan di Eropa."
+      },
+      {
+        month: "6 Februari 1958",
+        title: "Tragedi Munich",
+        description:
+          "Pesawat yang membawa rombongan Manchester United mengalami kecelakaan di Munich setelah kembali dari laga European Cup melawan Red Star Belgrade.",
+        impact:
+          "Menjadi tragedi terbesar dalam sejarah Manchester United dan mengubah arah klub selamanya."
+      },
+      {
+        month: "Februari 1958",
+        title: "Jimmy Murphy mengambil alih tim",
+        description:
+          "Saat Matt Busby menjalani pemulihan, Jimmy Murphy memimpin United untuk melanjutkan musim.",
+        impact:
+          "Menjaga klub tetap berdiri dalam masa paling gelap dan menjadi simbol ketahanan Manchester United."
+      },
+      {
+        month: "1957/58",
+        title: "United mencapai final FA Cup",
+        description:
+          "Meski skuad hancur akibat tragedi Munich, United berhasil melaju sampai final FA Cup 1958.",
+        impact:
+          "Menjadi salah satu cerita paling emosional dalam sejarah sepak bola Inggris."
+      },
+      {
+        month: "Akhir musim 1957/58",
+        title: "United finis kesembilan di First Division",
+        description:
+          "United mengakhiri musim liga di posisi ke-9 setelah musim yang sangat terganggu oleh tragedi.",
+        impact:
+          "Posisi liga bukan cerita utama musim ini; yang paling penting adalah perjuangan klub untuk bertahan dan melanjutkan perjalanan."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1957/58 cocok dijadikan featured season khusus karena menjadi musim tragedi Munich.",
+      "Tragedi Munich terjadi pada 6 Februari 1958 setelah United kembali dari laga European Cup melawan Red Star Belgrade.",
+      "Delapan pemain Manchester United meninggal akibat tragedi ini: Geoff Bent, Roger Byrne, Eddie Colman, Duncan Edwards, Mark Jones, David Pegg, Tommy Taylor, dan Liam Whelan.",
+      "Matt Busby mengalami cedera serius dan harus menjalani pemulihan.",
+      "Jimmy Murphy memimpin tim sebagai caretaker setelah tragedi.",
+      "United tetap melanjutkan musim dan mencapai final FA Cup 1958.",
+      "Musim ini menjadi fondasi emosional penting bagi identitas Manchester United: keberanian, kehilangan, kebangkitan, dan semangat untuk terus berjalan.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi ditulis sebagai gambaran umum tim Busby Babes, bukan klaim bahwa sebelas pemain tersebut selalu bermain bersama.",
+      "Detail statistik individu, assist, dan rekor liga lengkap bisa dilengkapi kemudian dari database historis yang lebih detail."
+    ],
+    featured: true
+  },
+  {
+    id: "1967-68",
+    label: "1967/68",
+    title: "Manchester United Musim 1967/68",
+    era: "Era Matt Busby",
+    managers: ["Matt Busby"],
+    competitions: ["First Division", "FA Cup", "European Cup"],
+    leaguePosition: "2nd First Division",
+    trophies: ["European Cup"],
+    summary:
+      "Musim 1967/68 adalah salah satu musim paling bersejarah Manchester United. Di bawah Matt Busby, United menjuarai European Cup setelah mengalahkan Benfica di final. Gelar ini sangat emosional karena datang 10 tahun setelah tragedi Munich 1958 dan menjadi puncak kebangkitan Busby Babes yang dibangun ulang.",
+    story: [
+      "Manchester United memasuki musim 1967/68 sebagai salah satu kekuatan besar Inggris. Tim ini masih dipimpin Matt Busby, sosok yang membangun klub sejak 1945 dan memimpin kebangkitan setelah tragedi Munich.",
+      "Skuad United saat itu dihuni pemain-pemain legendaris seperti Bobby Charlton, George Best, Denis Law, Bill Foulkes, Nobby Stiles, Pat Crerand, dan Alex Stepney.",
+      "Di liga, United bersaing ketat di papan atas First Division. Mereka akhirnya finis di posisi kedua, tetapi musim ini tetap dikenang terutama karena kejayaan di Eropa.",
+      "Perjalanan European Cup menjadi cerita terbesar musim ini. United berhasil melaju hingga final dan menghadapi Benfica di Wembley.",
+      "Final European Cup 1968 menjadi malam bersejarah. United menang 4-1 setelah extra time melalui gol Bobby Charlton, George Best, Brian Kidd, dan satu gol tambahan dari Charlton.",
+      "Kemenangan itu menjadikan Manchester United klub Inggris pertama yang menjuarai European Cup. Bagi Matt Busby, gelar ini bukan hanya trofi, tetapi simbol penyembuhan dan kebangkitan setelah kehilangan besar dalam tragedi Munich."
+    ],
+    squad: [
+      {
+        name: "Alex Stepney",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 25,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Tony Dunne",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: 26,
+        country: "Republic of Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Shay Brennan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan",
+        age: 30,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Bill Foulkes",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 36,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "David Sadler",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah/Gelandang",
+        age: 22,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Nobby Stiles",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang bertahan",
+        age: 25,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Pat Crerand",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 29,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Bobby Charlton",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang serang",
+        age: 30,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "George Best",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger/Penyerang",
+        age: 21,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "Denis Law",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 28,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "Brian Kidd",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 18,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain muda"
+      },
+      {
+        name: "John Aston Jr.",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger",
+        age: 20,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      }
+    ],
+    transfersIn: [],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "4-3-3",
+      players: {
+        GK: "Alex Stepney",
+        RB: "Shay Brennan",
+        CB1: "Bill Foulkes",
+        CB2: "David Sadler",
+        LB: "Tony Dunne",
+        RM: "Pat Crerand",
+        CM1: "Nobby Stiles",
+        CM2: "Bobby Charlton",
+        LM: "John Aston Jr.",
+        ST1: "George Best",
+        ST2: "Brian Kidd"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Matt Busby",
+        position: "Manajer",
+        contribution: "Membawa Manchester United menjuarai European Cup 1967/68",
+        story:
+          "Matt Busby adalah tokoh terbesar dalam era ini. Setelah membangun Busby Babes dan selamat dari tragedi Munich, ia membangun ulang United hingga akhirnya mencapai puncak Eropa pada 1968."
+      },
+      {
+        name: "Bobby Charlton",
+        position: "Gelandang serang",
+        contribution: "Kapten dan pencetak dua gol di final European Cup 1968",
+        story:
+          "Bobby Charlton adalah simbol kebangkitan United setelah tragedi Munich. Ia menjadi kapten di final European Cup dan mencetak dua gol dalam kemenangan atas Benfica."
+      },
+      {
+        name: "George Best",
+        position: "Winger/Penyerang",
+        contribution: "Salah satu bintang terbesar musim 1967/68",
+        story:
+          "George Best berada di puncak performa pada musim ini. Skill, kecepatan, dan keberaniannya membuatnya menjadi salah satu pemain paling menakutkan di Eropa."
+      },
+      {
+        name: "Denis Law",
+        position: "Penyerang",
+        contribution: "Bagian dari trio legendaris United bersama Charlton dan Best",
+        story:
+          "Denis Law adalah bagian penting dari generasi emas United. Meski tidak bermain di final European Cup 1968 karena cedera, pengaruhnya tetap besar sepanjang era Busby."
+      },
+      {
+        name: "Bill Foulkes",
+        position: "Bek tengah",
+        contribution: "Pemain senior dan penyintas Munich yang tampil di final 1968",
+        story:
+          "Bill Foulkes adalah salah satu penghubung langsung antara Busby Babes dan tim juara Eropa 1968. Kehadirannya memberi nilai emosional besar pada kemenangan tersebut."
+      }
+    ],
+    statistics: {
+      leaguePosition: "2nd First Division",
+      matches: 42,
+      wins: 24,
+      draws: 8,
+      losses: 10,
+      goalsFor: 89,
+      goalsAgainst: 55,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Musim 1967/68",
+        title: "Manchester United bersaing di papan atas First Division",
+        description:
+          "United menjalani musim liga yang kuat dan finis sebagai runner-up First Division.",
+        impact:
+          "Menunjukkan bahwa United tetap menjadi salah satu tim terbaik Inggris pada akhir era Busby."
+      },
+      {
+        month: "1967/68",
+        title: "Perjalanan besar di European Cup",
+        description:
+          "United melaju jauh di European Cup dan mencapai final untuk menghadapi Benfica di Wembley.",
+        impact:
+          "Membawa United ke panggung terbesar sepak bola Eropa."
+      },
+      {
+        month: "29 Mei 1968",
+        title: "Manchester United mengalahkan Benfica di final European Cup",
+        description:
+          "United menang 4-1 atas Benfica setelah extra time di Wembley. Gol dicetak oleh Bobby Charlton, George Best, Brian Kidd, dan Bobby Charlton lagi.",
+        impact:
+          "Manchester United menjadi klub Inggris pertama yang menjuarai European Cup."
+      },
+      {
+        month: "1968",
+        title: "Puncak kebangkitan setelah tragedi Munich",
+        description:
+          "Gelar European Cup datang 10 tahun setelah tragedi Munich 1958.",
+        impact:
+          "Menjadi salah satu momen paling emosional dan penting dalam sejarah Manchester United."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1967/68 cocok dijadikan featured season untuk Era Matt Busby karena menjadi puncak kejayaan Busby di Eropa.",
+      "Manchester United menjadi klub Inggris pertama yang menjuarai European Cup.",
+      "Final European Cup 1968 dimainkan di Wembley melawan Benfica dan berakhir 4-1 setelah extra time.",
+      "Bobby Charlton mencetak dua gol di final, sementara George Best dan Brian Kidd masing-masing mencetak satu gol.",
+      "Kemenangan ini sangat emosional karena terjadi 10 tahun setelah tragedi Munich 1958.",
+      "Skuad ini dikenal dengan nama-nama besar seperti Bobby Charlton, George Best, Denis Law, Nobby Stiles, Pat Crerand, Bill Foulkes, dan Alex Stepney.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Detail assist, menit bermain, dan statistik individu lengkap belum tersedia selengkap era modern.",
+      "Jika ingin data lebih akurat, bagian appearances, topScorer, dan mostAppearances bisa dilengkapi kemudian dari database statistik historis."
+    ],
+    featured: true
+  },
+  {
+    id: "1970-71",
+    label: "1970/71",
+    title: "Manchester United Musim 1970/71",
+    era: "Era transisi pasca-Busby",
+    managers: ["Wilf McGuinness", "Matt Busby"],
+    competitions: ["First Division", "FA Cup", "League Cup"],
+    leaguePosition: "8th First Division",
+    trophies: [],
+    summary:
+      "Musim 1970/71 adalah salah satu musim penting dalam masa transisi Manchester United setelah era besar Matt Busby. Wilf McGuinness memulai musim sebagai manajer, tetapi kesulitan mempertahankan stabilitas tim. Matt Busby kemudian kembali sementara untuk menenangkan situasi sebelum klub memasuki fase baru di bawah manajer berikutnya.",
+    story: [
+      "Setelah kejayaan European Cup 1968 dan mundurnya Matt Busby dari kursi manajer utama, Manchester United memasuki masa transisi yang sulit.",
+      "Wilf McGuinness, mantan pemain dan pelatih muda United, mendapat tugas berat untuk meneruskan warisan Busby. Namun, tekanan sangat besar karena ia harus mengelola skuad yang masih berisi banyak nama besar dari era sebelumnya.",
+      "Musim 1970/71 memperlihatkan bahwa menggantikan figur sebesar Matt Busby bukan hal mudah. United masih memiliki pemain besar seperti Bobby Charlton, George Best, Denis Law, Brian Kidd, Alex Stepney, dan Nobby Stiles, tetapi tim mulai kehilangan arah dominan seperti akhir 1960-an.",
+      "Hasil yang tidak konsisten membuat McGuinness kehilangan posisinya. Matt Busby kemudian kembali sebagai manajer sementara untuk membantu menstabilkan klub.",
+      "Musim ini penting karena menjadi bukti bahwa Manchester United belum siap meninggalkan bayang-bayang Busby. Klub masih mencari identitas baru, struktur baru, dan sosok manajer yang mampu membawa generasi berikutnya.",
+      "Walau United finis di papan tengah atas, musim ini lebih dikenang sebagai masa transisi emosional dan struktural setelah kejayaan besar era Busby."
+    ],
+    squad: [
+      {
+        name: "Alex Stepney",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 28,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Tony Dunne",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: 29,
+        country: "Republic of Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Shay Brennan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan",
+        age: 33,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "David Sadler",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah/Gelandang",
+        age: 25,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Nobby Stiles",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang bertahan",
+        age: 28,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "Bobby Charlton",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang serang",
+        age: 33,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "George Best",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger/Penyerang",
+        age: 24,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "Denis Law",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 30,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Legenda utama"
+      },
+      {
+        name: "Brian Kidd",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 21,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Willie Morgan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kanan",
+        age: 26,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Carlo Sartori",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 22,
+        country: "Italy",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain rotasi"
+      },
+      {
+        name: "John Aston Jr.",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger",
+        age: 23,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain rotasi"
+      }
+    ],
+    transfersIn: [
+      {
+        player: "Ian Ure",
+        from: "Arsenal",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Bek tengah berpengalaman. Detail biaya dan tanggal transfer perlu diverifikasi."
+      }
+    ],
+    transfersOut: [
+      {
+        player: "Pat Crerand",
+        to: NEEDS_VERIFICATION,
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Gelandang senior era Busby. Detail status keluar/pensiun perlu diverifikasi."
+      }
+    ],
+    commonStartingXI: {
+      formation: "4-3-3",
+      players: {
+        GK: "Alex Stepney",
+        RB: "Shay Brennan",
+        CB1: "David Sadler",
+        CB2: NEEDS_VERIFICATION,
+        LB: "Tony Dunne",
+        RM: "Willie Morgan",
+        CM1: "Nobby Stiles",
+        CM2: "Bobby Charlton",
+        LM: NEEDS_VERIFICATION,
+        ST1: "Denis Law",
+        ST2: "George Best"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Wilf McGuinness",
+        position: "Manajer",
+        contribution: "Memulai musim sebagai penerus Busby",
+        story:
+          "Wilf McGuinness mendapat tugas yang sangat berat: menggantikan Matt Busby dan mengelola skuad penuh legenda. Masa jabatannya menunjukkan betapa sulitnya transisi setelah era besar Busby."
+      },
+      {
+        name: "Matt Busby",
+        position: "Manajer sementara",
+        contribution: "Kembali sementara untuk menstabilkan klub",
+        story:
+          "Busby kembali ke kursi manajer setelah United kesulitan di bawah McGuinness. Kembalinya Busby memperlihatkan bahwa pengaruhnya masih sangat besar dan klub belum sepenuhnya lepas dari bayangannya."
+      },
+      {
+        name: "Bobby Charlton",
+        position: "Gelandang serang",
+        contribution: "Legenda senior dan simbol era Busby",
+        story:
+          "Bobby Charlton tetap menjadi simbol Manchester United pada masa transisi. Ia adalah penghubung langsung antara Busby Babes, tragedi Munich, kejayaan Eropa 1968, dan masa sulit setelahnya."
+      },
+      {
+        name: "George Best",
+        position: "Winger/Penyerang",
+        contribution: "Bintang terbesar United pada awal 1970-an",
+        story:
+          "George Best masih menjadi pemain paling berbakat dalam skuad United. Namun, masa ini juga menjadi awal dari periode yang lebih rumit dalam karier dan hubungannya dengan klub."
+      },
+      {
+        name: "Denis Law",
+        position: "Penyerang",
+        contribution: "Penyerang senior dan bagian dari trio legendaris United",
+        story:
+          "Denis Law masih menjadi bagian penting dari skuad. Bersama Bobby Charlton dan George Best, ia menjadi simbol sisa kejayaan era Busby yang perlahan memasuki fase akhir."
+      }
+    ],
+    statistics: {
+      leaguePosition: "8th First Division",
+      matches: 42,
+      wins: NEEDS_VERIFICATION,
+      draws: NEEDS_VERIFICATION,
+      losses: NEEDS_VERIFICATION,
+      goalsFor: NEEDS_VERIFICATION,
+      goalsAgainst: NEEDS_VERIFICATION,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Awal musim 1970/71",
+        title: "Wilf McGuinness mencoba meneruskan warisan Busby",
+        description:
+          "McGuinness memulai musim dengan beban besar sebagai manajer muda yang harus memimpin klub setelah era Matt Busby.",
+        impact:
+          "Menunjukkan sulitnya Manchester United menemukan penerus langsung Busby."
+      },
+      {
+        month: "Desember 1970",
+        title: "Wilf McGuinness diberhentikan",
+        description:
+          "Hasil yang tidak stabil membuat United mengambil keputusan untuk mengakhiri masa jabatan McGuinness.",
+        impact:
+          "Membuka jalan bagi Matt Busby untuk kembali sebagai manajer sementara."
+      },
+      {
+        month: "Akhir 1970",
+        title: "Matt Busby kembali sementara",
+        description:
+          "Busby kembali memimpin tim untuk membantu menenangkan situasi dan menjaga stabilitas klub.",
+        impact:
+          "Membuktikan bahwa pengaruh Busby masih sangat besar dalam struktur Manchester United."
+      },
+      {
+        month: "Akhir musim 1970/71",
+        title: "United finis di papan tengah atas",
+        description:
+          "United mengakhiri musim di posisi ke-8 First Division.",
+        impact:
+          "Hasil ini tidak buruk, tetapi jauh dari standar kejayaan yang baru saja dicapai United pada akhir 1960-an."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1970/71 cocok dijadikan featured season untuk Era transisi pasca-Busby karena menggambarkan kesulitan klub setelah ditinggal Matt Busby.",
+      "Wilf McGuinness memulai musim sebagai manajer, tetapi kemudian digantikan oleh Matt Busby yang kembali sementara.",
+      "Skuad masih berisi nama-nama besar dari era Busby seperti Bobby Charlton, George Best, Denis Law, Alex Stepney, Tony Dunne, dan Nobby Stiles.",
+      "Musim ini penting bukan karena trofi, tetapi karena memperlihatkan masalah regenerasi, tekanan warisan, dan kesulitan mengganti manajer legendaris.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi ditulis sebagai perkiraan struktur umum, bukan klaim starting XI yang selalu dimainkan bersama.",
+      "Detail statistik individu, assist, transfer, dan most appearances era ini perlu dilengkapi dari database historis yang lebih detail."
+    ],
+    featured: true
+  },
+  {
+    id: "1976-77",
+    label: "1976/77",
+    title: "Manchester United Musim 1976/77",
+    era: "Era Tommy Docherty",
+    managers: ["Tommy Docherty"],
+    competitions: ["First Division", "FA Cup", "League Cup"],
+    leaguePosition: "6th First Division",
+    trophies: ["FA Cup"],
+    summary:
+      "Musim 1976/77 adalah puncak era Tommy Docherty di Manchester United. Setelah membangun ulang tim pasca-masa sulit dan membawa United kembali ke First Division, Docherty mempersembahkan FA Cup 1977 dengan kemenangan atas Liverpool di final. Trofi ini menjadi momen penting karena United menghentikan peluang Liverpool meraih treble.",
+    story: [
+      "Tommy Docherty mengambil alih Manchester United pada awal 1970-an, ketika klub masih berusaha keluar dari bayang-bayang besar era Matt Busby.",
+      "United sempat terdegradasi ke Second Division pada 1973/74, tetapi Docherty berhasil membawa klub promosi kembali hanya dalam satu musim.",
+      "Pada musim 1976/77, United tampil sebagai tim yang energik, agresif, dan lebih segar. Gaya Docherty memberi identitas baru setelah periode transisi yang berat.",
+      "Di liga, United finis di posisi keenam First Division. Namun, cerita terbesar musim ini datang dari FA Cup.",
+      "United melaju ke final FA Cup 1977 dan menghadapi Liverpool, tim dominan Inggris saat itu. Liverpool sedang mengejar treble setelah menjuarai liga dan menuju final European Cup.",
+      "Di Wembley, Manchester United menang 2-1 atas Liverpool. Gol United dicetak oleh Stuart Pearson dan Jimmy Greenhoff.",
+      "Kemenangan ini memberi United trofi besar pertama setelah European Cup 1968 dan menjadi salah satu momen paling ikonik dalam sejarah klub tahun 1970-an.",
+      "Ironisnya, meski sukses besar di FA Cup, Tommy Docherty tidak lama setelah itu meninggalkan klub karena masalah di luar lapangan."
+    ],
+    squad: [
+      {
+        name: "Alex Stepney",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 34,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "Jimmy Nicholl",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan",
+        age: 20,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Arthur Albiston",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: 19,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain muda"
+      },
+      {
+        name: "Brian Greenhoff",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah/Gelandang",
+        age: 23,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Martin Buchan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kapten, bek tengah",
+        age: 27,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Steve Coppell",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kanan",
+        age: 21,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Lou Macari",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang/Penyerang",
+        age: 27,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Sammy McIlroy",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 22,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Gordon Hill",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kiri",
+        age: 22,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Stuart Pearson",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 27,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jimmy Greenhoff",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 30,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      }
+    ],
+    transfersIn: [
+      {
+        player: "Jimmy Greenhoff",
+        from: "Stoke City",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Penyerang penting yang kemudian mencetak gol kemenangan di final FA Cup 1977."
+      },
+      {
+        player: "Gordon Hill",
+        from: "Millwall",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Winger kiri yang menjadi bagian penting dari gaya menyerang United era Docherty."
+      }
+    ],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "4-4-2",
+      players: {
+        GK: "Alex Stepney",
+        RB: "Jimmy Nicholl",
+        CB1: "Brian Greenhoff",
+        CB2: "Martin Buchan",
+        LB: "Arthur Albiston",
+        RM: "Steve Coppell",
+        CM1: "Lou Macari",
+        CM2: "Sammy McIlroy",
+        LM: "Gordon Hill",
+        ST1: "Stuart Pearson",
+        ST2: "Jimmy Greenhoff"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Tommy Docherty",
+        position: "Manajer",
+        contribution: "Membangun ulang United dan membawa klub juara FA Cup 1977",
+        story:
+          "Tommy Docherty adalah tokoh utama periode pembangunan ulang Manchester United setelah era Busby. Ia membawa energi baru, mengembalikan United ke First Division, dan mempersembahkan FA Cup 1977."
+      },
+      {
+        name: "Martin Buchan",
+        position: "Kapten, bek tengah",
+        contribution: "Pemimpin lini belakang dan kapten tim",
+        story:
+          "Martin Buchan adalah kapten penting dalam era Docherty. Ia menjadi pemimpin di lapangan dan memberi stabilitas pada tim yang sedang dibangun ulang."
+      },
+      {
+        name: "Stuart Pearson",
+        position: "Penyerang",
+        contribution: "Mencetak gol pembuka di final FA Cup 1977",
+        story:
+          "Stuart Pearson menjadi salah satu tokoh final FA Cup 1977. Golnya membuka jalan bagi kemenangan United atas Liverpool di Wembley."
+      },
+      {
+        name: "Jimmy Greenhoff",
+        position: "Penyerang",
+        contribution: "Mencetak gol kemenangan di final FA Cup 1977",
+        story:
+          "Jimmy Greenhoff mencetak gol kedua United di final FA Cup 1977. Gol itu memastikan kemenangan 2-1 atas Liverpool dan memberi United trofi besar pertama sejak 1968."
+      },
+      {
+        name: "Steve Coppell",
+        position: "Winger kanan",
+        contribution: "Salah satu pemain kreatif utama United",
+        story:
+          "Steve Coppell memberi ancaman besar dari sisi kanan. Ia menjadi bagian penting dari gaya menyerang cepat dan langsung yang identik dengan United era Docherty."
+      }
+    ],
+    statistics: {
+      leaguePosition: "6th First Division",
+      matches: 42,
+      wins: 18,
+      draws: 10,
+      losses: 14,
+      goalsFor: 71,
+      goalsAgainst: 62,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Musim 1976/77",
+        title: "United finis keenam di First Division",
+        description:
+          "Manchester United menyelesaikan liga di posisi ke-6. Hasil ini menunjukkan tim mulai stabil kembali setelah masa naik-turun awal 1970-an.",
+        impact:
+          "Memperkuat posisi United sebagai tim papan atas yang sedang membangun kembali identitasnya."
+      },
+      {
+        month: "1976/77",
+        title: "Perjalanan kuat di FA Cup",
+        description:
+          "United melaju sampai final FA Cup dan berpeluang meraih trofi besar pertama setelah kejayaan Eropa 1968.",
+        impact:
+          "Memberi kesempatan bagi generasi baru United untuk menciptakan sejarah sendiri."
+      },
+      {
+        month: "21 Mei 1977",
+        title: "Manchester United mengalahkan Liverpool di final FA Cup",
+        description:
+          "United menang 2-1 atas Liverpool di Wembley. Stuart Pearson dan Jimmy Greenhoff mencetak gol untuk United.",
+        impact:
+          "United meraih FA Cup dan menghentikan peluang Liverpool meraih treble."
+      },
+      {
+        month: "Setelah final 1977",
+        title: "Akhir dramatis era Docherty",
+        description:
+          "Meski sukses memenangkan FA Cup, Tommy Docherty kemudian meninggalkan klub karena masalah di luar lapangan.",
+        impact:
+          "Membuat era Docherty berakhir secara dramatis meski baru saja mencapai puncak prestasi."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1976/77 cocok dijadikan featured season untuk Era Tommy Docherty karena menjadi puncak prestasi Docherty bersama Manchester United.",
+      "Manchester United menjuarai FA Cup 1977 setelah mengalahkan Liverpool 2-1 di Wembley.",
+      "Gol final FA Cup 1977 dicetak oleh Stuart Pearson dan Jimmy Greenhoff.",
+      "Kemenangan United menghentikan peluang Liverpool meraih treble pada musim tersebut.",
+      "Trofi ini adalah gelar besar pertama United setelah European Cup 1968.",
+      "Tommy Docherty sebelumnya juga membawa United kembali promosi ke First Division setelah degradasi 1973/74.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi 4-4-2 ditulis sebagai gambaran umum susunan utama, bukan klaim bahwa sebelas pemain tersebut selalu dimainkan bersama.",
+      "Detail appearances, assist, transfer, top scorer, dan most appearances bisa dilengkapi kemudian dari database historis yang lebih detail."
+    ],
+    featured: true
+  },
+  {
+    id: "1979-80",
+    label: "1979/80",
+    title: "Manchester United Musim 1979/80",
+    era: "Era Dave Sexton",
+    managers: ["Dave Sexton"],
+    competitions: ["First Division", "FA Cup", "League Cup"],
+    leaguePosition: "2nd First Division",
+    trophies: [],
+    summary:
+      "Musim 1979/80 adalah musim terbaik Manchester United di bawah Dave Sexton. United finis sebagai runner-up First Division, bersaing kuat di papan atas tetapi gagal mengejar Liverpool yang menjadi juara. Musim ini menggambarkan sisi terbaik era Sexton: lebih stabil, lebih rapi, tetapi belum cukup tajam untuk menghasilkan trofi besar.",
+    story: [
+      "Dave Sexton mengambil alih Manchester United setelah era Tommy Docherty yang berakhir dramatis. Ia mewarisi skuad yang punya energi menyerang, tetapi juga membutuhkan stabilitas dan kontrol yang lebih baik.",
+      "Berbeda dari Docherty yang lebih ekspresif dan agresif, Sexton dikenal lebih hati-hati, terstruktur, dan menekankan organisasi tim.",
+      "Pada musim 1979/80, pendekatan itu menghasilkan salah satu performa liga terbaik United sejak era Busby. United finis di posisi kedua First Division.",
+      "Liverpool masih menjadi kekuatan dominan sepak bola Inggris pada masa itu, dan United belum mampu melewati mereka dalam perebutan gelar liga.",
+      "Meski tidak meraih trofi, musim ini penting karena menunjukkan bahwa United masih mampu bersaing di papan atas sebelum era Ron Atkinson dan jauh sebelum kedatangan Sir Alex Ferguson.",
+      "Era Sexton sering dianggap kurang glamor karena minim trofi, tetapi musim 1979/80 membuktikan bahwa ia sempat membawa United sangat dekat dengan puncak liga."
+    ],
+    squad: [
+      {
+        name: "Gary Bailey",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 21,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jimmy Nicholl",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan",
+        age: 23,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Arthur Albiston",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: 22,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Martin Buchan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kapten, bek tengah",
+        age: 30,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Kevin Moran",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 23,
+        country: "Republic of Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Steve Coppell",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kanan",
+        age: 24,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Ray Wilkins",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang tengah",
+        age: 23,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Sammy McIlroy",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang",
+        age: 25,
+        country: "Northern Ireland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Lou Macari",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang/Penyerang",
+        age: 30,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Joe Jordan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 28,
+        country: "Scotland",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jimmy Greenhoff",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 33,
+        country: "England",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain senior"
+      },
+      {
+        name: "Mickey Thomas",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang/Winger",
+        age: 25,
+        country: "Wales",
+        appearances: NOT_AVAILABLE,
+        goals: NOT_AVAILABLE,
+        assists: NOT_AVAILABLE,
+        status: "Pemain rotasi"
+      }
+    ],
+    transfersIn: [
+      {
+        player: "Ray Wilkins",
+        from: "Chelsea",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Gelandang elegan yang menjadi salah satu rekrutan penting era Dave Sexton."
+      },
+      {
+        player: "Gary Bailey",
+        from: NEEDS_VERIFICATION,
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Kiper muda yang kemudian menjadi penjaga gawang utama United pada akhir 1970-an dan awal 1980-an."
+      }
+    ],
+    transfersOut: [],
+    commonStartingXI: {
+      formation: "4-4-2",
+      players: {
+        GK: "Gary Bailey",
+        RB: "Jimmy Nicholl",
+        CB1: "Martin Buchan",
+        CB2: "Kevin Moran",
+        LB: "Arthur Albiston",
+        RM: "Steve Coppell",
+        CM1: "Ray Wilkins",
+        CM2: "Sammy McIlroy",
+        LM: "Lou Macari",
+        ST1: "Joe Jordan",
+        ST2: "Jimmy Greenhoff"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Dave Sexton",
+        position: "Manajer",
+        contribution: "Membawa United finis runner-up First Division 1979/80",
+        story:
+          "Dave Sexton dikenal sebagai manajer yang lebih taktis dan hati-hati dibanding Tommy Docherty. Musim 1979/80 menjadi bukti terbaik pendekatannya, ketika United finis kedua di liga."
+      },
+      {
+        name: "Martin Buchan",
+        position: "Kapten, bek tengah",
+        contribution: "Pemimpin utama lini belakang",
+        story:
+          "Martin Buchan tetap menjadi figur penting di ruang ganti dan lini belakang United. Kepemimpinannya memberi stabilitas pada tim Sexton."
+      },
+      {
+        name: "Ray Wilkins",
+        position: "Gelandang tengah",
+        contribution: "Pengatur tempo permainan",
+        story:
+          "Ray Wilkins memberi kualitas teknis dan kontrol di lini tengah. Ia menjadi salah satu pemain paling elegan dalam skuad United pada masa ini."
+      },
+      {
+        name: "Steve Coppell",
+        position: "Winger kanan",
+        contribution: "Sumber kreativitas utama dari sisi kanan",
+        story:
+          "Steve Coppell tetap menjadi salah satu pemain paling konsisten United. Umpan silang, kerja keras, dan kecerdasannya sangat penting dalam permainan sayap United."
+      },
+      {
+        name: "Joe Jordan",
+        position: "Penyerang",
+        contribution: "Penyerang fisik dan target man utama",
+        story:
+          "Joe Jordan memberi kekuatan fisik dan karakter besar di lini depan. Ia menjadi salah satu profil striker penting United sebelum era Ron Atkinson."
+      }
+    ],
+    statistics: {
+      leaguePosition: "2nd First Division",
+      matches: 42,
+      wins: 24,
+      draws: 10,
+      losses: 8,
+      goalsFor: 65,
+      goalsAgainst: 35,
+      topScorer: NEEDS_VERIFICATION,
+      topAssist: "-",
+      mostAppearances: NEEDS_VERIFICATION
+    },
+    importantMoments: [
+      {
+        month: "Musim 1979/80",
+        title: "United bersaing di papan atas First Division",
+        description:
+          "Manchester United tampil kuat sepanjang musim dan menjadi salah satu pesaing utama Liverpool di liga.",
+        impact:
+          "Menunjukkan bahwa United masih punya kualitas untuk bersaing di level tertinggi Inggris."
+      },
+      {
+        month: "1979/80",
+        title: "Finis runner-up First Division",
+        description:
+          "United mengakhiri musim di posisi kedua, di belakang Liverpool.",
+        impact:
+          "Menjadi pencapaian liga terbaik Dave Sexton bersama Manchester United."
+      },
+      {
+        month: "1979/80",
+        title: "Stabilitas tim meningkat",
+        description:
+          "Sexton membangun United yang lebih terorganisir, lebih disiplin, dan lebih sulit dikalahkan.",
+        impact:
+          "Memberi fondasi stabil meski belum menghasilkan trofi besar."
+      },
+      {
+        month: "Akhir musim 1979/80",
+        title: "Nyaris tetapi belum cukup",
+        description:
+          "United tampil kuat, tetapi belum mampu mengakhiri dominasi Liverpool di sepak bola Inggris.",
+        impact:
+          "Menggambarkan batas era Sexton: kompetitif, tetapi tidak cukup eksplosif untuk menjadi juara."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1979/80 cocok dijadikan featured season untuk Era Dave Sexton karena menjadi pencapaian liga terbaiknya bersama Manchester United.",
+      "United finis sebagai runner-up First Division di belakang Liverpool.",
+      "Catatan liga 1979/80: 42 pertandingan, 24 menang, 10 seri, 8 kalah, 65 gol, dan 35 kebobolan.",
+      "Era Dave Sexton sering dianggap sebagai era stabilisasi setelah Tommy Docherty.",
+      "Sexton membawa pendekatan yang lebih taktis dan hati-hati dibanding Docherty.",
+      "Meski tidak memenangkan trofi besar, musim ini menunjukkan United masih berada di level papan atas Inggris.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi 4-4-2 ditulis sebagai gambaran umum, bukan klaim bahwa sebelas pemain tersebut selalu dimainkan bersama.",
+      "Detail appearances, assist, transfer, top scorer, dan most appearances bisa dilengkapi kemudian dari database historis yang lebih detail."
+    ],
+    featured: true
+  },
+  {
+    id: "1984-85",
+    label: "1984/85",
+    title: "Manchester United Musim 1984/85",
+    era: "Era Ron Atkinson",
+    managers: ["Ron Atkinson"],
+    competitions: ["First Division", "FA Cup", "League Cup", "UEFA Cup"],
+    leaguePosition: "4th First Division",
+    trophies: ["FA Cup"],
+    summary:
+      "Musim 1984/85 adalah salah satu puncak era Ron Atkinson di Manchester United. United finis keempat di First Division dan menjuarai FA Cup setelah mengalahkan Everton 1-0 di final melalui gol Norman Whiteside pada extra time. Musim ini juga penting karena menjadi salah satu trofi besar terakhir sebelum kedatangan Sir Alex Ferguson.",
+    story: [
+      "Ron Atkinson memasuki musim 1984/85 dengan skuad yang kuat dan berisi banyak pemain penting seperti Bryan Robson, Norman Whiteside, Mark Hughes, Gordon Strachan, Jesper Olsen, Frank Stapleton, Paul McGrath, Kevin Moran, dan Gary Bailey.",
+      "United tidak selalu konsisten di liga. Mereka sempat bersaing di papan atas, tetapi akhirnya finis di posisi keempat First Division.",
+      "Mark Hughes mulai semakin menonjol sebagai penyerang utama. Ia menjadi top scorer United musim itu dengan 24 gol semua kompetisi dan 16 gol di liga.",
+      "Cerita terbesar musim ini datang dari FA Cup. United melaju sampai final dan menghadapi Everton, tim yang sangat kuat pada masa itu.",
+      "Final FA Cup 1985 menjadi pertandingan dramatis. Kevin Moran mendapat kartu merah dan menjadi pemain pertama yang diusir dalam sejarah final FA Cup.",
+      "Meski bermain dengan 10 pemain, United bertahan dan akhirnya menang 1-0 lewat gol melengkung Norman Whiteside pada menit ke-110.",
+      "Kemenangan ini memberi Ron Atkinson trofi FA Cup keduanya bersama United setelah sebelumnya juga menjuarai FA Cup 1983.",
+      "Musim ini penting karena memperlihatkan sisi terbaik era Atkinson: skuad berbakat, karakter kuat di laga besar, tetapi belum cukup konsisten untuk menjadi juara liga."
+    ],
+    squad: [
+      {
+        name: "Gary Bailey",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kiper",
+        age: 26,
+        country: "England",
+        appearances: 55,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Arthur Albiston",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kiri",
+        age: 27,
+        country: "Scotland",
+        appearances: 57,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "John Gidman",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan",
+        age: 31,
+        country: "England",
+        appearances: 41,
+        goals: 3,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Mike Duxbury",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek kanan/Bek",
+        age: 25,
+        country: "England",
+        appearances: 41,
+        goals: 1,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Graeme Hogg",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 21,
+        country: "Scotland",
+        appearances: 43,
+        goals: 0,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Paul McGrath",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 25,
+        country: "Republic of Ireland",
+        appearances: 32,
+        goals: 2,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Kevin Moran",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Bek tengah",
+        age: 28,
+        country: "Republic of Ireland",
+        appearances: 28,
+        goals: 4,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Remi Moses",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang bertahan",
+        age: 24,
+        country: "England",
+        appearances: 38,
+        goals: 3,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Bryan Robson",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Kapten, gelandang",
+        age: 27,
+        country: "England",
+        appearances: 46,
+        goals: 14,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Gordon Strachan",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang kanan",
+        age: 27,
+        country: "Scotland",
+        appearances: 56,
+        goals: 19,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Jesper Olsen",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Winger kiri",
+        age: 23,
+        country: "Denmark",
+        appearances: 51,
+        goals: 6,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Norman Whiteside",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Gelandang/penyerang",
+        age: 19,
+        country: "Northern Ireland",
+        appearances: 39,
+        goals: 13,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Mark Hughes",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 21,
+        country: "Wales",
+        appearances: 55,
+        goals: 24,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Frank Stapleton",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 28,
+        country: "Republic of Ireland",
+        appearances: 36,
+        goals: 9,
+        assists: NOT_AVAILABLE,
+        status: "Pemain utama"
+      },
+      {
+        name: "Alan Brazil",
+        shirtNumber: NO_PERMANENT_SQUAD_NUMBER,
+        position: "Penyerang",
+        age: 25,
+        country: "Scotland",
+        appearances: 26,
+        goals: 9,
+        assists: NOT_AVAILABLE,
+        status: "Pemain rotasi"
+      }
+    ],
+    transfersIn: [
+      {
+        player: "Gordon Strachan",
+        from: "Aberdeen",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Gelandang/winger kanan yang langsung menjadi salah satu pemain penting United musim ini."
+      },
+      {
+        player: "Jesper Olsen",
+        from: "Ajax",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Winger kiri Denmark yang memberi kreativitas dan kecepatan dari sisi lapangan."
+      },
+      {
+        player: "Alan Brazil",
+        from: "Tottenham Hotspur",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Penyerang yang menjadi opsi rotasi di lini depan bersama Mark Hughes dan Frank Stapleton."
+      }
+    ],
+    transfersOut: [
+      {
+        player: "Ray Wilkins",
+        to: "AC Milan",
+        fee: NEEDS_VERIFICATION,
+        date: NEEDS_VERIFICATION,
+        note: "Kepergian Wilkins membuat Norman Whiteside lebih sering dimainkan di lini tengah."
+      }
+    ],
+    commonStartingXI: {
+      formation: "4-4-2",
+      players: {
+        GK: "Gary Bailey",
+        RB: "John Gidman",
+        CB1: "Kevin Moran",
+        CB2: "Paul McGrath",
+        LB: "Arthur Albiston",
+        RM: "Gordon Strachan",
+        CM1: "Bryan Robson",
+        CM2: "Norman Whiteside",
+        LM: "Jesper Olsen",
+        ST1: "Mark Hughes",
+        ST2: "Frank Stapleton"
+      }
+    },
+    keyPlayers: [
+      {
+        name: "Ron Atkinson",
+        position: "Manajer",
+        contribution: "Membawa United menjuarai FA Cup 1985",
+        story:
+          "Ron Atkinson adalah manajer terakhir sebelum Sir Alex Ferguson. Ia belum mampu membawa United menjadi juara liga, tetapi berhasil mempersembahkan dua FA Cup dan membangun skuad yang sangat berbakat."
+      },
+      {
+        name: "Bryan Robson",
+        position: "Kapten, gelandang",
+        contribution: "46 main, 14 gol semua kompetisi",
+        story:
+          "Bryan Robson adalah kapten dan jantung tim United era Atkinson. Energi, kepemimpinan, dan kemampuannya mencetak gol dari lini tengah membuatnya menjadi pemain terpenting klub pada masa ini."
+      },
+      {
+        name: "Mark Hughes",
+        position: "Penyerang",
+        contribution: "55 main, 24 gol semua kompetisi",
+        story:
+          "Mark Hughes menjadi pencetak gol terbanyak United musim 1984/85. Musim ini menjadi salah satu fase awal kemunculannya sebagai penyerang besar United."
+      },
+      {
+        name: "Norman Whiteside",
+        position: "Gelandang/penyerang",
+        contribution: "Mencetak gol kemenangan final FA Cup 1985",
+        story:
+          "Norman Whiteside menjadi pahlawan final FA Cup 1985. Golnya pada extra time melawan Everton memberi United kemenangan 1-0 dan menjadi salah satu momen ikonik era Atkinson."
+      },
+      {
+        name: "Gordon Strachan",
+        position: "Gelandang kanan",
+        contribution: "56 main, 19 gol semua kompetisi",
+        story:
+          "Gordon Strachan langsung memberi dampak besar setelah datang dari Aberdeen. Ia menjadi salah satu sumber gol dan kreativitas utama United musim ini."
+      }
+    ],
+    statistics: {
+      leaguePosition: "4th First Division",
+      matches: 42,
+      wins: 22,
+      draws: 10,
+      losses: 10,
+      goalsFor: 77,
+      goalsAgainst: 47,
+      topScorer: "Mark Hughes (24 gol semua kompetisi / 16 gol liga)",
+      topAssist: "-",
+      mostAppearances: "Arthur Albiston (57 main semua kompetisi)"
+    },
+    importantMoments: [
+      {
+        month: "Awal musim 1984/85",
+        title: "Rekrutan baru memberi warna besar",
+        description:
+          "Gordon Strachan, Jesper Olsen, dan Alan Brazil menjadi wajah baru dalam skuad United.",
+        impact:
+          "Memberi variasi serangan dan kualitas baru bagi tim Ron Atkinson."
+      },
+      {
+        month: "Musim 1984/85",
+        title: "Mark Hughes menjadi top scorer United",
+        description:
+          "Hughes mencetak 24 gol semua kompetisi dan 16 gol di liga.",
+        impact:
+          "Menandai kemunculan Hughes sebagai salah satu penyerang penting Manchester United."
+      },
+      {
+        month: "13 dan 17 April 1985",
+        title: "United melewati Liverpool di semifinal FA Cup",
+        description:
+          "United bermain 2-2 melawan Liverpool pada semifinal pertama, lalu menang 2-1 dalam laga replay.",
+        impact:
+          "Membawa United ke final FA Cup dan memberi momentum besar menjelang Wembley."
+      },
+      {
+        month: "18 Mei 1985",
+        title: "Manchester United mengalahkan Everton di final FA Cup",
+        description:
+          "United menang 1-0 atas Everton di Wembley lewat gol Norman Whiteside pada extra time.",
+        impact:
+          "United meraih FA Cup 1985 dan menggagalkan ambisi besar Everton untuk menambah trofi musim itu."
+      },
+      {
+        month: "Final FA Cup 1985",
+        title: "Kevin Moran mendapat kartu merah",
+        description:
+          "Kevin Moran diusir pada final FA Cup dan menjadi pemain pertama yang menerima kartu merah dalam sejarah final FA Cup.",
+        impact:
+          "Membuat kemenangan United terasa lebih dramatis karena diraih dengan 10 pemain."
+      }
+    ],
+    additionalInfo: [
+      "Musim 1984/85 cocok dijadikan featured season untuk Era Ron Atkinson karena menjadi salah satu puncak prestasi Atkinson bersama Manchester United.",
+      "United menjuarai FA Cup 1985 setelah mengalahkan Everton 1-0 di final.",
+      "Norman Whiteside mencetak gol kemenangan pada menit ke-110.",
+      "Kevin Moran menjadi pemain pertama yang diusir dalam final FA Cup.",
+      "United finis keempat di First Division dengan catatan 42 pertandingan, 22 menang, 10 seri, 10 kalah, 77 gol, dan 47 kebobolan.",
+      "Mark Hughes menjadi top scorer United dengan 24 gol semua kompetisi.",
+      "Gordon Strachan, Jesper Olsen, dan Alan Brazil adalah rekrutan penting pada musim ini.",
+      "United mencapai quarter-finals UEFA Cup, tetapi kalah dari Videoton melalui adu penalti.",
+      "Setelah tragedi Heysel 1985, klub-klub Inggris terkena larangan tampil di kompetisi Eropa. Karena itu, United tidak bisa tampil di European Cup Winners' Cup musim berikutnya meski menjuarai FA Cup.",
+      "Pada masa ini nomor punggung permanen belum digunakan seperti era modern.",
+      "Formasi 4-4-2 ditulis sebagai gambaran umum susunan utama, bukan klaim bahwa sebelas pemain tersebut selalu dimainkan bersama."
+    ],
+    featured: true
+  },
   {
     id: "1986-87",
     label: "1986/87",
@@ -1680,7 +3906,7 @@ export const seasons: Season[] = [
       "Rekor liga United: 38 pertandingan, 13 menang, 12 seri, 13 kalah, gol 45:35, 51 poin.",
       "Mark Hughes menjadi PFA Player of the Year 1988/89.",
       "United menjadi runner-up Football League Centenary Trophy setelah kalah 1-2 dari Arsenal di final.",
-      "Lee Sharpe mulai terlihat sebagai pemain muda penting, tampil 30 kali di musim pertamanya bersama tim utama.",
+      "Lee Sharpe mulai terlihat sebagai Pemain muda, tampil 30 kali di musim pertamanya bersama tim utama.",
       "Giuliano Maiorana datang dari Histon dan tampil enam kali; performa awalnya menjanjikan, tetapi karier United-nya tidak berkembang panjang.",
       "Norman Whiteside hanya tampil enam kali karena masalah cedera; musim berikutnya ia meninggalkan klub.",
       "Ralph Milne sering dikenang sebagai salah satu transfer paling mengecewakan pada awal era Ferguson.",
@@ -9194,7 +11420,8 @@ export const seasons: Season[] = [
       { month: "16 April 2003", title: "Highbury berakhir 2-2", description: "United menahan Arsenal 2-2 lewat gol Van Nistelrooy dan Giggs.", impact: "Hasil ini menjaga United di jalur juara dan menambah tekanan ke Arsenal." },
       { month: "23 April 2003", title: "Menang 4-3 atas Real Madrid", description: "United menang di Old Trafford, tetapi tersingkir agregat 5-6. Beckham mencetak dua gol dari bangku cadangan.", impact: "Salah satu laga Eropa paling ikonik era Ferguson, sekaligus salah satu bab akhir Beckham di United." },
       { month: "4 Mei 2003", title: "Gelar liga dipastikan", description: "Kekalahan Arsenal dari Leeds membuat United memastikan gelar Premier League 2002/03.", impact: "United merebut kembali tahta Inggris setelah kehilangan gelar pada musim sebelumnya." },
-      { month: "2 Juli 2003", title: "Beckham pindah ke Real Madrid", description: "Setelah musim selesai, Beckham meninggalkan United menuju Real Madrid.", impact: "Menutup era besar Class of 92 di sisi kanan United dan membuka jalan bagi nomor 7 berikutnya."
+      {
+        month: "2 Juli 2003", title: "Beckham pindah ke Real Madrid", description: "Setelah musim selesai, Beckham meninggalkan United menuju Real Madrid.", impact: "Menutup era besar Class of 92 di sisi kanan United dan membuka jalan bagi nomor 7 berikutnya."
       }
     ],
     additionalInfo: [
@@ -10406,6 +12633,1019 @@ export const seasons: Season[] = [
       "Musim ini menjadi transisi penting dari tim Ronaldo menuju tim Rooney. United tetap kuat, tetapi cedera Rooney dan head-to-head melawan Chelsea membuat margin kecil berubah menjadi kehilangan gelar."
     ],
     featured: false
+  },
+  {
+    id: "2010-11",
+    label: "2010/11",
+    title: "Manchester United Musim 2010/11",
+    era: "Era akhir Sir Alex Ferguson",
+    managers: ["Sir Alex Ferguson"],
+    competitions: ["Premier League", "FA Cup", "League Cup", "UEFA Champions League", "FA Community Shield"],
+    leaguePosition: "1st Premier League",
+    trophies: ["Premier League", "FA Community Shield"],
+    summary:
+      "Musim 2010/11 menjadi salah satu penutup besar era Sir Alex Ferguson. United kembali menjadi juara Inggris, meraih gelar liga ke-19 untuk melewati rekor Liverpool, memenangkan Community Shield, dan mencapai final Champions League sebelum kalah dari Barcelona di Wembley.",
+    story: [
+      "United masuk musim ini setelah kehilangan gelar liga 2009/10 dari Chelsea hanya dengan selisih satu poin. Ferguson tidak membalasnya dengan belanja superstar, tetapi menambah pemain muda seperti Javier Hernandez, Chris Smalling, Bebe, dan Anders Lindegaard.",
+      "Keputusan itu ternyata memberi energi baru. Hernandez langsung menjadi kejutan besar dengan pergerakan tajam dan 20 gol semua kompetisi, sementara Smalling mendapat banyak menit sebagai bek muda yang dipercaya.",
+      "Di liga, United sangat kuat di Old Trafford: 18 kemenangan dan 1 seri dari 19 laga kandang. Performa tandang tidak sekuat biasanya, tetapi kedalaman skuad, ledakan Nani, gol Dimitar Berbatov, kepemimpinan Nemanja Vidic, dan duet Rooney-Hernandez membawa United ke puncak.",
+      "Pada 14 Mei 2011, hasil imbang 1-1 melawan Blackburn Rovers memastikan gelar liga ke-19. Secara simbolis, ini besar karena United melewati rekor 18 gelar liga Liverpool dan untuk pertama kalinya memegang rekor gelar liga Inggris secara outright.",
+      "Musim ini juga emosional: Gary Neville pensiun pada Februari 2011, Edwin van der Sar menutup kariernya di akhir musim, Paul Scholes mulai mundur sebelum kembali pada 2012, dan Ferguson melewati rekor masa jabatan Sir Matt Busby sebagai manajer terlama United.",
+      "Di Eropa, United mencapai final Champions League ketiga dalam empat musim. Mereka menyingkirkan Marseille, Chelsea, dan Schalke 04, tetapi Barcelona terlalu kuat di final Wembley dan menang 3-1."
+    ],
+    squad: [
+      { name: "Edwin van der Sar", shirtNumber: 1, position: "Kiper", age: 39, country: "Netherlands", appearances: 46, goals: 0, assists: 1, status: "Pemain utama" },
+      { name: "Gary Neville", shirtNumber: 2, position: "Bek kanan", age: 35, country: "England", appearances: 4, goals: 0, assists: 0, status: "Pemain senior" },
+      { name: "Patrice Evra", shirtNumber: 3, position: "Bek kiri", age: 29, country: "France", appearances: 48, goals: 1, assists: 2, status: "Pemain utama" },
+      { name: "Owen Hargreaves", shirtNumber: 4, position: "Gelandang bertahan/bek kanan", age: 29, country: "England", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Rio Ferdinand", shirtNumber: 5, position: "Bek tengah", age: 31, country: "England", appearances: 29, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Wes Brown", shirtNumber: 6, position: "Bek kanan/bek tengah", age: 30, country: "England", appearances: 15, goals: 1, assists: 0, status: "Cadangan" },
+      { name: "Michael Owen", shirtNumber: 7, position: "Striker", age: 30, country: "England", appearances: 17, goals: 5, assists: 0, status: "Cadangan" },
+      { name: "Anderson", shirtNumber: 8, position: "Gelandang tengah", age: 22, country: "Brazil", appearances: 30, goals: 4, assists: 2, status: "Pemain rotasi" },
+      { name: "Dimitar Berbatov", shirtNumber: 9, position: "Striker/second striker", age: 29, country: "Bulgaria", appearances: 42, goals: 21, assists: 4, status: "Pemain utama" },
+      { name: "Wayne Rooney", shirtNumber: 10, position: "Forward/second striker", age: 24, country: "England", appearances: 40, goals: 16, assists: 11, status: "Pemain utama" },
+      { name: "Ryan Giggs", shirtNumber: 11, position: "Gelandang kiri/tengah", age: 36, country: "Wales", appearances: 38, goals: 4, assists: 7, status: "Pemain utama" },
+      { name: "Chris Smalling", shirtNumber: 12, position: "Bek tengah/bek kanan", age: 20, country: "England", appearances: 33, goals: 1, assists: 0, status: "Pemain rotasi" },
+      { name: "Park Ji-sung", shirtNumber: 13, position: "Gelandang/winger", age: 29, country: "South Korea", appearances: 28, goals: 8, assists: 4, status: "Pemain utama" },
+      { name: "Javier Hernandez", shirtNumber: 14, position: "Striker", age: 22, country: "Mexico", appearances: 45, goals: 20, assists: 1, status: "Pemain utama" },
+      { name: "Nemanja Vidic", shirtNumber: 15, position: "Bek tengah, kapten", age: 28, country: "Serbia", appearances: 47, goals: 5, assists: 1, status: "Pemain utama" },
+      { name: "Michael Carrick", shirtNumber: 16, position: "Gelandang tengah", age: 29, country: "England", appearances: 44, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Nani", shirtNumber: 17, position: "Winger kiri/kanan", age: 23, country: "Portugal", appearances: 49, goals: 10, assists: 18, status: "Pemain utama" },
+      { name: "Paul Scholes", shirtNumber: 18, position: "Gelandang tengah", age: 35, country: "England", appearances: 33, goals: 1, assists: 4, status: "Pemain senior" },
+      { name: "Danny Welbeck", shirtNumber: 19, position: "Forward/winger", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Fabio", shirtNumber: 20, position: "Bek kiri/kanan", age: 20, country: "Brazil", appearances: 25, goals: 2, assists: 0, status: "Pemain rotasi" },
+      { name: "Rafael", shirtNumber: 21, position: "Bek kanan", age: 20, country: "Brazil", appearances: 28, goals: 0, assists: 1, status: "Pemain utama" },
+      { name: "John O'Shea", shirtNumber: 22, position: "Bek/gelandang", age: 29, country: "Republic of Ireland", appearances: 32, goals: 0, assists: 2, status: "Pemain rotasi" },
+      { name: "Jonny Evans", shirtNumber: 23, position: "Bek tengah", age: 22, country: "Northern Ireland", appearances: 21, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Darren Fletcher", shirtNumber: 24, position: "Gelandang tengah", age: 26, country: "Scotland", appearances: 37, goals: 3, assists: 6, status: "Pemain utama" },
+      { name: "Antonio Valencia", shirtNumber: 25, position: "Winger kanan", age: 25, country: "Ecuador", appearances: 20, goals: 3, assists: 2, status: "Pemain utama" },
+      { name: "Gabriel Obertan", shirtNumber: 26, position: "Winger", age: 21, country: "France", appearances: 15, goals: 1, assists: 0, status: "Cadangan" },
+      { name: "Federico Macheda", shirtNumber: 27, position: "Striker", age: 18, country: "Italy", appearances: 12, goals: 1, assists: 0, status: "Pemain muda" },
+      { name: "Darron Gibson", shirtNumber: 28, position: "Gelandang tengah", age: 22, country: "Republic of Ireland", appearances: 20, goals: 2, assists: 1, status: "Pemain rotasi" },
+      { name: "Tomasz Kuszczak", shirtNumber: 29, position: "Kiper", age: 28, country: "Poland", appearances: 10, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Ritchie De Laet", shirtNumber: 30, position: "Bek kanan/bek tengah", age: 21, country: "Belgium", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Corry Evans", shirtNumber: 31, position: "Bek/gelandang", age: 20, country: "Northern Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Mame Biram Diouf", shirtNumber: 32, position: "Striker", age: 22, country: "Senegal", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Bebe", shirtNumber: 33, position: "Forward/winger", age: 20, country: "Portugal", appearances: 7, goals: 2, assists: 0, status: "Cadangan" },
+      { name: "Anders Lindegaard", shirtNumber: 34, position: "Kiper", age: 26, country: "Denmark", appearances: 2, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Tom Cleverley", shirtNumber: 35, position: "Gelandang tengah", age: 21, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Robbie Brady", shirtNumber: 37, position: "Gelandang/winger", age: 18, country: "Republic of Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Nicky Ajose", shirtNumber: 38, position: "Striker", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ben Amos", shirtNumber: 40, position: "Kiper", age: 20, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Joshua King", shirtNumber: 41, position: "Striker", age: 18, country: "Norway", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Paul Pogba", shirtNumber: 42, position: "Gelandang tengah", age: 17, country: "France", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Matty James", shirtNumber: 43, position: "Gelandang tengah", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Joe Dudgeon", shirtNumber: 44, position: "Bek kiri", age: 19, country: "Northern Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Oliver Gill", shirtNumber: 45, position: "Bek tengah", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ryan Tunnicliffe", shirtNumber: 46, position: "Gelandang tengah", age: 17, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Oliver Norwood", shirtNumber: 47, position: "Gelandang tengah", age: 19, country: "Northern Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Will Keane", shirtNumber: 48, position: "Striker", age: 17, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ravel Morrison", shirtNumber: 49, position: "Gelandang serang", age: 17, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Sam Johnstone", shirtNumber: 50, position: "Kiper", age: 17, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "Marnick Vermijl", from: "Standard Liege", fee: "Undisclosed", date: "1 Juli 2010", note: "Bek muda Belgia; Wikipedia mencatat fee undisclosed, sementara data euro publik tidak konsisten." },
+      { player: "Chris Smalling", from: "Fulham", fee: "EUR 8.00m", date: "1 Juli 2010", note: "Transfermarkt mencatat EUR 8.00m; sumber resmi musim mencatat fee undisclosed." },
+      { player: "Javier Hernandez", from: "Guadalajara", fee: "EUR 7.50m", date: "1 Juli 2010", note: "Transfermarkt mencatat EUR 7.50m; langsung menjadi rekrutan paling berdampak musim ini dengan 20 gol." },
+      { player: "Bebe", from: "Vitoria de Guimaraes", fee: "EUR 8.80m", date: "16 Agustus 2010", note: "Transfermarkt mencatat EUR 8.80m; laporan Inggris saat itu menyebut sekitar GBP 7.4m." },
+      { player: "Anders Lindegaard", from: "Aalesund", fee: "EUR 5.00m", date: "1 Januari 2011", note: "Transfermarkt mencatat EUR 5.00m; didatangkan sebagai opsi regenerasi kiper menjelang pensiunnya Van der Sar." }
+    ],
+    transfersOut: [
+      { player: "Ben Foster", to: "Birmingham City", fee: "EUR 7.00m", date: "19 Mei 2010", note: "Transfermarkt mencatat EUR 7.00m; The Guardian melaporkan nilai sekitar GBP 6m." },
+      { player: "Tom Heaton", to: "Cardiff City", fee: "Free transfer", date: "1 Juli 2010", note: "Dilepas gratis setelah beberapa periode pinjaman." },
+      { player: "Zoran Tosic", to: "CSKA Moscow", fee: "EUR 9.50m", date: "1 Juli 2010", note: "Transfermarkt mencatat EUR 9.50m; sumber resmi musim mencatat fee undisclosed." },
+      { player: "Ron-Robert Zieler", to: "Hannover 96", fee: "Free transfer", date: "1 Juli 2010", note: "Kiper muda pindah gratis ke Jerman." },
+      { player: "Febian Brandy", to: "Released", fee: "Released", date: "1 Juli 2010", note: "Pemain muda dilepas." },
+      { player: "Sam Hewson", to: "Released", fee: "Released", date: "1 Juli 2010", note: "Pemain muda dilepas." },
+      { player: "Scott Moffatt", to: "Released", fee: "Released", date: "1 Juli 2010", note: "Pemain muda dilepas." },
+      { player: "David Gray", to: "Preston North End", fee: "Free transfer", date: "16 Juli 2010", note: "Bek kanan muda pindah gratis." },
+      { player: "Craig Cathcart", to: "Blackpool", fee: "Undisclosed", date: "11 Agustus 2010", note: "Transfer permanen ke Blackpool; sumber resmi musim mencatat fee undisclosed." },
+      { player: "Rodrigo Possebon", to: "Santos", fee: "Undisclosed", date: "20 Agustus 2010", note: "Kembali ke Brasil secara permanen." },
+      { player: "James Chester", to: "Hull City", fee: "Undisclosed", date: "7 Januari 2011", note: "Pindah permanen setelah beberapa periode pinjaman." },
+      { player: "Magnus Wolff Eikrem", to: "Molde", fee: "Undisclosed", date: "12 Januari 2011", note: "Reserve team captain pindah ke Molde." },
+      { player: "Cameron Stewart", to: "Hull City", fee: "Undisclosed", date: "31 Januari 2011", note: "Pindah permanen ke Hull City setelah masa pinjaman." },
+      { player: "Gary Neville", to: "Retired", fee: "-", date: "2 Februari 2011", note: "Pensiun setelah 602 penampilan untuk United." },
+      { player: "Corry Evans", to: "Hull City", fee: "EUR 565k", date: "8 Mei 2011", note: "Wikipedia mencatat nilai sampai GBP 500k; dikonversi kira-kira EUR 565k berdasarkan kurs historis sekitar GBP 1 = EUR 1.13." },
+      { player: "Joe Dudgeon", to: "Hull City", fee: "Undisclosed", date: "11 Mei 2011", note: "Transfer permanen ke Hull City dengan fee undisclosed." },
+      { player: "Danny Welbeck", to: "Sunderland", fee: "Loan transfer", date: "12 Agustus 2010", note: "Dipinjamkan semusim penuh dan tidak tampil untuk United di laga resmi 2010/11." },
+      { player: "Mame Biram Diouf", to: "Blackburn Rovers", fee: "Loan transfer", date: "6 Agustus 2010", note: "Dipinjamkan semusim penuh ke Blackburn Rovers." },
+      { player: "Tom Cleverley", to: "Wigan Athletic", fee: "Loan transfer", date: "31 Agustus 2010", note: "Dipinjamkan untuk mendapat menit Premier League." },
+      { player: "Federico Macheda", to: "Sampdoria", fee: "Loan transfer", date: "8 Januari 2011", note: "Dipinjamkan pada paruh kedua musim." }
+    ],
+    commonStartingXI: {
+      formation: "4-4-2 / 4-4-1-1",
+      players: {
+        GK: "Edwin van der Sar",
+        RB: "Rafael",
+        CB1: "Rio Ferdinand",
+        CB2: "Nemanja Vidic",
+        LB: "Patrice Evra",
+        RM: "Nani",
+        CM1: "Michael Carrick",
+        CM2: "Ryan Giggs",
+        LM: "Park Ji-sung",
+        ST1: "Wayne Rooney",
+        ST2: "Javier Hernandez"
+      }
+    },
+    keyPlayers: [
+      { name: "Nemanja Vidic", position: "Bek tengah", contribution: "47 main, 5 gol, kapten, pemimpin pertahanan", story: "Vidic menjadi wajah utama lini belakang ketika Ferdinand tidak selalu fit. Kepemimpinannya penting dalam musim gelar ke-19." },
+      { name: "Nani", position: "Winger", contribution: "49 main, 10 gol semua kompetisi, 18 assist Premier League menurut StatBunker", story: "Dengan Valencia cedera panjang, Nani mengambil tanggung jawab kreatif. Ia menjadi sumber peluang utama dan salah satu pemain paling eksplosif United musim ini." },
+      { name: "Dimitar Berbatov", position: "Striker", contribution: "42 main, 21 gol semua kompetisi, top skor klub", story: "Berbatov menjadi top skor liga bersama Carlos Tevez dengan 20 gol. Lima golnya melawan Blackburn menjadi salah satu penampilan individual paling ikonik era Premier League United." },
+      { name: "Wayne Rooney", position: "Forward/second striker", contribution: "40 main, 16 gol semua kompetisi, 11 assist Premier League", story: "Musim Rooney penuh drama kontrak, tetapi ia kembali penting di fase akhir. Ia memberi kreativitas di belakang Hernandez dan mencetak gol United di final Champions League." },
+      { name: "Javier Hernandez", position: "Striker", contribution: "45 main, 20 gol semua kompetisi", story: "Chicharito menjadi rekrutan kejutan. Gerakan tanpa bolanya mengubah dinamika lini depan dan membuat duet Rooney-Hernandez menjadi pilihan besar di fase akhir musim." },
+      { name: "Edwin van der Sar", position: "Kiper", contribution: "46 main, musim terakhir sebagai pemain", story: "Van der Sar menutup karier United dengan gelar Premier League, meski laga terakhirnya adalah final Champions League yang pahit melawan Barcelona." },
+      { name: "Ryan Giggs", position: "Gelandang kiri/tengah", contribution: "38 main, 4 gol, 7 assist Premier League", story: "Giggs tetap menjadi pemain laga besar. Pengalaman, umpan akhir, dan fleksibilitasnya membuat Ferguson sering memakainya di fase Eropa." },
+      { name: "Michael Carrick", position: "Gelandang tengah", contribution: "44 main, pengatur tempo fase akhir musim", story: "Carrick tidak mencetak gol, tetapi menjadi gelandang kontrol yang sangat penting, terutama dalam perjalanan ke final Champions League." }
+    ],
+    statistics: {
+      leaguePosition: "1st Premier League",
+      matches: 60,
+      wins: 39,
+      draws: 14,
+      losses: 7,
+      goalsFor: 107,
+      goalsAgainst: 48,
+      topScorer: "Dimitar Berbatov (21 gol semua kompetisi / 20 gol Premier League)",
+      topAssist: "Nani (18 assist Premier League menurut StatBunker; sumber lain mencatat angka berbeda)",
+      mostAppearances: "Nani (49 main), Patrice Evra (48 main), Nemanja Vidic (47 main), Edwin van der Sar (46 main)"
+    },
+    importantMoments: [
+      { month: "8 Agustus 2010", title: "Community Shield dimenangkan", description: "United mengalahkan Chelsea 3-1 di Wembley lewat gol Valencia, Hernandez, dan Berbatov.", impact: "Memberi awal positif dan trofi pertama musim ini." },
+      { month: "14 September 2010", title: "Cedera berat Antonio Valencia", description: "Valencia mengalami patah dan dislokasi pergelangan kaki melawan Rangers di Champions League.", impact: "Membuat Nani menjadi kreator sayap utama sampai Valencia kembali pada fase akhir musim." },
+      { month: "19 September 2010", title: "Berbatov hat-trick melawan Liverpool", description: "United menang 3-2 atas Liverpool di Old Trafford dengan hat-trick Dimitar Berbatov.", impact: "Menguatkan posisi Berbatov sebagai penyerang utama liga pada awal musim." },
+      { month: "Oktober 2010", title: "Drama kontrak Wayne Rooney", description: "Rooney sempat menyatakan ingin pergi sebelum menandatangani kontrak baru lima tahun.", impact: "Menjadi krisis besar di tengah musim, tetapi Rooney kembali menjadi pemain kunci setelahnya." },
+      { month: "27 November 2010", title: "Berbatov lima gol vs Blackburn", description: "United menang 7-1 atas Blackburn dan Berbatov mencetak lima gol.", impact: "Salah satu performa individual terbesar United di era Premier League." },
+      { month: "19 Desember 2010", title: "Ferguson melewati rekor Busby", description: "Sir Alex Ferguson menjadi manajer terlama dalam sejarah Manchester United.", impact: "Menegaskan skala dinasti Ferguson di atas fondasi sejarah Sir Matt Busby." },
+      { month: "2 Februari 2011", title: "Gary Neville pensiun", description: "Neville mengakhiri karier setelah hampir dua dekade bersama United.", impact: "Menandai makin berakhirnya generasi Class of '92 sebagai inti reguler." },
+      { month: "12 Februari 2011", title: "Rooney bicycle kick vs Manchester City", description: "Rooney mencetak gol salto ikonik dalam kemenangan derby 2-1 di Old Trafford.", impact: "Menjadi salah satu gol paling terkenal dalam sejarah Premier League dan simbol superioritas United atas City saat itu." },
+      { month: "16 April 2011", title: "FA Cup dihentikan Manchester City", description: "United kalah 0-1 dari City di semifinal FA Cup di Wembley.", impact: "Mengakhiri peluang double dan menjadi tanda City mulai menjadi rival besar yang nyata." },
+      { month: "14 Mei 2011", title: "Gelar liga ke-19 dipastikan", description: "Hasil 1-1 di Blackburn memastikan United menjadi juara Premier League.", impact: "United melewati Liverpool dalam jumlah gelar liga Inggris." },
+      { month: "28 Mei 2011", title: "Final Champions League di Wembley", description: "United kalah 1-3 dari Barcelona; Rooney mencetak satu-satunya gol United.", impact: "Menunjukkan jarak kualitas dengan Barcelona 2010/11 yang sangat dominan." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 23 menang, 11 seri, 4 kalah, gol 78:37, 80 poin, finis pertama.",
+      "Rekor semua kompetisi di tabel ini menghitung 60 pertandingan resmi termasuk Community Shield: 39 menang, 14 seri, 7 kalah, gol 107:48.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2010/11: Nani 42+7 dan 10 gol, Evra 46+2 dan 1 gol, Vidic 47 dan 5 gol, Van der Sar 46, Hernandez 27+18 dan 20 gol, Berbatov 32+10 dan 21 gol, Carrick 39+5, Rooney 36+4 dan 16 gol.",
+      "Assist pada tabel skuad memakai daftar Premier League Manchester United 2010/11 dari StatBunker agar konsisten dengan musim sebelumnya: Nani 18, Rooney 11, Giggs 7, Fletcher 6, Berbatov 4, Park 4, Scholes 4, Anderson 2, Valencia 2, Evra 2, O'Shea 2, Van der Sar 1, Hernandez 1, Vidic 1, Rafael 1, dan Gibson 1.",
+      "Catatan assist berbeda antar sumber: StatBunker mencatat Nani 18 assist Premier League, sementara FBref mencatat Nani sebagai top assist liga dengan 14 dan beberapa situs lain mencatat 17.",
+      "Nomor skuad 2010/11 mengikuti FootballSquads dan tabel musim: Van der Sar 1, Neville 2, Evra 3, Hargreaves 4, Ferdinand 5, Brown 6, Owen 7, Anderson 8, Berbatov 9, Rooney 10, Giggs 11, Smalling 12, Park 13, Hernandez 14, Vidic 15, Carrick 16, Nani 17, Scholes 18, Welbeck 19, Fabio 20, Rafael 21, O'Shea 22, Evans 23, Fletcher 24, Valencia 25, Obertan 26, Macheda 27, Gibson 28, Kuszczak 29, De Laet 30, Corry Evans 31, Diouf 32, Bebe 33, Lindegaard 34, Cleverley 35, Brady 37, Ajose 38, Amos 40, King 41, Pogba 42, Matty James 43, Dudgeon 44, Gill 45, Tunnicliffe 46, Norwood 47, Will Keane 48, Morrison 49, dan Johnstone 50.",
+      "Transfermarkt mencatat pengeluaran utama United 2010/11 dalam euro: Bebe EUR 8.80m, Chris Smalling EUR 8.00m, Javier Hernandez EUR 7.50m, dan Anders Lindegaard EUR 5.00m; Vermijl tetap dicatat sebagai undisclosed dalam sumber musim.",
+      "Transfermarkt mencatat pemasukan utama United 2010/11: Zoran Tosic EUR 9.50m dan Ben Foster EUR 7.00m. Corry Evans dicatat Wikipedia sampai GBP 500k; tabel ini menulis kira-kira EUR 565k dengan catatan konversi historis.",
+      "Perjalanan Champions League: United juara grup, menyingkirkan Marseille 2-1 agregat, Chelsea 3-1 agregat, Schalke 04 6-1 agregat, lalu kalah 1-3 dari Barcelona di final Wembley.",
+      "Starting XI final Champions League 2011: Van der Sar; Fabio, Ferdinand, Vidic, Evra; Valencia, Carrick, Giggs, Park; Rooney, Hernandez.",
+      "Musim ini adalah musim terakhir Edwin van der Sar sebagai pemain United dan musim pensiunnya Gary Neville.",
+      "Gelar Premier League 2010/11 adalah gelar liga ke-19 United, melewati rekor Liverpool yang saat itu memiliki 18 gelar liga."
+    ],
+    featured: false
+  },
+  {
+    id: "2011-12",
+    label: "2011/12",
+    title: "Manchester United Musim 2011/12",
+    era: "Era akhir Sir Alex Ferguson",
+    managers: ["Sir Alex Ferguson"],
+    competitions: ["Premier League", "FA Cup", "League Cup", "UEFA Champions League", "UEFA Europa League", "FA Community Shield"],
+    leaguePosition: "2nd Premier League",
+    trophies: ["FA Community Shield"],
+    summary:
+      "Musim 2011/12 adalah salah satu musim paling menyakitkan dalam sejarah Manchester United era Premier League. United mengumpulkan 89 poin, angka yang biasanya cukup untuk juara, tetapi kalah dari Manchester City hanya karena selisih gol setelah drama injury time Sergio Aguero pada hari terakhir.",
+    story: [
+      "United masuk musim ini sebagai juara bertahan dan sedang menutup beberapa bab besar: Edwin van der Sar pensiun, Gary Neville sudah pensiun, Paul Scholes sempat pensiun, dan final Champions League 2011 melawan Barcelona meninggalkan tanda bahwa skuad perlu regenerasi.",
+      "Ferguson merespons dengan membeli David de Gea, Phil Jones, dan Ashley Young. De Gea datang sebagai proyek jangka panjang pengganti Van der Sar, Jones sebagai bek muda serbaguna, sedangkan Young menambah variasi di sayap.",
+      "Awal musim terasa eksplosif. United mengalahkan Tottenham 3-0, menghancurkan Arsenal 8-2, dan menang 5-0 di Bolton. Kombinasi pemain muda seperti Welbeck, Cleverley, Jones, dan De Gea memberi kesan bahwa regenerasi berjalan cepat.",
+      "Namun musim berubah keras setelah kekalahan derby 1-6 dari Manchester City di Old Trafford. Kekalahan itu bukan hanya memalukan, tetapi juga memberi City keunggulan selisih gol besar yang akhirnya menentukan gelar.",
+      "Di Eropa, United gagal lolos dari fase grup Champions League setelah kalah 1-2 dari Basel. Absennya Nemanja Vidic karena cedera lutut panjang di laga itu membuat struktur pertahanan semakin rapuh.",
+      "Januari 2012 menghadirkan cerita besar: Paul Scholes kembali dari pensiun. Ia langsung memberi kontrol di lini tengah, tetapi comeback itu juga menjadi tanda bahwa United belum menemukan penerus elite untuk pusat permainan.",
+      "United sempat unggul delapan poin dari City pada April 2012. Rangkaian buruk melawan Wigan, Everton, dan City membuat keunggulan itu hilang, lalu hari terakhir musim menjadi luka besar: United menang di Sunderland, tetapi City mencetak dua gol injury time melawan QPR dan menjadi juara lewat selisih gol."
+    ],
+    squad: [
+      { name: "David de Gea", shirtNumber: 1, position: "Kiper", age: 20, country: "Spain", appearances: 39, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Patrice Evra", shirtNumber: 3, position: "Bek kiri", age: 30, country: "France", appearances: 47, goals: 0, assists: 3, status: "Pemain utama" },
+      { name: "Phil Jones", shirtNumber: 4, position: "Bek tengah/bek kanan/gelandang bertahan", age: 19, country: "England", appearances: 41, goals: 2, assists: 2, status: "Pemain rotasi" },
+      { name: "Rio Ferdinand", shirtNumber: 5, position: "Bek tengah", age: 32, country: "England", appearances: 38, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Jonny Evans", shirtNumber: 6, position: "Bek tengah", age: 23, country: "Northern Ireland", appearances: 40, goals: 1, assists: 1, status: "Pemain utama" },
+      { name: "Michael Owen", shirtNumber: 7, position: "Striker", age: 31, country: "England", appearances: 4, goals: 3, assists: 0, status: "Cadangan" },
+      { name: "Anderson", shirtNumber: 8, position: "Gelandang tengah", age: 23, country: "Brazil", appearances: 16, goals: 2, assists: 2, status: "Pemain rotasi" },
+      { name: "Dimitar Berbatov", shirtNumber: 9, position: "Striker/second striker", age: 30, country: "Bulgaria", appearances: 21, goals: 9, assists: 2, status: "Pemain rotasi" },
+      { name: "Wayne Rooney", shirtNumber: 10, position: "Forward/second striker", age: 25, country: "England", appearances: 43, goals: 34, assists: 5, status: "Pemain utama" },
+      { name: "Ryan Giggs", shirtNumber: 11, position: "Gelandang kiri/tengah", age: 37, country: "Wales", appearances: 33, goals: 4, assists: 3, status: "Pemain senior" },
+      { name: "Chris Smalling", shirtNumber: 12, position: "Bek tengah/bek kanan", age: 21, country: "England", appearances: 30, goals: 2, assists: 1, status: "Pemain rotasi" },
+      { name: "Park Ji-sung", shirtNumber: 13, position: "Gelandang/winger", age: 30, country: "South Korea", appearances: 28, goals: 3, assists: 1, status: "Pemain rotasi" },
+      { name: "Javier Hernandez", shirtNumber: 14, position: "Striker", age: 23, country: "Mexico", appearances: 36, goals: 12, assists: 3, status: "Pemain rotasi" },
+      { name: "Nemanja Vidic", shirtNumber: 15, position: "Bek tengah, kapten", age: 29, country: "Serbia", appearances: 10, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Michael Carrick", shirtNumber: 16, position: "Gelandang tengah/bek tengah darurat", age: 30, country: "England", appearances: 41, goals: 2, assists: 3, status: "Pemain utama" },
+      { name: "Nani", shirtNumber: 17, position: "Winger kiri/kanan", age: 24, country: "Portugal", appearances: 40, goals: 10, assists: 10, status: "Pemain utama" },
+      { name: "Ashley Young", shirtNumber: 18, position: "Winger kiri/kanan/gelandang serang", age: 26, country: "England", appearances: 33, goals: 8, assists: 7, status: "Pemain utama" },
+      { name: "Danny Welbeck", shirtNumber: 19, position: "Striker/forward", age: 20, country: "England", appearances: 39, goals: 12, assists: 4, status: "Pemain utama" },
+      { name: "Fabio", shirtNumber: 20, position: "Bek kiri/kanan", age: 21, country: "Brazil", appearances: 15, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Rafael", shirtNumber: 21, position: "Bek kanan", age: 21, country: "Brazil", appearances: 18, goals: 0, assists: 1, status: "Pemain rotasi" },
+      { name: "Paul Scholes", shirtNumber: 22, position: "Gelandang tengah", age: 36, country: "England", appearances: 21, goals: 4, assists: 1, status: "Pemain senior" },
+      { name: "Tom Cleverley", shirtNumber: 23, position: "Gelandang tengah", age: 21, country: "England", appearances: 15, goals: 0, assists: 2, status: "Pemain rotasi" },
+      { name: "Darren Fletcher", shirtNumber: 24, position: "Gelandang tengah", age: 27, country: "Scotland", appearances: 10, goals: 2, assists: 0, status: "Pemain rotasi" },
+      { name: "Antonio Valencia", shirtNumber: 25, position: "Winger kanan/bek kanan", age: 26, country: "Ecuador", appearances: 38, goals: 6, assists: 13, status: "Pemain utama" },
+      { name: "Federico Macheda", shirtNumber: 27, position: "Striker", age: 20, country: "Italy", appearances: 6, goals: 1, assists: 0, status: "Cadangan" },
+      { name: "Darron Gibson", shirtNumber: 28, position: "Gelandang tengah", age: 23, country: "Republic of Ireland", appearances: 2, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Tomasz Kuszczak", shirtNumber: 29, position: "Kiper", age: 29, country: "Poland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Ritchie De Laet", shirtNumber: 30, position: "Bek kanan/bek tengah", age: 22, country: "Belgium", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Mame Biram Diouf", shirtNumber: 32, position: "Striker", age: 23, country: "Senegal", appearances: 3, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Bebe", shirtNumber: 33, position: "Forward/winger", age: 21, country: "Portugal", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Anders Lindegaard", shirtNumber: 34, position: "Kiper", age: 27, country: "Denmark", appearances: 11, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Reece Brown", shirtNumber: 35, position: "Bek tengah", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Marnick Vermijl", shirtNumber: 36, position: "Bek kanan", age: 19, country: "Belgium", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Michael Keane", shirtNumber: 38, position: "Bek tengah", age: 18, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tom Thorpe", shirtNumber: 39, position: "Bek tengah", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ben Amos", shirtNumber: 40, position: "Kiper", age: 21, country: "England", appearances: 4, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Joshua King", shirtNumber: 41, position: "Striker", age: 19, country: "Norway", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Paul Pogba", shirtNumber: 42, position: "Gelandang tengah", age: 18, country: "France", appearances: 7, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Matty James", shirtNumber: 43, position: "Gelandang tengah", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Sean McGinty", shirtNumber: 44, position: "Bek", age: 18, country: "Republic of Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Davide Petrucci", shirtNumber: 45, position: "Gelandang", age: 19, country: "Italy", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ryan Tunnicliffe", shirtNumber: 46, position: "Gelandang tengah", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Oliver Norwood", shirtNumber: 47, position: "Gelandang tengah", age: 20, country: "Northern Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Will Keane", shirtNumber: 48, position: "Striker", age: 18, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Ravel Morrison", shirtNumber: 49, position: "Gelandang serang", age: 18, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Sam Johnstone", shirtNumber: 50, position: "Kiper", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ezekiel Fryers", shirtNumber: 51, position: "Bek kiri/bek tengah", age: 18, country: "England", appearances: 6, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Larnell Cole", shirtNumber: 52, position: "Gelandang", age: 18, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Jesse Lingard", shirtNumber: 53, position: "Gelandang serang/winger", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "David de Gea", from: "Atletico Madrid", fee: "EUR 25.00m", date: "1 Juli 2011", note: "Transfermarkt mencatat EUR 25.00m; laporan Inggris saat itu sering menyebut sekitar GBP 17m sebagai pengganti jangka panjang Van der Sar." },
+      { player: "Phil Jones", from: "Blackburn Rovers", fee: "EUR 19.30m", date: "1 Juli 2011", note: "Transfermarkt mencatat EUR 19.30m; diumumkan United pada Juni 2011 dan menjadi rekrutan muda serbaguna untuk lini belakang." },
+      { player: "Ashley Young", from: "Aston Villa", fee: "EUR 18.00m", date: "1 Juli 2011", note: "Transfermarkt mencatat EUR 18.00m; memberi opsi winger kiri/kanan dan bola mati." },
+      { player: "Paul Scholes", from: "Career break", fee: "-", date: "8 Januari 2012", note: "Kembali dari pensiun untuk membantu krisis lini tengah pada paruh kedua musim." },
+      { player: "Frederic Veseli", from: "Manchester City", fee: "Free transfer", date: "31 Januari 2012", note: "Bek muda Swiss/Albania bergabung dari akademi Manchester City." },
+      { player: "Ben Amos", from: "Manchester United Reserves", fee: "-", date: "2011/12", note: "Naik ke rotasi tim utama dan tampil empat kali." },
+      { player: "Tom Cleverley", from: "Wigan Athletic", fee: "End of loan", date: "30 Juni 2011", note: "Kembali dari pinjaman dan memulai musim dengan sangat menjanjikan sebelum cedera." },
+      { player: "Danny Welbeck", from: "Sunderland", fee: "End of loan", date: "30 Juni 2011", note: "Kembali dari pinjaman dan menjadi partner penting Rooney di lini depan." },
+      { player: "Federico Macheda", from: "Sampdoria / QPR", fee: "End of loan", date: "30 Juni 2011 / 28 Maret 2012", note: "Kembali dari Sampdoria pada awal musim lalu kembali dari QPR setelah pinjamannya dihentikan." },
+      { player: "Ritchie De Laet", from: "Portsmouth / Norwich City", fee: "End of loan", date: "30 Juni 2011 / 31 Desember 2011", note: "Kembali dari beberapa periode pinjaman menurut Transfermarkt." }
+    ],
+    transfersOut: [
+      { player: "Edwin van der Sar", to: "Retired", fee: "-", date: "30 Juni 2011", note: "Pensiun setelah musim 2010/11 dan final Champions League di Wembley." },
+      { player: "Paul Scholes", to: "Retired", fee: "-", date: "31 Mei 2011", note: "Sempat pensiun pada akhir 2010/11 sebelum kembali bermain pada Januari 2012." },
+      { player: "Owen Hargreaves", to: "Manchester City", fee: "Free transfer", date: "1 Juli 2011", note: "Dilepas setelah kontraknya habis dan bergabung dengan City." },
+      { player: "John O'Shea", to: "Sunderland", fee: "EUR 4.50m", date: "7 Juli 2011", note: "Transfermarkt mencatat EUR 4.50m; kehilangan pemain rotasi senior yang bisa bermain di banyak posisi." },
+      { player: "Gabriel Obertan", to: "Newcastle United", fee: "EUR 3.40m", date: "9 Agustus 2011", note: "Transfer permanen ke Newcastle setelah sulit masuk rotasi utama United." },
+      { player: "Mame Biram Diouf", to: "Hannover 96", fee: "EUR 1.80m", date: "28 Januari 2012", note: "Transfermarkt mencatat EUR 1.80m; pindah permanen ke Bundesliga." },
+      { player: "Wes Brown", to: "Sunderland", fee: "EUR 1.50m", date: "7 Juli 2011", note: "Transfermarkt mencatat EUR 1.50m; ikut pindah ke Sunderland bersama O'Shea." },
+      { player: "Bebe", to: "Besiktas", fee: "Loan fee: EUR 1.00m", date: "1 Juli 2011", note: "Dipinjamkan ke Besiktas; Transfermarkt mencatat loan fee EUR 1.00m." },
+      { player: "Darron Gibson", to: "Everton", fee: "EUR 600k", date: "13 Januari 2012", note: "Pindah permanen pada Januari setelah kesempatan bermain makin terbatas." },
+      { player: "Joe Dudgeon", to: "Hull City", fee: "EUR 95k", date: "1 Juli 2011", note: "Transfermarkt mencatat EUR 95k." },
+      { player: "Oliver Gill", to: "Released", fee: "Released", date: "1 Juli 2011", note: "Dilepas oleh klub pada awal musim." },
+      { player: "Conor Devlin", to: "Released", fee: "Released", date: "1 Juli 2011", note: "Dilepas oleh klub pada awal musim." },
+      { player: "Nicky Ajose", to: "Peterborough United", fee: "Undisclosed", date: "5 Juli 2011", note: "Transfer permanen dengan fee undisclosed." },
+      { player: "Danny Drinkwater", to: "Leicester City", fee: "Undisclosed", date: "20 Januari 2012", note: "Transfer permanen setelah sempat menjalani pinjaman." },
+      { player: "Ravel Morrison", to: "West Ham United", fee: "Undisclosed", date: "31 Januari 2012", note: "Pindah permanen pada hari terakhir bursa Januari." },
+      { player: "Ritchie De Laet", to: "Norwich City", fee: "Loan transfer", date: "2011/12", note: "Dipinjamkan ke Norwich pada paruh pertama musim." },
+      { player: "Federico Macheda", to: "Queens Park Rangers", fee: "Loan transfer", date: "2 Januari 2012", note: "Dipinjamkan pada Januari sebelum kembali lebih cepat pada Maret 2012." },
+      { player: "Joshua King", to: "Hull City", fee: "Loan transfer", date: "16 Januari 2012", note: "Dipinjamkan ke Championship untuk mendapat menit senior." },
+      { player: "Oliver Norwood", to: "Coventry City", fee: "Loan transfer", date: "31 Januari 2012", note: "Dipinjamkan pada paruh kedua musim." },
+      { player: "Tomasz Kuszczak", to: "Watford", fee: "Loan transfer", date: "21 Februari 2012", note: "Dipinjamkan setelah tidak masuk rencana utama di posisi kiper." },
+      { player: "Reece Brown", to: "Oldham Athletic", fee: "Loan transfer", date: "2 Maret 2012", note: "Dipinjamkan untuk pengalaman tim utama." }
+    ],
+    commonStartingXI: {
+      formation: "4-4-2 / 4-4-1-1",
+      players: {
+        GK: "David de Gea",
+        RB: "Phil Jones",
+        CB1: "Rio Ferdinand",
+        CB2: "Jonny Evans",
+        LB: "Patrice Evra",
+        RM: "Antonio Valencia",
+        CM1: "Michael Carrick",
+        CM2: "Ryan Giggs",
+        LM: "Nani",
+        ST1: "Wayne Rooney",
+        ST2: "Danny Welbeck"
+      }
+    },
+    keyPlayers: [
+      { name: "Wayne Rooney", position: "Forward/second striker", contribution: "43 main, 34 gol semua kompetisi, 27 gol Premier League", story: "Rooney menjadi pusat serangan United. Ia mencetak gol di liga, FA Cup, Eropa, dan menjadi alasan besar United tetap bersaing sampai hari terakhir." },
+      { name: "Antonio Valencia", position: "Winger kanan", contribution: "38 main, 6 gol semua kompetisi, 13 assist Premier League menurut StatMuse/StatsCrew", story: "Valencia menjalani salah satu musim terbaiknya. Crossing, kekuatan duel, dan konsistensinya di kanan membuatnya menjadi Sir Matt Busby Player of the Year 2011/12." },
+      { name: "David de Gea", position: "Kiper", contribution: "39 main, musim debut sebagai pengganti Van der Sar", story: "De Gea menjalani adaptasi keras di Inggris, terutama untuk duel udara dan fisik, tetapi refleks serta shot-stopping-nya sudah menunjukkan fondasi kiper elite." },
+      { name: "Michael Carrick", position: "Gelandang tengah", contribution: "41 main, 2 gol semua kompetisi", story: "Carrick menjadi gelandang paling stabil. Ia bahkan sempat bermain darurat sebagai bek tengah ketika krisis cedera menghantam lini belakang." },
+      { name: "Paul Scholes", position: "Gelandang tengah", contribution: "21 main, 4 gol setelah kembali dari pensiun", story: "Scholes kembali pada Januari 2012 dan langsung memberi kontrol tempo. Dampaknya besar, meski comeback itu juga menunjukkan lubang regenerasi di lini tengah." },
+      { name: "Jonny Evans", position: "Bek tengah", contribution: "40 main, 1 gol semua kompetisi", story: "Cedera Vidic membuat Evans naik peran. Ia tampil lebih stabil dan menjadi partner utama Rio Ferdinand di fase title race." },
+      { name: "Danny Welbeck", position: "Striker/forward", contribution: "39 main, 12 gol semua kompetisi", story: "Welbeck kembali dari pinjaman Sunderland dan memberi mobilitas, pressing, serta link-up yang sering membuatnya dipilih bersama Rooney." },
+      { name: "Nani", position: "Winger", contribution: "40 main, 10 gol semua kompetisi, 10 assist Premier League menurut Weltfussball/StatBunker-style tables", story: "Nani tetap produktif, termasuk gol dalam kemenangan 8-2 atas Arsenal dan dua gol di Community Shield, tetapi performanya lebih naik-turun dibanding 2010/11." }
+    ],
+    statistics: {
+      leaguePosition: "2nd Premier League",
+      matches: 54,
+      wins: 35,
+      draws: 8,
+      losses: 11,
+      goalsFor: 120,
+      goalsAgainst: 56,
+      topScorer: "Wayne Rooney (34 gol semua kompetisi / 27 gol Premier League)",
+      topAssist: "Antonio Valencia (13 assist Premier League menurut StatMuse/StatsCrew; beberapa sumber mencatat 14)",
+      mostAppearances: "Patrice Evra (47 main), Wayne Rooney (43 main), Phil Jones dan Michael Carrick (41 main), Nani dan Jonny Evans (40 main)"
+    },
+    importantMoments: [
+      { month: "7 Agustus 2011", title: "Community Shield comeback vs Manchester City", description: "United bangkit dari tertinggal 0-2 dan menang 3-2 lewat gol Chris Smalling dan dua gol Nani.", impact: "Membuka musim dengan trofi dan memberi kesan United masih berada di depan City." },
+      { month: "28 Agustus 2011", title: "United 8-2 Arsenal", description: "Rooney mencetak hat-trick, Ashley Young dua gol, serta Welbeck, Nani, dan Park ikut mencetak gol.", impact: "Menjadi salah satu kemenangan paling ikonik United di era Premier League." },
+      { month: "23 Oktober 2011", title: "Derby 1-6 di Old Trafford", description: "United kalah telak dari Manchester City setelah kartu merah Jonny Evans dan gol-gol akhir City memperbesar skor.", impact: "Selisih gol dari laga ini sangat menentukan perebutan gelar pada akhir musim." },
+      { month: "7 Desember 2011", title: "Tersingkir dari Champions League di Basel", description: "United kalah 1-2 dari Basel dan finis ketiga di grup yang berisi Benfica, Basel, dan Otelul Galati.", impact: "Kegagalan Eropa terbesar musim ini, diperparah cedera lutut panjang Nemanja Vidic." },
+      { month: "8 Januari 2012", title: "Paul Scholes comeback", description: "Scholes kembali bermain dalam kemenangan 3-2 atas Manchester City di FA Cup ronde ketiga.", impact: "Membantu United mengontrol lini tengah pada paruh kedua musim." },
+      { month: "15 Maret 2012", title: "Disingkirkan Athletic Bilbao", description: "United kalah dua kali dari Athletic Bilbao dan tersingkir 3-5 secara agregat di Europa League.", impact: "Menunjukkan masalah intensitas dan kualitas lini tengah United di level Eropa." },
+      { month: "11 April 2012", title: "Kalah dari Wigan", description: "United kalah 0-1 di DW Stadium setelah sempat unggul delapan poin atas City.", impact: "Menjadi awal runtuhnya keunggulan dalam title race." },
+      { month: "22 April 2012", title: "United 4-4 Everton", description: "United membuang keunggulan 4-2 di Old Trafford dan kehilangan dua poin penting.", impact: "Jika United menang laga ini, gelar liga kemungkinan besar tetap di Old Trafford." },
+      { month: "30 April 2012", title: "Derby Kompany", description: "Manchester City menang 1-0 lewat gol Vincent Kompany di Etihad Stadium.", impact: "City mengambil kendali title race karena selisih gol lebih baik." },
+      { month: "13 Mei 2012", title: "Final day dan Aguero", description: "United menang 1-0 di Sunderland, tetapi City menang 3-2 atas QPR lewat dua gol injury time.", impact: "United finis dengan poin sama, tetapi kalah gelar karena selisih gol 56 berbanding 64." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 28 menang, 5 seri, 5 kalah, gol 89:33, 89 poin, finis kedua di belakang Manchester City hanya karena selisih gol.",
+      "Rekor semua kompetisi di tabel ini menghitung 54 pertandingan resmi termasuk Community Shield: 35 menang, 8 seri, 11 kalah, gol 120:56.",
+      "Rincian hasil semua kompetisi: Premier League 28-5-5, FA Cup 1-0-1, League Cup 2-0-1, Champions League 2-3-1, Europa League 1-0-3, Community Shield 1-0-0.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2011/12: Evra 47, Rooney 41+2 dan 34 gol, Jones 34+7 dan 2 gol, Carrick 37+4 dan 2 gol, Nani 32+8 dan 10 gol, Evans 35+5 dan 1 gol, De Gea 39, Welbeck 27+12 dan 12 gol, Valencia 32+6 dan 6 gol.",
+      "Assist pada tabel skuad memakai angka Premier League yang tersedia lintas sumber publik. Valencia dicatat 13 oleh StatMuse/StatsCrew, sedangkan beberapa tabel seperti Weltfussball/livefutbol mencatat 14. Untuk konsistensi dengan musim sebelumnya, topAssist memakai angka 13 dengan catatan perbedaan sumber.",
+      "Nomor skuad 2011/12 mengikuti FootballSquads: De Gea 1, Evra 3, Jones 4, Ferdinand 5, Evans 6, Owen 7, Anderson 8, Berbatov 9, Rooney 10, Giggs 11, Smalling 12, Park 13, Hernandez 14, Vidic 15, Carrick 16, Nani 17, Young 18, Welbeck 19, Fabio 20, Rafael 21, Scholes 22, Cleverley 23, Fletcher 24, Valencia 25, Kuszczak 29, De Laet 30, Lindegaard 34, Ben Amos 40, Pogba 42, Fryers 51, Cole 52, dan Lingard 53.",
+      "Transfermarkt mencatat pengeluaran United 2011/12 sebesar EUR 62.30m: De Gea EUR 25.00m, Phil Jones EUR 19.30m, Ashley Young EUR 18.00m, dan Frederic Veseli free transfer.",
+      "Transfermarkt mencatat pemasukan United 2011/12 sebesar EUR 12.90m: John O'Shea EUR 4.50m, Gabriel Obertan EUR 3.40m, Mame Biram Diouf EUR 1.80m, Wes Brown EUR 1.50m, loan fee Bebe EUR 1.00m, Darron Gibson EUR 600k, dan Joe Dudgeon EUR 95k.",
+      "Champions League berakhir di fase grup. United berada satu grup dengan Benfica, Basel, dan Otelul Galati, lalu turun ke Europa League setelah finis ketiga.",
+      "Europa League berakhir di ronde 16 besar setelah United mengalahkan Ajax 3-2 agregat, lalu kalah 3-5 agregat dari Athletic Bilbao.",
+      "FA Cup: United mengalahkan Manchester City 3-2 di ronde ketiga, kemudian kalah 1-2 dari Liverpool di ronde keempat.",
+      "League Cup: United mengalahkan Leeds United dan Aldershot Town masing-masing 3-0, lalu kalah 1-2 setelah extra time dari Crystal Palace di ronde kelima.",
+      "Starting XI paling mewakili musim: De Gea; Rafael atau Jones, Ferdinand, Evans, Evra; Valencia, Carrick, Scholes, Young atau Nani; Rooney, Welbeck.",
+      "Musim ini menjadi musim pertama setelah pensiunnya Van der Sar dan Gary Neville, sekaligus musim ketika Scholes sempat pensiun lalu kembali pada Januari 2012.",
+      "Kegagalan juara terutama ditentukan oleh selisih gol: City finis +64, United +56. Kekalahan derby 1-6 di Old Trafford menjadi margin psikologis dan matematis yang sangat besar."
+    ],
+    featured: false
+  },
+  {
+    id: "2012-13",
+    label: "2012/13",
+    title: "Manchester United Musim 2012/13",
+    era: "Era akhir Sir Alex Ferguson",
+    managers: ["Sir Alex Ferguson"],
+    competitions: ["Premier League", "FA Cup", "League Cup", "UEFA Champions League"],
+    leaguePosition: "1st Premier League",
+    trophies: ["Premier League"],
+    summary:
+      "Musim 2012/13 adalah penutup sempurna era Sir Alex Ferguson. Setelah luka 2011/12, United membeli Robin van Persie dari Arsenal, merebut kembali Premier League, meraih gelar liga Inggris ke-20, lalu Ferguson pensiun sebagai juara setelah lebih dari 26 tahun memimpin klub.",
+    story: [
+      "United memasuki musim ini dengan rasa sakit yang masih segar: gelar 2011/12 hilang dari Manchester City lewat selisih gol dan gol injury time Sergio Aguero. Ferguson tidak membongkar total skuad, tetapi menambahkan pembeda terbesar yang mungkin tersedia di pasar.",
+      "Robin van Persie datang dari Arsenal pada Agustus 2012. Transfer ini langsung mengubah dinamika liga karena United mengambil kapten dan pencetak gol terbaik Arsenal, sekaligus mengalahkan minat rival seperti Manchester City dan Juventus.",
+      "Van Persie memberi United kualitas yang hilang pada musim sebelumnya: gol dari peluang kecil, tendangan bebas, penalti, volley, dan penyelesaian dingin di laga besar. Ia mencetak 30 gol semua kompetisi dan menjadi top skor Premier League dengan 26 gol.",
+      "Ferguson juga menambah Shinji Kagawa, Nick Powell, Alexander Buttner, Angelo Henriquez, dan Wilfried Zaha. Namun secara praktis, Van Persie adalah rekrutan yang menentukan gelar.",
+      "United tidak selalu terlihat dominan secara permainan. Mereka cukup sering kebobolan dulu, tetapi mental comeback, pengalaman skuad, konsistensi Michael Carrick, dan ketajaman Van Persie membuat mereka terus mengambil poin.",
+      "Di Eropa, United tersingkir dari Real Madrid di babak 16 besar Champions League setelah kartu merah Nani yang kontroversial di Old Trafford. Di piala domestik, Chelsea menjadi penghalang di FA Cup dan League Cup.",
+      "Pada 22 April 2013, United mengalahkan Aston Villa 3-0 lewat hat-trick Van Persie dan memastikan gelar Premier League ke-13 era Ferguson sekaligus gelar liga Inggris ke-20 klub.",
+      "Pada 8 Mei 2013, Ferguson mengumumkan pensiun. Laga kandang terakhirnya berakhir dengan kemenangan 2-1 atas Swansea, sedangkan laga terakhirnya sebagai manajer United adalah hasil 5-5 melawan West Bromwich Albion."
+    ],
+    squad: [
+      { name: "David de Gea", shirtNumber: 1, position: "Kiper", age: 21, country: "Spain", appearances: 41, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Rafael", shirtNumber: 2, position: "Bek kanan", age: 22, country: "Brazil", appearances: 40, goals: 3, assists: 3, status: "Pemain utama" },
+      { name: "Patrice Evra", shirtNumber: 3, position: "Bek kiri", age: 31, country: "France", appearances: 42, goals: 4, assists: 5, status: "Pemain utama" },
+      { name: "Phil Jones", shirtNumber: 4, position: "Bek tengah/bek kanan/gelandang bertahan", age: 20, country: "England", appearances: 24, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Rio Ferdinand", shirtNumber: 5, position: "Bek tengah", age: 33, country: "England", appearances: 34, goals: 1, assists: 0, status: "Pemain utama" },
+      { name: "Jonny Evans", shirtNumber: 6, position: "Bek tengah", age: 24, country: "Northern Ireland", appearances: 30, goals: 4, assists: 1, status: "Pemain utama" },
+      { name: "Antonio Valencia", shirtNumber: 7, position: "Winger kanan", age: 27, country: "Ecuador", appearances: 40, goals: 1, assists: 5, status: "Pemain utama" },
+      { name: "Anderson", shirtNumber: 8, position: "Gelandang tengah", age: 24, country: "Brazil", appearances: 26, goals: 2, assists: 2, status: "Pemain rotasi" },
+      { name: "Dimitar Berbatov", shirtNumber: 9, position: "Striker", age: 31, country: "Bulgaria", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Wayne Rooney", shirtNumber: 10, position: "Forward/gelandang serang", age: 26, country: "England", appearances: 37, goals: 16, assists: 10, status: "Pemain utama" },
+      { name: "Ryan Giggs", shirtNumber: 11, position: "Gelandang kiri/tengah", age: 38, country: "Wales", appearances: 32, goals: 5, assists: 2, status: "Pemain senior" },
+      { name: "Chris Smalling", shirtNumber: 12, position: "Bek tengah/bek kanan", age: 22, country: "England", appearances: 22, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Anders Lindegaard", shirtNumber: 13, position: "Kiper", age: 28, country: "Denmark", appearances: 13, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Javier Hernandez", shirtNumber: 14, position: "Striker", age: 24, country: "Mexico", appearances: 36, goals: 18, assists: 3, status: "Pemain rotasi" },
+      { name: "Nemanja Vidic", shirtNumber: 15, position: "Bek tengah, kapten", age: 30, country: "Serbia", appearances: 23, goals: 1, assists: 0, status: "Pemain utama" },
+      { name: "Michael Carrick", shirtNumber: 16, position: "Gelandang tengah", age: 31, country: "England", appearances: 46, goals: 2, assists: 4, status: "Pemain utama" },
+      { name: "Nani", shirtNumber: 17, position: "Winger kiri/kanan", age: 25, country: "Portugal", appearances: 21, goals: 3, assists: 2, status: "Pemain rotasi" },
+      { name: "Ashley Young", shirtNumber: 18, position: "Winger kiri/kanan", age: 27, country: "England", appearances: 23, goals: 0, assists: 3, status: "Pemain rotasi" },
+      { name: "Danny Welbeck", shirtNumber: 19, position: "Forward/winger", age: 21, country: "England", appearances: 40, goals: 2, assists: 3, status: "Pemain rotasi" },
+      { name: "Robin van Persie", shirtNumber: 20, position: "Striker", age: 29, country: "Netherlands", appearances: 48, goals: 30, assists: 8, status: "Pemain utama" },
+      { name: "Angelo Henriquez", shirtNumber: 21, position: "Striker", age: 18, country: "Chile", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Paul Scholes", shirtNumber: 22, position: "Gelandang tengah", age: 37, country: "England", appearances: 21, goals: 1, assists: 1, status: "Pemain senior" },
+      { name: "Tom Cleverley", shirtNumber: 23, position: "Gelandang tengah", age: 23, country: "England", appearances: 32, goals: 4, assists: 3, status: "Pemain rotasi" },
+      { name: "Darren Fletcher", shirtNumber: 24, position: "Gelandang tengah", age: 28, country: "Scotland", appearances: 10, goals: 1, assists: 0, status: "Pemain rotasi" },
+      { name: "Nick Powell", shirtNumber: 25, position: "Gelandang serang", age: 18, country: "England", appearances: 6, goals: 1, assists: 0, status: "Pemain muda" },
+      { name: "Shinji Kagawa", shirtNumber: 26, position: "Gelandang serang/winger kiri", age: 23, country: "Japan", appearances: 26, goals: 6, assists: 3, status: "Pemain rotasi" },
+      { name: "Federico Macheda", shirtNumber: 27, position: "Striker", age: 21, country: "Italy", appearances: 3, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Alexander Buttner", shirtNumber: 28, position: "Bek kiri", age: 23, country: "Netherlands", appearances: 13, goals: 2, assists: 1, status: "Pemain rotasi" },
+      { name: "Scott Wootton", shirtNumber: 31, position: "Bek tengah", age: 20, country: "England", appearances: 4, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Bebe", shirtNumber: 33, position: "Forward/winger", age: 22, country: "Portugal", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Larnell Cole", shirtNumber: 34, position: "Gelandang", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Jesse Lingard", shirtNumber: 35, position: "Gelandang serang/winger", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Marnick Vermijl", shirtNumber: 36, position: "Bek kanan", age: 20, country: "Belgium", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Robbie Brady", shirtNumber: 37, position: "Gelandang/winger", age: 20, country: "Republic of Ireland", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Michael Keane", shirtNumber: 38, position: "Bek tengah", age: 19, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tom Thorpe", shirtNumber: 39, position: "Bek tengah", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ben Amos", shirtNumber: 40, position: "Kiper", age: 22, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Joshua King", shirtNumber: 41, position: "Striker", age: 20, country: "Norway", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tyler Blackett", shirtNumber: 42, position: "Bek", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Adnan Januzaj", shirtNumber: 44, position: "Gelandang serang/winger", age: 17, country: "Belgium", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Davide Petrucci", shirtNumber: 45, position: "Gelandang tengah", age: 20, country: "Italy", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ryan Tunnicliffe", shirtNumber: 46, position: "Gelandang tengah", age: 19, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Will Keane", shirtNumber: 48, position: "Striker", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Frederic Veseli", shirtNumber: 49, position: "Bek", age: 19, country: "Switzerland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Sam Johnstone", shirtNumber: 50, position: "Kiper", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "Shinji Kagawa", from: "Borussia Dortmund", fee: "EUR 16.00m", date: "1 Juli 2012", note: "Transfermarkt mencatat EUR 16.00m; sumber resmi United saat itu menyebut fee undisclosed." },
+      { player: "Nick Powell", from: "Crewe Alexandra", fee: "EUR 7.50m", date: "1 Juli 2012", note: "Transfermarkt mencatat EUR 7.50m; gelandang muda yang mencetak gol pada debut liga melawan Wigan." },
+      { player: "Robin van Persie", from: "Arsenal", fee: "EUR 30.70m", date: "17 Agustus 2012", note: "Transfermarkt mencatat EUR 30.70m; laporan Inggris saat itu banyak menyebut sekitar GBP 23m-24m." },
+      { player: "Alexander Buttner", from: "Vitesse", fee: "EUR 5.00m", date: "21 Agustus 2012", note: "Transfermarkt mencatat EUR 5.00m; bek kiri pelapis Patrice Evra." },
+      { player: "Angelo Henriquez", from: "Universidad de Chile", fee: "EUR 5.50m", date: "5 September 2012", note: "Transfermarkt mencatat EUR 5.50m; prospek striker Chile yang tidak tampil untuk tim utama musim ini." },
+      { player: "Wilfried Zaha", from: "Crystal Palace", fee: "EUR 11.75m", date: "26 Januari 2013", note: "Transfermarkt mencatat EUR 11.75m; tetap dipinjamkan ke Crystal Palace sampai akhir musim." },
+      { player: "Marnick Vermijl", from: "Manchester United U18", fee: "-", date: "2012/13", note: "Naik ke skuad senior dan tampil di League Cup." },
+      { player: "Davide Petrucci", from: "Manchester United U21", fee: "-", date: "2012/13", note: "Masuk daftar skuad senior sebelum dipinjamkan." },
+      { player: "Fabio", from: "Queens Park Rangers", fee: "End of loan", date: "31 Mei 2013", note: "Kembali setelah pinjaman semusim, tetapi tidak tampil untuk United pada 2012/13." },
+      { player: "Ben Amos", from: "Hull City", fee: "End of loan", date: "3 Januari 2013", note: "Kembali dari pinjaman sebagai bagian dari kedalaman kiper." }
+    ],
+    transfersOut: [
+      { player: "Ritchie De Laet", to: "Leicester City", fee: "EUR 1.25m", date: "15 Mei 2012", note: "Transfermarkt mencatat EUR 1.25m; pindah permanen ke Leicester." },
+      { player: "Matty James", to: "Leicester City", fee: "Undisclosed", date: "15 Mei 2012", note: "Transfer permanen bersama Ritchie De Laet; Wikipedia mencatat fee undisclosed." },
+      { player: "Oliver Norwood", to: "Huddersfield Town", fee: "Undisclosed", date: "1 Juli 2012", note: "Transfer permanen setelah tidak menembus tim utama United." },
+      { player: "Paul Pogba", to: "Juventus", fee: "Tribunal / compensation", date: "1 Juli 2012", note: "Pindah setelah kontraknya habis; kehilangan bakat besar yang kemudian menjadi kelas dunia." },
+      { player: "Ezekiel Fryers", to: "Standard Liege", fee: "Free transfer", date: "1 Juli 2012", note: "FootballSquads/Wikipedia mencatat sebagai Zeki Fryers; pindah gratis ke Belgia." },
+      { player: "Tomasz Kuszczak", to: "Brighton & Hove Albion", fee: "Free transfer", date: "1 Juli 2012", note: "Dilepas setelah masa United berakhir." },
+      { player: "Michael Owen", to: "Released / Stoke City", fee: "-", date: "1 Juli 2012", note: "Dilepas oleh United lalu bergabung dengan Stoke City." },
+      { player: "Park Ji-sung", to: "Queens Park Rangers", fee: "EUR 3.10m", date: "9 Juli 2012", note: "Transfermarkt mencatat EUR 3.10m; mengakhiri era pemain taktis penting Ferguson." },
+      { player: "Dimitar Berbatov", to: "Fulham", fee: "EUR 5.00m", date: "31 Agustus 2012", note: "Transfermarkt mencatat EUR 5.00m; pindah setelah semakin tersisih dari rencana lini depan." },
+      { player: "Joshua King", to: "Blackburn Rovers", fee: "Undisclosed", date: "2 Januari 2013", note: "Transfer permanen setelah beberapa periode pinjaman." },
+      { player: "Robbie Brady", to: "Hull City", fee: "Undisclosed", date: "8 Januari 2013", note: "Pindah permanen ke Hull City." },
+      { player: "Sean McGinty", to: "Released", fee: "Released", date: "13 Mei 2013", note: "Dilepas pada akhir musim." },
+      { player: "Paul Scholes", to: "Retired", fee: "-", date: "19 Mei 2013", note: "Pensiun untuk kedua kalinya setelah musim terakhir Ferguson." },
+      { player: "Fabio", to: "Queens Park Rangers", fee: "Loan transfer", date: "2012/13", note: "Dipinjamkan semusim dan tidak tampil untuk United musim ini." },
+      { player: "Federico Macheda", to: "VfB Stuttgart", fee: "Loan fee: EUR 300k", date: "Januari 2013", note: "Transfermarkt mencatat loan fee EUR 300k." },
+      { player: "Bebe", to: "Rio Ave", fee: "Loan transfer", date: "Januari 2013", note: "Dipinjamkan ke Portugal setelah kembali dari Besiktas." },
+      { player: "Angelo Henriquez", to: "Wigan Athletic", fee: "Loan transfer", date: "Januari 2013", note: "Dipinjamkan pada paruh kedua musim." },
+      { player: "Wilfried Zaha", to: "Crystal Palace", fee: "Loan transfer", date: "Januari 2013", note: "Langsung dipinjamkan kembali setelah transfer permanen disepakati." }
+    ],
+    commonStartingXI: {
+      formation: "4-4-1-1 / 4-2-3-1",
+      players: {
+        GK: "David de Gea",
+        RB: "Rafael",
+        CB1: "Rio Ferdinand",
+        CB2: "Jonny Evans",
+        LB: "Patrice Evra",
+        RM: "Antonio Valencia",
+        CM1: "Michael Carrick",
+        CM2: "Ryan Giggs",
+        LM: "Shinji Kagawa",
+        ST1: "Wayne Rooney",
+        ST2: "Robin van Persie"
+      }
+    },
+    keyPlayers: [
+      { name: "Robin van Persie", position: "Striker", contribution: "48 main, 30 gol semua kompetisi, 26 gol Premier League, 8 assist Premier League menurut StatMuse", story: "Van Persie adalah transfer penentu gelar. Ia mencetak gol penting melawan Southampton, Liverpool, Manchester City, dan hat-trick penentu gelar melawan Aston Villa." },
+      { name: "Michael Carrick", position: "Gelandang tengah", contribution: "46 main, 2 gol, pengatur tempo utama", story: "Carrick menjalani salah satu musim terbaiknya. Ia menjadi pemain paling stabil di tengah, melindungi pertahanan, dan menjaga ritme serangan saat Scholes dan Giggs makin terbatas menitnya." },
+      { name: "Wayne Rooney", position: "Forward/gelandang serang", contribution: "37 main, 16 gol semua kompetisi, 10 assist Premier League menurut StatBunker/StatMuse", story: "Rooney bukan lagi pusat serangan tunggal karena Van Persie menjadi striker utama, tetapi ia tetap sangat produktif sebagai pencetak gol dan kreator." },
+      { name: "David de Gea", position: "Kiper", contribution: "41 main, kiper utama tim juara", story: "De Gea jauh lebih matang dibanding musim debutnya. Musim ini ia mulai terlihat sebagai jawaban jangka panjang setelah Van der Sar." },
+      { name: "Rafael", position: "Bek kanan", contribution: "40 main, 3 gol semua kompetisi", story: "Rafael menjalani salah satu musim terbaiknya di United. Ia lebih matang secara defensif dan tetap agresif membantu serangan." },
+      { name: "Patrice Evra", position: "Bek kiri", contribution: "42 main, 4 gol, 5 assist Premier League menurut ESPN/StatBunker-style tables", story: "Evra tetap sangat penting di sisi kiri. Meski sudah 31 tahun, ia memberi konsistensi dan kontribusi gol yang besar untuk bek kiri." },
+      { name: "Rio Ferdinand", position: "Bek tengah", contribution: "34 main, 1 gol", story: "Ferdinand tidak lagi dimainkan setiap pekan tanpa henti, tetapi ia tetap menjadi bek paling berpengalaman dan masuk PFA Team of the Year." },
+      { name: "Javier Hernandez", position: "Striker", contribution: "36 main, 18 gol semua kompetisi", story: "Chicharito kembali sangat efisien sebagai finisher dan pemain pengganti. Gol-golnya membantu United menang dalam banyak laga yang kacau." }
+    ],
+    statistics: {
+      leaguePosition: "1st Premier League",
+      matches: 54,
+      wins: 36,
+      draws: 8,
+      losses: 10,
+      goalsFor: 114,
+      goalsAgainst: 65,
+      topScorer: "Robin van Persie (30 gol semua kompetisi / 26 gol Premier League)",
+      topAssist: "Wayne Rooney (10 assist Premier League menurut StatBunker/StatMuse; MyFootballFacts mencatat 11)",
+      mostAppearances: "Robin van Persie (48 main), Michael Carrick (46 main), Patrice Evra (42 main), David de Gea (41 main), Rafael, Antonio Valencia, dan Danny Welbeck (40 main)"
+    },
+    importantMoments: [
+      { month: "17 Agustus 2012", title: "Robin van Persie resmi bergabung", description: "United mendatangkan Van Persie dari Arsenal sebagai rekrutan pembeda setelah gagal juara 2011/12.", impact: "Transfer ini menjadi faktor terbesar gelar Premier League ke-20." },
+      { month: "2 September 2012", title: "Van Persie hat-trick vs Southampton", description: "United menang 3-2 di Southampton lewat hat-trick Van Persie.", impact: "Menunjukkan sejak awal bahwa Van Persie bisa memenangkan laga sulit sendirian." },
+      { month: "9 Desember 2012", title: "Derby Etihad dimenangkan United", description: "United menang 3-2 atas Manchester City lewat free-kick Van Persie pada injury time.", impact: "Balasan psikologis besar setelah City merebut gelar musim sebelumnya." },
+      { month: "5 Maret 2013", title: "Kartu merah Nani vs Real Madrid", description: "United sempat unggul di Old Trafford, tetapi kartu merah Nani mengubah laga dan Madrid menang 2-1.", impact: "Mengakhiri perjalanan Champions League Ferguson yang terakhir dengan rasa kontroversial." },
+      { month: "1 April 2013", title: "FA Cup dihentikan Chelsea", description: "United kalah 0-1 dari Chelsea di replay perempat final FA Cup di Stamford Bridge.", impact: "Menghapus peluang trofi domestik kedua pada musim terakhir Ferguson." },
+      { month: "22 April 2013", title: "Gelar liga ke-20 dipastikan", description: "United mengalahkan Aston Villa 3-0 lewat hat-trick Robin van Persie.", impact: "United menjadi juara Inggris untuk ke-20 kalinya dan Ferguson menutup era sebagai juara." },
+      { month: "8 Mei 2013", title: "Ferguson mengumumkan pensiun", description: "Sir Alex Ferguson menyatakan akan mundur sebagai manajer United pada akhir musim.", impact: "Mengakhiri era manajerial terbesar dalam sejarah Manchester United dan Premier League." },
+      { month: "12 Mei 2013", title: "Laga kandang terakhir Ferguson", description: "United mengalahkan Swansea City 2-1 di Old Trafford; Rio Ferdinand mencetak gol kemenangan.", impact: "Menjadi momen perpisahan emosional Ferguson di depan publik Old Trafford." },
+      { month: "19 Mei 2013", title: "West Brom 5-5 United", description: "Laga ke-1.500 sekaligus laga terakhir Ferguson berakhir imbang 5-5.", impact: "Penutup yang liar dan dramatis untuk karier Ferguson di United." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 28 menang, 5 seri, 5 kalah, gol 86:43, 89 poin, finis pertama dengan keunggulan 11 poin atas Manchester City.",
+      "Rekor semua kompetisi di tabel ini menghitung 54 pertandingan resmi: 36 menang, 8 seri, 10 kalah, gol 114:65.",
+      "Rincian hasil semua kompetisi: Premier League 28-5-5, FA Cup 3-2-1, League Cup 1-0-1, dan Champions League 4-1-3.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2012/13: Van Persie 40+8 dan 30 gol, Carrick 42+4 dan 2 gol, De Gea 41, Evra 42 dan 4 gol, Rafael 38+2 dan 3 gol, Rooney 31+6 dan 16 gol, Hernandez 22+14 dan 18 gol, Valencia 29+11 dan 1 gol.",
+      "Assist pada tabel skuad memakai angka Premier League publik yang tersedia. StatBunker/StatMuse mencatat Wayne Rooney 10 assist dan Robin van Persie 8; MyFootballFacts mencatat Rooney 11 dan Van Persie 10 sehingga ada perbedaan definisi assist antar sumber.",
+      "Nomor skuad 2012/13 mengikuti FootballSquads: De Gea 1, Rafael 2, Evra 3, Jones 4, Ferdinand 5, Evans 6, Valencia 7, Anderson 8, Berbatov 9, Rooney 10, Giggs 11, Smalling 12, Lindegaard 13, Hernandez 14, Vidic 15, Carrick 16, Nani 17, Young 18, Welbeck 19, Van Persie 20, Henriquez 21, Scholes 22, Cleverley 23, Fletcher 24, Powell 25, Kagawa 26, Macheda 27, Buttner 28, Wootton 31, Bebe 33, Cole 34, Lingard 35, Vermijl 36, Brady 37, Michael Keane 38, Thorpe 39, Amos 40, Joshua King 41, Blackett 42, Januzaj 44, Petrucci 45, Tunnicliffe 46, Will Keane 48, Veseli 49, dan Johnstone 50.",
+      "Transfermarkt mencatat pengeluaran United 2012/13 sebesar EUR 76.45m: Van Persie EUR 30.70m, Kagawa EUR 16.00m, Zaha EUR 11.75m, Powell EUR 7.50m, Henriquez EUR 5.50m, dan Buttner EUR 5.00m.",
+      "Transfermarkt mencatat pemasukan United 2012/13 sebesar EUR 9.65m: Berbatov EUR 5.00m, Park Ji-sung EUR 3.10m, Ritchie De Laet EUR 1.25m, dan loan fee Federico Macheda EUR 300k.",
+      "Wilfried Zaha dibeli pada Januari 2013 tetapi tetap bermain untuk Crystal Palace sampai akhir musim, sehingga bukan bagian praktis dari skuad pertandingan Ferguson 2012/13.",
+      "Champions League berakhir di babak 16 besar melawan Real Madrid: 1-1 di Bernabeu, 1-2 di Old Trafford, agregat 2-3.",
+      "FA Cup berakhir di perempat final/replay melawan Chelsea; United seri 2-2 di Old Trafford lalu kalah 0-1 di Stamford Bridge.",
+      "League Cup berakhir di ronde keempat setelah United kalah 4-5 dari Chelsea setelah extra time.",
+      "Starting XI paling mewakili musim: De Gea; Rafael, Ferdinand, Vidic atau Evans, Evra; Valencia, Carrick, Cleverley atau Giggs, Kagawa atau Young; Rooney; Van Persie.",
+      "Musim ini adalah musim terakhir Sir Alex Ferguson dan Paul Scholes. Ferguson pensiun sebagai juara liga, sementara Scholes pensiun untuk kedua kalinya.",
+      "Gelar Premier League 2012/13 adalah gelar liga ke-13 Ferguson bersama United dan gelar liga Inggris ke-20 klub."
+    ],
+    featured: true
+  },
+  {
+    id: "2013-14",
+    label: "2013/14",
+    title: "Manchester United Musim 2013/14",
+    era: "Era pasca Sir Alex Ferguson",
+    managers: ["David Moyes", "Ryan Giggs"],
+    competitions: ["Premier League", "FA Cup", "League Cup", "UEFA Champions League", "FA Community Shield"],
+    leaguePosition: "7th Premier League",
+    trophies: ["FA Community Shield"],
+    summary:
+      "Musim 2013/14 adalah musim pertama Manchester United setelah Sir Alex Ferguson pensiun. David Moyes datang sebagai penerus yang direkomendasikan Ferguson, tetapi United jatuh dari juara Premier League ke posisi ketujuh, gagal lolos ke kompetisi Eropa, dan membuka era pasca-Ferguson dengan krisis identitas.",
+    story: [
+      "Manchester United memasuki 2013/14 sebagai juara bertahan, tetapi kehilangan dua tokoh struktural besar: Sir Alex Ferguson pensiun dan David Gill mundur dari peran chief executive. Pergantian ini membuat transisi tidak hanya terjadi di bangku manajer, tetapi juga di level kepemimpinan klub.",
+      "David Moyes resmi mengambil alih pada 1 Juli 2013. Ia memulai musim dengan Community Shield, tetapi performa liga segera runtuh. Old Trafford tidak lagi terasa seperti benteng, dan United kalah dari beberapa rival besar serta tim yang sebelumnya jarang menang di sana.",
+      "Bursa transfer musim panas menjadi simbol awal kekacauan era baru. United gagal mendapatkan target seperti Cesc Fabregas, Ander Herrera, Leighton Baines, Fabio Coentrao, dan Sami Khedira, lalu baru mendapatkan Marouane Fellaini pada deadline day.",
+      "Juan Mata datang dari Chelsea pada Januari 2014 dan memberi kreativitas, tetapi transfer itu datang ketika musim sudah telanjur rusak. Mata juga tidak bisa bermain di Champions League karena sudah membela Chelsea di Eropa.",
+      "Moyes dipecat pada 22 April 2014 setelah kekalahan 0-2 dari Everton. Ryan Giggs menjadi interim player-manager untuk empat laga terakhir, lalu pensiun sebagai pemain pada akhir musim.",
+      "Musim ini menjadi awal nyata Era pasca Sir Alex Ferguson: skuad juara 2012/13 terbukti menua, struktur klub belum siap, dan United gagal lolos ke kompetisi Eropa untuk pertama kalinya sejak awal 1990-an."
+    ],
+    squad: [
+      { name: "David de Gea", shirtNumber: 1, position: "Kiper", age: 22, country: "Spain", appearances: 52, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Rafael", shirtNumber: 2, position: "Bek kanan", age: 23, country: "Brazil", appearances: 29, goals: 0, assists: 1, status: "Pemain utama" },
+      { name: "Patrice Evra", shirtNumber: 3, position: "Bek kiri", age: 32, country: "France", appearances: 45, goals: 3, assists: 4, status: "Pemain utama" },
+      { name: "Phil Jones", shirtNumber: 4, position: "Bek tengah/bek kanan/gelandang bertahan", age: 21, country: "England", appearances: 39, goals: 3, assists: 2, status: "Pemain rotasi" },
+      { name: "Rio Ferdinand", shirtNumber: 5, position: "Bek tengah", age: 34, country: "England", appearances: 23, goals: 0, assists: 0, status: "Pemain senior" },
+      { name: "Jonny Evans", shirtNumber: 6, position: "Bek tengah", age: 25, country: "Northern Ireland", appearances: 25, goals: 2, assists: 0, status: "Pemain rotasi" },
+      { name: "Anderson", shirtNumber: 8, position: "Gelandang tengah", age: 25, country: "Brazil", appearances: 8, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Juan Mata", shirtNumber: 8, position: "Gelandang serang/winger kanan", age: 25, country: "Spain", appearances: 15, goals: 6, assists: 4, status: "Pemain utama" },
+      { name: "Wayne Rooney", shirtNumber: 10, position: "Forward/gelandang serang", age: 27, country: "England", appearances: 40, goals: 19, assists: 10, status: "Pemain utama" },
+      { name: "Ryan Giggs", shirtNumber: 11, position: "Gelandang/winger", age: 39, country: "Wales", appearances: 22, goals: 0, assists: 1, status: "Pemain senior" },
+      { name: "Chris Smalling", shirtNumber: 12, position: "Bek tengah/bek kanan", age: 23, country: "England", appearances: 38, goals: 2, assists: 0, status: "Pemain rotasi" },
+      { name: "Anders Lindegaard", shirtNumber: 13, position: "Kiper", age: 29, country: "Denmark", appearances: 3, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Javier Hernandez", shirtNumber: 14, position: "Striker", age: 25, country: "Mexico", appearances: 35, goals: 9, assists: 3, status: "Pemain rotasi" },
+      { name: "Nemanja Vidic", shirtNumber: 15, position: "Bek tengah, kapten", age: 31, country: "Serbia", appearances: 34, goals: 2, assists: 0, status: "Pemain utama" },
+      { name: "Michael Carrick", shirtNumber: 16, position: "Gelandang tengah", age: 32, country: "England", appearances: 40, goals: 1, assists: 0, status: "Pemain utama" },
+      { name: "Nani", shirtNumber: 17, position: "Winger", age: 26, country: "Portugal", appearances: 13, goals: 1, assists: 0, status: "Cadangan" },
+      { name: "Ashley Young", shirtNumber: 18, position: "Winger", age: 28, country: "England", appearances: 30, goals: 3, assists: 1, status: "Pemain rotasi" },
+      { name: "Danny Welbeck", shirtNumber: 19, position: "Forward/winger", age: 22, country: "England", appearances: 36, goals: 10, assists: 2, status: "Pemain rotasi" },
+      { name: "Robin van Persie", shirtNumber: 20, position: "Striker", age: 30, country: "Netherlands", appearances: 28, goals: 18, assists: 3, status: "Pemain utama" },
+      { name: "Angelo Henriquez", shirtNumber: 21, position: "Striker", age: 19, country: "Chile", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Fabio", shirtNumber: 22, position: "Bek sayap", age: 23, country: "Brazil", appearances: 3, goals: 1, assists: 0, status: "Cadangan" },
+      { name: "Tom Cleverley", shirtNumber: 23, position: "Gelandang tengah", age: 24, country: "England", appearances: 31, goals: 1, assists: 1, status: "Pemain rotasi" },
+      { name: "Darren Fletcher", shirtNumber: 24, position: "Gelandang tengah", age: 29, country: "Scotland", appearances: 18, goals: 0, assists: 0, status: "Pemain senior" },
+      { name: "Antonio Valencia", shirtNumber: 25, position: "Winger kanan/bek kanan", age: 28, country: "Ecuador", appearances: 44, goals: 4, assists: 4, status: "Pemain utama" },
+      { name: "Shinji Kagawa", shirtNumber: 26, position: "Gelandang serang/winger kiri", age: 24, country: "Japan", appearances: 30, goals: 0, assists: 3, status: "Pemain rotasi" },
+      { name: "Federico Macheda", shirtNumber: 27, position: "Striker", age: 22, country: "Italy", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Alexander Buttner", shirtNumber: 28, position: "Bek kiri", age: 24, country: "Netherlands", appearances: 15, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Wilfried Zaha", shirtNumber: 29, position: "Winger", age: 20, country: "England", appearances: 4, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Guillermo Varela", shirtNumber: 30, position: "Bek kanan", age: 20, country: "Uruguay", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Marouane Fellaini", shirtNumber: 31, position: "Gelandang tengah", age: 25, country: "Belgium", appearances: 21, goals: 0, assists: 1, status: "Pemain rotasi" },
+      { name: "Nick Powell", shirtNumber: 32, position: "Gelandang", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Bebe", shirtNumber: 33, position: "Forward/winger", age: 23, country: "Portugal", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Tom Lawrence", shirtNumber: 34, position: "Forward/winger", age: 19, country: "Wales", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Jesse Lingard", shirtNumber: 35, position: "Gelandang serang/winger", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Marnick Vermijl", shirtNumber: 36, position: "Bek kanan", age: 21, country: "Belgium", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Michael Keane", shirtNumber: 38, position: "Bek tengah", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Tom Thorpe", shirtNumber: 39, position: "Bek tengah", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Ben Amos", shirtNumber: 40, position: "Kiper", age: 23, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Tyler Blackett", shirtNumber: 42, position: "Bek", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Adnan Januzaj", shirtNumber: 44, position: "Gelandang serang/winger", age: 18, country: "Belgium", appearances: 35, goals: 4, assists: 3, status: "Pemain muda" },
+      { name: "Davide Petrucci", shirtNumber: 45, position: "Gelandang tengah", age: 21, country: "Italy", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "James Wilson", shirtNumber: 47, position: "Striker", age: 17, country: "England", appearances: 1, goals: 2, assists: 0, status: "Pemain muda" },
+      { name: "Will Keane", shirtNumber: 48, position: "Striker", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Sam Johnstone", shirtNumber: 50, position: "Kiper", age: 20, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "Guillermo Varela", from: "Penarol", fee: "Undisclosed", date: "1 Juli 2013", note: "Rekrutan pertama David Moyes. Beberapa laporan menyebut sekitar EUR 2.80m, tetapi sumber resmi dan tabel musim mencatat fee undisclosed." },
+      { player: "Marouane Fellaini", from: "Everton", fee: "EUR 32.40m", date: "2 September 2013", note: "Transfermarkt mencatat EUR 32.40m; sumber Inggris saat itu menyebut GBP 27.5m pada deadline day." },
+      { player: "Saidy Janko", from: "FC Zurich", fee: "Undisclosed", date: "2 September 2013", note: "Bek muda Swiss. Sumber musim mencatat fee undisclosed; beberapa sumber Eropa menyebut sekitar EUR 830k." },
+      { player: "Juan Mata", from: "Chelsea", fee: "EUR 44.73m", date: "25 Januari 2014", note: "Transfermarkt mencatat EUR 44.73m; sumber Inggris saat itu menyebut GBP 37.1m dan menjadi rekor transfer klub pada saat itu." },
+      { player: "Wilfried Zaha", from: "Crystal Palace", fee: "End of loan", date: "31 Mei 2013", note: "Kembali setelah dipinjamkan ke Crystal Palace pada paruh akhir 2012/13." },
+      { player: "Fabio", from: "Queens Park Rangers", fee: "End of loan", date: "31 Mei 2013", note: "Kembali dari pinjaman semusim di QPR sebelum kemudian dijual ke Cardiff City pada Januari 2014." },
+      { player: "Ben Amos", from: "Carlisle United", fee: "End of loan", date: "2013/14", note: "Kembali sebagai bagian dari kedalaman kiper, lalu sempat dipinjamkan lagi." }
+    ],
+    transfersOut: [
+      { player: "Reece Brown", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "John Cofie", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Michele Fornasier", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Luke Giverin", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Luke Hendrie", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Luke McCullough", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Gyliano van Velzen", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Frederic Veseli", to: "Released", fee: "Released", date: "1 Juli 2013", note: "Dilepas pada awal musim." },
+      { player: "Mats Moller Daehli", to: "Molde", fee: "Undisclosed", date: "4 Juli 2013", note: "Transfer permanen ke Molde; sumber musim mencatat fee undisclosed." },
+      { player: "Scott Wootton", to: "Leeds United", fee: "Undisclosed", date: "20 Agustus 2013", note: "Transfer permanen ke Leeds; beberapa laporan menyebut sekitar GBP 1m, tetapi sumber musim mencatat fee undisclosed." },
+      { player: "Angelo Henriquez", to: "Real Zaragoza", fee: "Loan transfer", date: "28 Agustus 2013", note: "Dipinjamkan semusim ke Zaragoza." },
+      { player: "Nick Powell", to: "Wigan Athletic", fee: "Loan transfer", date: "2 September 2013", note: "Dipinjamkan semusim dan berkembang sebagai pemain muda di Championship." },
+      { player: "Bebe", to: "Pacos de Ferreira", fee: "Loan transfer", date: "2 September 2013", note: "Dipinjamkan ke Portugal." },
+      { player: "Davide Petrucci", to: "Royal Antwerp", fee: "Loan transfer", date: "2 September 2013", note: "Dipinjamkan ke Belgia." },
+      { player: "Marnick Vermijl", to: "NEC Nijmegen", fee: "Loan transfer", date: "2 September 2013", note: "Dipinjamkan ke Belanda." },
+      { player: "Anderson", to: "Fiorentina", fee: "Loan transfer", date: "18 Januari 2014", note: "Dipinjamkan setelah semakin tersisih dari skuad utama." },
+      { player: "Fabio", to: "Cardiff City", fee: "Undisclosed", date: "31 Januari 2014", note: "Transfer permanen ke Cardiff City." },
+      { player: "Ryan Tunnicliffe", to: "Fulham", fee: "Undisclosed", date: "31 Januari 2014", note: "Transfer permanen ke Fulham setelah masa pinjaman di Ipswich." },
+      { player: "Larnell Cole", to: "Fulham", fee: "Undisclosed", date: "31 Januari 2014", note: "Transfer permanen ke Fulham bersama Ryan Tunnicliffe." },
+      { player: "Wilfried Zaha", to: "Cardiff City", fee: "Loan transfer", date: "31 Januari 2014", note: "Dipinjamkan ke Cardiff City pada paruh kedua musim." },
+      { player: "Federico Macheda", to: "Birmingham City", fee: "Loan transfer", date: "31 Januari 2014", note: "Dipinjamkan ke Birmingham setelah masa pinjaman singkat di Doncaster." },
+      { player: "Ryan Giggs", to: "Retired", fee: "-", date: "19 Mei 2014", note: "Pensiun sebagai pemain setelah hampir 25 tahun karier senior di Manchester United." }
+    ],
+    commonStartingXI: {
+      formation: "4-4-1-1 / 4-2-3-1",
+      players: {
+        GK: "David de Gea",
+        RB: "Rafael",
+        CB1: "Nemanja Vidic",
+        CB2: "Jonny Evans",
+        LB: "Patrice Evra",
+        RM: "Antonio Valencia",
+        CM1: "Michael Carrick",
+        CM2: "Tom Cleverley",
+        LM: "Adnan Januzaj",
+        ST1: "Wayne Rooney",
+        ST2: "Robin van Persie"
+      }
+    },
+    keyPlayers: [
+      { name: "Wayne Rooney", position: "Forward/gelandang serang", contribution: "40 main, 19 gol semua kompetisi, 17 gol Premier League, top assist liga United dengan 10 assist menurut MyFootballFacts/StatsCrew", story: "Rooney menjadi pemain dengan output terbaik United di musim kacau ini. Ia tetap produktif, menandatangani kontrak baru besar, dan menjadi pusat serangan ketika Van Persie sering terganggu cedera." },
+      { name: "David de Gea", position: "Kiper", contribution: "52 main semua kompetisi", story: "De Gea menjadi salah satu titik terang terbesar. Di tengah pertahanan yang tidak stabil, ia semakin matang dan mulai terlihat sebagai kiper elite United." },
+      { name: "Adnan Januzaj", position: "Gelandang serang/winger", contribution: "35 main, 4 gol semua kompetisi", story: "Januzaj adalah cerita positif terbesar musim ini. Dua golnya di markas Sunderland membuatnya langsung dianggap sebagai prospek besar dalam masa transisi pasca-Ferguson." },
+      { name: "Juan Mata", position: "Gelandang serang", contribution: "15 main, 6 gol Premier League setelah datang Januari", story: "Mata memberi kreativitas dan kualitas teknik, tetapi datang terlambat untuk menyelamatkan musim dan tidak bisa bermain untuk United di Champions League." },
+      { name: "Robin van Persie", position: "Striker", contribution: "28 main, 18 gol semua kompetisi", story: "Van Persie tetap tajam ketika fit, termasuk hat-trick melawan Olympiacos, tetapi cedera membuatnya tidak bisa mengulang peran dominan seperti musim juara 2012/13." },
+      { name: "Nemanja Vidic", position: "Bek tengah, kapten", contribution: "34 main, 2 gol semua kompetisi", story: "Vidic masih menjadi kapten dan mencetak gol penting melawan Bayern Munich, tetapi musim ini juga menjadi musim terakhirnya di United sebelum pindah ke Inter." },
+      { name: "Ryan Giggs", position: "Interim player-manager", contribution: "22 main sebagai pemain, lalu menangani empat laga terakhir sebagai pelatih sementara", story: "Giggs menjadi simbol akhir era. Ia mengambil alih setelah Moyes dipecat, lalu pensiun sebagai pemain pada 19 Mei 2014." },
+      { name: "Marouane Fellaini", position: "Gelandang tengah", contribution: "21 main, 0 gol semua kompetisi", story: "Fellaini menjadi simbol bursa transfer musim panas yang kacau. Ia datang mahal dari Everton, tetapi tidak langsung cocok dengan kebutuhan lini tengah United." }
+    ],
+    statistics: {
+      leaguePosition: "7th Premier League",
+      matches: 55,
+      wins: 29,
+      draws: 10,
+      losses: 16,
+      goalsFor: 94,
+      goalsAgainst: 57,
+      topScorer: "Wayne Rooney (19 gol semua kompetisi / 17 gol Premier League)",
+      topAssist: "Wayne Rooney (10 assist Premier League menurut MyFootballFacts/StatsCrew; StatBunker mencatat 9)",
+      mostAppearances: "David de Gea (52 main), Patrice Evra (45 main), Antonio Valencia (44 main), Wayne Rooney, Michael Carrick (40 main)"
+    },
+    importantMoments: [
+      { month: "11 Agustus 2013", title: "Community Shield dimenangkan", description: "United mengalahkan Wigan Athletic 2-0 di Wembley lewat dua gol Robin van Persie.", impact: "Menjadi trofi pertama David Moyes di United, tetapi juga satu-satunya trofi musim ini." },
+      { month: "1 Juli 2013", title: "David Moyes resmi memulai tugas", description: "Moyes resmi mengambil alih setelah diumumkan sebagai penerus Sir Alex Ferguson pada akhir musim sebelumnya.", impact: "Memulai era baru yang ternyata sangat sulit bagi klub." },
+      { month: "2 September 2013", title: "Deadline day Fellaini", description: "United mendapatkan Marouane Fellaini dari Everton setelah gagal mengejar beberapa target utama.", impact: "Menjadi simbol bursa transfer musim panas yang tidak terencana dengan baik." },
+      { month: "5 Oktober 2013", title: "Adnan Januzaj menyelamatkan United di Sunderland", description: "Januzaj mencetak dua gol saat United menang 2-1 di Stadium of Light.", impact: "Muncul sebagai harapan muda terbesar di tengah performa tim yang menurun." },
+      { month: "5 Januari 2014", title: "FA Cup langsung berakhir", description: "United kalah 1-2 dari Swansea City di Old Trafford pada ronde ketiga FA Cup.", impact: "Menegaskan bahwa penurunan performa United terjadi di semua kompetisi domestik." },
+      { month: "22 Januari 2014", title: "Tersingkir dari League Cup oleh Sunderland", description: "United kalah lewat adu penalti setelah agregat semifinal melawan Sunderland berakhir 3-3.", impact: "Menghapus peluang trofi domestik yang paling realistis." },
+      { month: "25 Januari 2014", title: "Juan Mata bergabung", description: "United memecahkan rekor transfer klub saat membeli Mata dari Chelsea.", impact: "Memberi kreativitas baru, tetapi transfer ini datang terlalu terlambat untuk membalikkan musim." },
+      { month: "19 Maret 2014", title: "Van Persie hat-trick vs Olympiacos", description: "United membalikkan defisit 0-2 dari leg pertama dengan menang 3-0 di Old Trafford.", impact: "Menjadi momen Eropa terbaik United musim ini dan menyelamatkan mereka dari eliminasi memalukan." },
+      { month: "9 April 2014", title: "Bayern menghentikan United di perempat final", description: "United kalah 1-3 di Munich dan tersingkir agregat 2-4 dari Champions League.", impact: "Menjadi akhir perjalanan Eropa sebelum United absen dari kompetisi Eropa musim berikutnya." },
+      { month: "22 April 2014", title: "David Moyes dipecat", description: "Moyes dipecat setelah kekalahan 0-2 dari Everton, dengan empat laga liga tersisa.", impact: "Mengakhiri eksperimen penerus langsung Ferguson setelah kurang dari satu musim." },
+      { month: "6 Mei 2014", title: "James Wilson mencetak dua gol pada debut", description: "Wilson mencetak dua gol saat United mengalahkan Hull City 3-1 di Old Trafford.", impact: "Menjadi salah satu momen muda yang memberi sedikit optimisme pada akhir musim." },
+      { month: "19 Mei 2014", title: "Ryan Giggs pensiun sebagai pemain", description: "Giggs mengumumkan pensiun setelah karier senior panjang bersama United.", impact: "Menutup salah satu sisa terbesar era Ferguson dan Class of '92 di skuad pemain." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 19 menang, 7 seri, 12 kalah, gol 64:43, 64 poin, finis ketujuh.",
+      "Rekor semua kompetisi: 55 pertandingan, 29 menang, 10 seri, 16 kalah, gol 94:57.",
+      "Rincian hasil semua kompetisi: Premier League 19-7-12, FA Cup 0-0-1, League Cup 4-0-1, Champions League 5-3-2, Community Shield 1-0-0.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2013/14 semua kompetisi: De Gea 52, Evra 45, Valencia 44, Rooney dan Carrick 40, Jones 39, Smalling 38, Welbeck 36, Januzaj dan Hernandez 35.",
+      "Assist pada tabel skuad memakai angka Premier League publik yang tersedia. MyFootballFacts, StatsCrew, dan beberapa tabel ESPN-style mencatat Rooney 10 assist; StatBunker mencatat Rooney 9, Mata 4, Januzaj 4, Evra 4, Valencia 4, Kagawa 3, Van Persie 3, Jones 2, Welbeck 2, Hernandez 2, Fellaini 1, Rafael 1, dan Giggs 1.",
+      "Nomor skuad 2013/14 mengikuti FootballSquads: De Gea 1, Rafael 2, Evra 3, Jones 4, Ferdinand 5, Evans 6, Mata 8, Rooney 10, Giggs 11, Smalling 12, Lindegaard 13, Hernandez 14, Vidic 15, Carrick 16, Nani 17, Young 18, Welbeck 19, Van Persie 20, Henriquez 21, Fabio 22, Cleverley 23, Fletcher 24, Valencia 25, Kagawa 26, Macheda 27, Buttner 28, Zaha 29, Varela 30, Fellaini 31, Powell 32, Bebe 33, Lawrence 34, Lingard 35, Vermijl 36, Keane 38, Thorpe 39, Amos 40, Blackett 42, Januzaj 44, Petrucci 45, Wilson 47, Will Keane 48, dan Johnstone 50.",
+      "Transfermarkt mencatat pengeluaran United 2013/14 sebesar EUR 77.13m untuk Juan Mata EUR 44.73m dan Marouane Fellaini EUR 32.40m. Varela dan Janko banyak dicatat sebagai undisclosed oleh sumber musim.",
+      "Sumber Inggris mencatat Fellaini datang dengan GBP 27.5m dan Mata dengan GBP 37.1m; nilai pada tabel ini dikonversi mengikuti angka euro Transfermarkt agar konsisten dengan musim sebelumnya.",
+      "United gagal lolos ke kompetisi Eropa setelah finis ketujuh, finis liga terendah klub sejak 1989/90.",
+      "Champions League berakhir di perempat final melawan Bayern Munich: 1-1 di Old Trafford dan 1-3 di Munich, agregat 2-4.",
+      "FA Cup berakhir pada ronde ketiga setelah kalah 1-2 dari Swansea City di Old Trafford.",
+      "League Cup berakhir di semifinal setelah kalah adu penalti dari Sunderland.",
+      "Starting XI paling mewakili musim: De Gea; Rafael, Vidic, Evans atau Ferdinand, Evra; Valencia, Carrick, Cleverley atau Fellaini, Januzaj; Rooney; Van Persie.",
+      "Setelah Juan Mata datang, versi yang lebih kuat secara nama adalah De Gea; Rafael, Vidic, Evans, Evra; Carrick, Fellaini atau Cleverley; Mata, Rooney, Januzaj atau Kagawa; Van Persie.",
+      "Musim ini adalah musim terakhir Ryan Giggs sebagai pemain, musim terakhir Nemanja Vidic dan Rio Ferdinand di United, serta musim terakhir Patrice Evra sebelum pindah pada musim panas berikutnya."
+    ],
+    featured: true
+  },
+  {
+    id: "2014-15",
+    label: "2014/15",
+    title: "Manchester United Musim 2014/15",
+    era: "Era pasca Sir Alex Ferguson",
+    managers: ["Louis van Gaal"],
+    competitions: ["Premier League", "FA Cup", "League Cup"],
+    leaguePosition: "4th Premier League",
+    trophies: [],
+    summary:
+      "Musim 2014/15 adalah musim pertama Louis van Gaal sebagai manajer Manchester United. Setelah kekacauan era David Moyes, target utama bukan langsung kembali juara, tetapi menghentikan penurunan dan masuk lagi ke zona Liga Champions. United finis keempat Premier League dengan 70 poin, tetapi gaya main Van Gaal sering dikritik karena lambat, sangat terstruktur, dan belum terasa seperti United era Ferguson.",
+    story: [
+      "Louis van Gaal datang setelah membawa Belanda finis ketiga di Piala Dunia 2014. Reputasinya besar: Ajax, Barcelona, Bayern Munich, timnas Belanda, dan filosofi penguasaan bola yang sangat disiplin.",
+      "Ia mewarisi skuad yang sedang berubah besar. Rio Ferdinand, Nemanja Vidic, Patrice Evra, dan Ryan Giggs tidak lagi menjadi bagian skuad pemain, sehingga tulang punggung pertahanan era Ferguson harus dibangun ulang hampir sekaligus.",
+      "United bergerak agresif di bursa transfer. Ander Herrera, Luke Shaw, Marcos Rojo, Angel Di Maria, Daley Blind, dan pinjaman Radamel Falcao menjadi wajah baru, lalu Victor Valdes datang pada Januari 2015.",
+      "Nama besar Di Maria dan Falcao membuat ekspektasi naik, tetapi keduanya tidak menjadi inti stabil sepanjang musim. Di Maria memberi 10 assist Premier League, namun adaptasi, cedera, dan perubahan posisi membuatnya hanya bertahan satu musim. Falcao datang setelah cedera ACL dan tidak menemukan kembali ledakan lamanya.",
+      "Fondasi yang lebih kuat justru datang dari David de Gea, Antonio Valencia sebagai bek kanan/wing-back, Chris Smalling, Daley Blind, Michael Carrick, Ander Herrera, Marouane Fellaini, Juan Mata, Ashley Young, dan Wayne Rooney sebagai kapten.",
+      "Puncak musim terjadi pada Maret-April 2015 saat United mengalahkan Tottenham 3-0, Liverpool 2-1 di Anfield, dan Manchester City 4-2. Periode itu mengamankan jalan kembali ke empat besar, meski akhir musim masih memperlihatkan jarak besar dengan Chelsea."
+    ],
+    squad: [
+      { name: "David de Gea", shirtNumber: 1, position: "Kiper", age: 23, country: "Spain", appearances: 43, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Rafael", shirtNumber: 2, position: "Bek kanan", age: 24, country: "Brazil", appearances: 11, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Luke Shaw", shirtNumber: 3, position: "Bek kiri", age: 19, country: "England", appearances: 20, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Phil Jones", shirtNumber: 4, position: "Bek tengah/bek kanan", age: 22, country: "England", appearances: 24, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Marcos Rojo", shirtNumber: 5, position: "Bek tengah/bek kiri", age: 24, country: "Argentina", appearances: 26, goals: 1, assists: 0, status: "Pemain utama" },
+      { name: "Jonny Evans", shirtNumber: 6, position: "Bek tengah", age: 26, country: "Northern Ireland", appearances: 17, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Angel Di Maria", shirtNumber: 7, position: "Winger/gelandang serang", age: 26, country: "Argentina", appearances: 32, goals: 4, assists: 10, status: "Pemain rotasi" },
+      { name: "Juan Mata", shirtNumber: 8, position: "Gelandang serang/winger kanan", age: 26, country: "Spain", appearances: 35, goals: 10, assists: 4, status: "Pemain utama" },
+      { name: "Radamel Falcao", shirtNumber: 9, position: "Striker", age: 28, country: "Colombia", appearances: 29, goals: 4, assists: 4, status: "Pemain rotasi" },
+      { name: "Wayne Rooney", shirtNumber: 10, position: "Forward/gelandang serang, kapten", age: 28, country: "England", appearances: 37, goals: 14, assists: 5, status: "Pemain utama" },
+      { name: "Adnan Januzaj", shirtNumber: 11, position: "Winger/gelandang serang", age: 19, country: "Belgium", appearances: 21, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Chris Smalling", shirtNumber: 12, position: "Bek tengah", age: 24, country: "England", appearances: 29, goals: 4, assists: 0, status: "Pemain utama" },
+      { name: "Anders Lindegaard", shirtNumber: 13, position: "Kiper", age: 30, country: "Denmark", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Javier Hernandez", shirtNumber: 14, position: "Striker", age: 26, country: "Mexico", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Michael Carrick", shirtNumber: 16, position: "Gelandang bertahan/bek tengah", age: 33, country: "England", appearances: 20, goals: 1, assists: 2, status: "Pemain utama" },
+      { name: "Nani", shirtNumber: 17, position: "Winger", age: 27, country: "Portugal", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Daley Blind", shirtNumber: 17, position: "Gelandang bertahan/bek kiri/bek tengah", age: 24, country: "Netherlands", appearances: 29, goals: 2, assists: 2, status: "Pemain utama" },
+      { name: "Ashley Young", shirtNumber: 18, position: "Winger kiri/wing-back", age: 29, country: "England", appearances: 29, goals: 2, assists: 5, status: "Pemain utama" },
+      { name: "Danny Welbeck", shirtNumber: 19, position: "Forward/winger", age: 23, country: "England", appearances: 3, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Robin van Persie", shirtNumber: 20, position: "Striker", age: 31, country: "Netherlands", appearances: 29, goals: 10, assists: 2, status: "Pemain utama" },
+      { name: "Ander Herrera", shirtNumber: 21, position: "Gelandang tengah", age: 25, country: "Spain", appearances: 31, goals: 8, assists: 4, status: "Pemain utama" },
+      { name: "Nick Powell", shirtNumber: 22, position: "Gelandang serang", age: 20, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tom Cleverley", shirtNumber: 23, position: "Gelandang tengah", age: 25, country: "England", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Darren Fletcher", shirtNumber: 24, position: "Gelandang tengah", age: 30, country: "Scotland", appearances: 12, goals: 0, assists: 0, status: "Pemain senior" },
+      { name: "Antonio Valencia", shirtNumber: 25, position: "Bek kanan/winger kanan", age: 29, country: "Ecuador", appearances: 35, goals: 0, assists: 3, status: "Pemain utama" },
+      { name: "Shinji Kagawa", shirtNumber: 26, position: "Gelandang serang", age: 25, country: "Japan", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Anderson", shirtNumber: 28, position: "Gelandang tengah", age: 26, country: "Brazil", appearances: 2, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Wilfried Zaha", shirtNumber: 29, position: "Winger", age: 21, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Guillermo Varela", shirtNumber: 30, position: "Bek kanan", age: 21, country: "Uruguay", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Marouane Fellaini", shirtNumber: 31, position: "Gelandang tengah/gelandang serang", age: 26, country: "Belgium", appearances: 31, goals: 7, assists: 0, status: "Pemain utama" },
+      { name: "Victor Valdes", shirtNumber: 32, position: "Kiper", age: 32, country: "Spain", appearances: 2, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Paddy McNair", shirtNumber: 33, position: "Bek tengah/bek kanan", age: 19, country: "Northern Ireland", appearances: 18, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Jesse Lingard", shirtNumber: 35, position: "Gelandang serang/winger", age: 21, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Marnick Vermijl", shirtNumber: 36, position: "Bek kanan", age: 22, country: "Belgium", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Saidy Janko", shirtNumber: 37, position: "Bek kanan", age: 18, country: "Switzerland", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Michael Keane", shirtNumber: 38, position: "Bek tengah", age: 21, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tom Thorpe", shirtNumber: 39, position: "Bek tengah", age: 21, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Ben Amos", shirtNumber: 40, position: "Kiper", age: 24, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Reece James", shirtNumber: 41, position: "Bek kiri", age: 20, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tyler Blackett", shirtNumber: 42, position: "Bek tengah/bek kiri", age: 20, country: "England", appearances: 12, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Andreas Pereira", shirtNumber: 44, position: "Gelandang serang", age: 18, country: "Brazil", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Davide Petrucci", shirtNumber: 45, position: "Gelandang tengah", age: 22, country: "Italy", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Joe Rothwell", shirtNumber: 46, position: "Gelandang tengah", age: 19, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Will Keane", shirtNumber: 48, position: "Striker", age: 21, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "James Wilson", shirtNumber: 49, position: "Striker", age: 18, country: "England", appearances: 17, goals: 2, assists: 0, status: "Pemain muda" },
+      { name: "Sam Johnstone", shirtNumber: 50, position: "Kiper", age: 21, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "Ander Herrera", from: "Athletic Bilbao", fee: "EUR 36.00m", date: "26 Juni 2014", note: "Transfermarkt mencatat EUR 36.00m; sumber resmi dan tabel musim sering menulis undisclosed karena klausul buyout dibayar melalui jalur administratif Spanyol." },
+      { player: "Luke Shaw", from: "Southampton", fee: "EUR 37.50m", date: "27 Juni 2014", note: "Transfermarkt mencatat EUR 37.50m; sumber Inggris saat itu menyebut biaya sekitar GBP 27m-31m untuk bek kiri muda Southampton." },
+      { player: "Vanja Milinkovic-Savic", from: "Vojvodina", fee: "EUR 1.75m", date: "4 Agustus 2014", note: "Kiper muda Serbia; kesepakatan membuatnya tetap bersama Vojvodina lebih dulu." },
+      { player: "Marcos Rojo", from: "Sporting CP", fee: "EUR 20.00m", date: "20 Agustus 2014", note: "Transfermarkt mencatat EUR 20.00m; sumber Inggris menyebut sekitar GBP 16m dan Nani dipinjamkan ke Sporting dalam rangkaian kesepakatan." },
+      { player: "Angel Di Maria", from: "Real Madrid", fee: "EUR 75.00m", date: "26 Agustus 2014", note: "Transfer rekor Inggris saat itu. Sumber Inggris menyebut GBP 59.7m; tabel ini memakai angka euro Transfermarkt." },
+      { player: "Daley Blind", from: "Ajax", fee: "EUR 17.50m", date: "1 September 2014", note: "Pemain fleksibel pilihan Van Gaal, bisa bermain sebagai DM, bek kiri, atau bek tengah." },
+      { player: "Radamel Falcao", from: "Monaco", fee: "Loan fee: EUR 7.60m", date: "1 September 2014", note: "Pinjaman satu musim. United tidak mempermanenkannya setelah output dan kebugarannya tidak memenuhi ekspektasi." },
+      { player: "Timothy Fosu-Mensah", from: "Ajax", fee: "Undisclosed", date: "2 September 2014", note: "Prospek akademi dari Ajax, bukan bagian reguler skuad senior musim ini." },
+      { player: "Victor Valdes", from: "Unattached", fee: "Free transfer", date: "8 Januari 2015", note: "Mantan kiper Barcelona bergabung setelah pemulihan cedera dan latihan bersama United." },
+      { player: "Sadiq El Fitouri", from: "Salford City", fee: "Undisclosed", date: "30 Januari 2015", note: "Bek muda yang bergabung pada bursa Januari." },
+      { player: "Anderson", from: "Fiorentina", fee: "End of loan", date: "30 Juni 2014", note: "Kembali dari pinjaman sebelum kemudian dilepas ke Internacional pada Februari 2015." },
+      { player: "Wilfried Zaha", from: "Cardiff City", fee: "End of loan", date: "2014", note: "Kembali dari pinjaman, tetapi kemudian dipinjamkan dan dijual kembali ke Crystal Palace." }
+    ],
+    transfersOut: [
+      { player: "Alexander Buttner", to: "Dynamo Moscow", fee: "EUR 5.50m", date: "28 Juni 2014", note: "Transfermarkt mencatat EUR 5.50m; sumber Inggris menyebut sekitar GBP 4.4m." },
+      { player: "Rio Ferdinand", to: "Queens Park Rangers", fee: "Free transfer", date: "1 Juli 2014", note: "Dilepas setelah kontraknya berakhir; salah satu akhir simbolis pertahanan besar era Ferguson." },
+      { player: "Federico Macheda", to: "Cardiff City", fee: "Free transfer", date: "1 Juli 2014", note: "Pergi permanen setelah tidak lagi masuk rencana utama." },
+      { player: "Nemanja Vidic", to: "Inter Milan", fee: "Free transfer", date: "1 Juli 2014", note: "Mantan kapten pergi ke Inter setelah kontraknya berakhir." },
+      { player: "Patrice Evra", to: "Juventus", fee: "EUR 1.90m", date: "21 Juli 2014", note: "Transfermarkt mencatat EUR 1.90m; sumber Inggris menyebut sekitar GBP 1.2m." },
+      { player: "Bebe", to: "Benfica", fee: "EUR 3.00m", date: "25 Juli 2014", note: "Transfer permanen ke Benfica setelah periode pinjaman di Portugal." },
+      { player: "Nani", to: "Sporting CP", fee: "Loan transfer", date: "19 Agustus 2014", note: "Dipinjamkan ke Sporting sebagai bagian dari rangkaian transfer Marcos Rojo." },
+      { player: "Javier Hernandez", to: "Real Madrid", fee: "Loan fee: EUR 3.00m", date: "1 September 2014", note: "Dipinjamkan semusim ke Real Madrid; Transfermarkt mencatat loan fee EUR 3.00m." },
+      { player: "Angelo Henriquez", to: "Dinamo Zagreb", fee: "Loan fee: EUR 1.50m", date: "1 September 2014", note: "Dipinjamkan ke Dinamo Zagreb sebelum akhirnya pindah permanen." },
+      { player: "Tom Cleverley", to: "Aston Villa", fee: "Loan transfer", date: "1 September 2014", note: "Dipinjamkan setelah tidak masuk rencana inti Van Gaal." },
+      { player: "Nick Powell", to: "Leicester City", fee: "Loan transfer", date: "1 September 2014", note: "Dipinjamkan ke Leicester City, lalu kembali pada Januari 2015." },
+      { player: "Shinji Kagawa", to: "Borussia Dortmund", fee: "EUR 8.00m", date: "31 Agustus 2014", note: "Transfermarkt mencatat EUR 8.00m; kembali ke Dortmund setelah sulit menemukan peran tetap di United." },
+      { player: "Tom Lawrence", to: "Leicester City", fee: "Undisclosed", date: "1 September 2014", note: "Transfer permanen ke Leicester City." },
+      { player: "Danny Welbeck", to: "Arsenal", fee: "EUR 20.00m", date: "1 September 2014", note: "Transfermarkt mencatat EUR 20.00m; sumber Inggris menyebut GBP 16m. Penjualan produk akademi ke Arsenal menjadi salah satu keputusan paling diperdebatkan musim itu." },
+      { player: "Davide Petrucci", to: "CFR Cluj", fee: "Free transfer", date: "8 September 2014", note: "Keluar permanen setelah tidak menembus tim utama." },
+      { player: "Michael Keane", to: "Burnley", fee: "Undisclosed", date: "8 Januari 2015", note: "Awalnya dipinjamkan lalu pindah permanen ke Burnley." },
+      { player: "Marnick Vermijl", to: "Sheffield Wednesday", fee: "Undisclosed", date: "2 Februari 2015", note: "Transfer permanen pada deadline day Januari/Februari." },
+      { player: "Darren Fletcher", to: "West Bromwich Albion", fee: "Free transfer", date: "2 Februari 2015", note: "Pemain senior dan wakil kapten keluar setelah perannya mengecil." },
+      { player: "Wilfried Zaha", to: "Crystal Palace", fee: "EUR 3.80m", date: "2 Februari 2015", note: "Transfermarkt mencatat EUR 3.80m; kembali permanen ke Crystal Palace setelah sempat dipinjamkan." },
+      { player: "Anderson", to: "Internacional", fee: "Free transfer", date: "3 Februari 2015", note: "Mengakhiri periode panjang yang tidak konsisten sejak datang pada 2007." }
+    ],
+    commonStartingXI: {
+      formation: "4-3-3 / 4-1-4-1",
+      players: {
+        GK: "David de Gea",
+        RB: "Antonio Valencia",
+        CB1: "Chris Smalling",
+        CB2: "Marcos Rojo",
+        LB: "Daley Blind",
+        RM: "Juan Mata",
+        CM1: "Angel Di Maria",
+        CM2: "Ander Herrera",
+        LM: "Ashley Young",
+        ST1: "Marouane Fellaini",
+        ST2: "Wayne Rooney"
+      }
+    },
+    keyPlayers: [
+      { name: "David de Gea", position: "Kiper", contribution: "43 main semua kompetisi, kiper utama, pemain terbaik klub musim ini", story: "De Gea menyelamatkan banyak poin ketika pertahanan sering berubah. Musim ini memperkuat statusnya sebagai salah satu kiper elite Premier League." },
+      { name: "Wayne Rooney", position: "Forward/gelandang serang, kapten", contribution: "37 main, 14 gol semua kompetisi; top skor klub", story: "Rooney menjadi kapten dan tetap menjadi pusat output United, meski Van Gaal beberapa kali memainkannya sebagai gelandang tengah." },
+      { name: "Angel Di Maria", position: "Winger/gelandang serang", contribution: "32 main, 4 gol semua kompetisi, 10 assist Premier League", story: "Di Maria memulai musim dengan ledakan kualitas, tetapi adaptasi, cedera, dan posisi yang berubah-ubah membuat transfer rekor Inggris ini berakhir sebagai eksperimen satu musim." },
+      { name: "Juan Mata", position: "Gelandang serang/winger kanan", contribution: "35 main, 10 gol semua kompetisi, termasuk brace di Anfield", story: "Mata menjadi bagian terpenting dari fase terbaik United. Dua golnya melawan Liverpool menjadi momen ikonik musim Van Gaal pertama." },
+      { name: "Ander Herrera", position: "Gelandang tengah", contribution: "31 main, 8 gol semua kompetisi, 4 assist Premier League", story: "Herrera memberi energi, teknik, pressing, dan koneksi yang membuat sisi kanan United lebih hidup bersama Mata dan Valencia." },
+      { name: "Marouane Fellaini", position: "Gelandang tengah/target taktis", contribution: "31 main, 7 gol semua kompetisi", story: "Fellaini berubah dari simbol kegagalan Moyes menjadi senjata taktik Van Gaal, terutama untuk duel udara dan second ball." },
+      { name: "Ashley Young", position: "Winger kiri/wing-back", contribution: "29 main, 2 gol, 5 assist Premier League", story: "Young bangkit sebagai pemain pekerja keras yang memberi keseimbangan di kiri. Gol telatnya di Newcastle menjadi salah satu momen penting top-four race." },
+      { name: "Michael Carrick", position: "Gelandang bertahan", contribution: "20 main, 1 gol, 2 assist Premier League", story: "Ketika Carrick fit, United jauh lebih stabil dalam build-up dan kontrol tempo. Absennya beberapa kali terasa besar." },
+      { name: "Chris Smalling", position: "Bek tengah", contribution: "29 main, 4 gol semua kompetisi", story: "Smalling berkembang menjadi bek utama setelah start yang tidak mulus, termasuk kartu merah di derby Manchester." },
+      { name: "Radamel Falcao", position: "Striker", contribution: "29 main, 4 gol semua kompetisi", story: "Falcao datang dengan reputasi superstar, tetapi cedera ACL sebelumnya membuatnya tidak lagi eksplosif dan United tidak mempermanenkan pinjamannya." }
+    ],
+    statistics: {
+      leaguePosition: "4th Premier League",
+      matches: 44,
+      wins: 23,
+      draws: 11,
+      losses: 10,
+      goalsFor: 71,
+      goalsAgainst: 44,
+      topScorer: "Wayne Rooney (14 gol semua kompetisi / 12 gol Premier League)",
+      topAssist: "Angel Di Maria (10 assist Premier League menurut StatBunker/StatsCrew)",
+      mostAppearances: "David de Gea (43 main), Wayne Rooney (37), Juan Mata, Antonio Valencia (35), Angel Di Maria (32), Ander Herrera, Marouane Fellaini (31)"
+    },
+    importantMoments: [
+      { month: "16 Agustus 2014", title: "Start buruk melawan Swansea", description: "United kalah 1-2 dari Swansea City di Old Trafford pada laga pembuka Premier League.", impact: "Menunjukkan bahwa perubahan manajer dan belanja awal belum langsung menyelesaikan masalah." },
+      { month: "26 Agustus 2014", title: "Angel Di Maria menjadi transfer rekor Inggris", description: "Di Maria datang dari Real Madrid dengan biaya yang dicatat Transfermarkt sebagai EUR 75.00m dan sumber Inggris sebagai GBP 59.7m.", impact: "Menaikkan ekspektasi besar terhadap proyek Van Gaal." },
+      { month: "26 Agustus 2014", title: "Kalah 0-4 dari MK Dons", description: "United tersingkir dari League Cup pada ronde kedua setelah kalah telak dari MK Dons.", impact: "Salah satu kekalahan cup paling memalukan dalam era modern klub." },
+      { month: "21 September 2014", title: "Leicester 5-3 United", description: "United sempat unggul 3-1, tetapi runtuh dan kalah 3-5 di King Power Stadium.", impact: "Mengungkap masalah besar di transisi bertahan dan stabilitas lini belakang." },
+      { month: "14 Desember 2014", title: "United 3-0 Liverpool", description: "United mengalahkan Liverpool di Old Trafford lewat gol Rooney, Mata, dan Van Persie, dengan De Gea tampil luar biasa.", impact: "Memberi momentum besar dalam persaingan empat besar." },
+      { month: "4 Maret 2015", title: "Ashley Young mencetak gol telat di Newcastle", description: "Young mencetak gol menit akhir dalam kemenangan 1-0 di St James' Park.", impact: "Tiga poin penting dalam periode ketat perebutan zona Champions League." },
+      { month: "9 Maret 2015", title: "FA Cup dihentikan Arsenal", description: "United kalah 1-2 dari Arsenal di Old Trafford; Danny Welbeck mencetak gol kemenangan untuk klub barunya.", impact: "Mengakhiri peluang trofi domestik dan memberi cerita simbolis setelah Welbeck dijual." },
+      { month: "15 Maret 2015", title: "Performa terbaik melawan Tottenham", description: "United menang 3-0 atas Tottenham dengan gol Fellaini, Carrick, dan Rooney.", impact: "Menjadi salah satu tampilan paling rapi dari struktur Van Gaal musim ini." },
+      { month: "22 Maret 2015", title: "Mata brace di Anfield", description: "Juan Mata mencetak dua gol, termasuk voli/scissor kick, saat United menang 2-1 atas Liverpool.", impact: "Kemenangan langsung atas pesaing top four yang sangat menentukan." },
+      { month: "12 April 2015", title: "Derby Manchester 4-2", description: "United bangkit dari ketertinggalan dan mengalahkan Manchester City melalui gol Young, Fellaini, Mata, dan Smalling.", impact: "Momen terbaik emosional musim Van Gaal pertama dan kemenangan derby pertama United sejak 2012." },
+      { month: "17 Mei 2015", title: "Kembali ke Liga Champions dipastikan", description: "Hasil 1-1 melawan Arsenal memastikan United finis di empat besar dan kembali ke kualifikasi Champions League.", impact: "Target utama musim tercapai setelah absen dari kompetisi Eropa." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 20 menang, 10 seri, 8 kalah, gol 62:37, 70 poin, finis keempat.",
+      "Rekor semua kompetisi: 44 pertandingan, 23 menang, 11 seri, 10 kalah, gol 71:44.",
+      "Rincian hasil semua kompetisi: Premier League 20-10-8, FA Cup 3-1-1, League Cup 0-0-1.",
+      "United tidak bermain di Liga Champions maupun Europa League pada 2014/15 karena finis ketujuh pada musim 2013/14.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2014/15 semua kompetisi: De Gea 43, Rooney 37, Mata dan Valencia 35, Di Maria 32, Herrera dan Fellaini 31, Smalling, Blind, Young, Van Persie, dan Falcao termasuk kelompok inti.",
+      "Assist pada tabel skuad memakai angka Premier League publik yang tersedia. StatBunker/StatsCrew mencatat Di Maria 10 assist, Rooney dan Ashley Young 5, Mata, Herrera, dan Falcao 4, Valencia 3, Van Persie, Blind, dan Carrick 2.",
+      "Nomor skuad 2014/15 mengikuti FootballSquads dan United By Numbers: De Gea 1, Rafael 2, Shaw 3, Jones 4, Rojo 5, Evans 6, Di Maria 7, Mata 8, Falcao 9, Rooney 10, Januzaj 11, Smalling 12, Lindegaard 13, Hernandez 14, Carrick 16, Nani 17 sebelum dipinjamkan, Blind 17 setelah datang, Young 18, Van Persie 20, Herrera 21, Powell 22, Cleverley 23, Fletcher 24, Valencia 25, Kagawa 26, Anderson 28, Zaha 29, Varela 30, Fellaini 31, Valdes 32, McNair 33, Lingard 35, Janko 37, Thorpe 39, Amos 40, Reece James 41, Blackett 42, Andreas Pereira 44, Rothwell 46, Will Keane 48, Wilson 49, dan Johnstone 50.",
+      "Transfermarkt mencatat pengeluaran United 2014/15 sebesar EUR 195.35m dan pemasukan EUR 46.70m, sehingga neraca transfer sekitar EUR -148.65m.",
+      "Nilai transfer utama dalam euro: Di Maria EUR 75.00m, Shaw EUR 37.50m, Herrera EUR 36.00m, Rojo EUR 20.00m, Blind EUR 17.50m, loan fee Falcao EUR 7.60m, dan Vanja Milinkovic-Savic EUR 1.75m.",
+      "Nilai keluar utama dalam euro: Welbeck EUR 20.00m, Kagawa EUR 8.00m, Buttner EUR 5.50m, Zaha EUR 3.80m, Hernandez loan fee EUR 3.00m, Bebe EUR 3.00m, Evra EUR 1.90m, dan Henriquez loan fee EUR 1.50m.",
+      "FA Cup berakhir di perempat final/round 6 setelah kalah 1-2 dari Arsenal di Old Trafford.",
+      "League Cup berakhir di ronde kedua setelah kalah 0-4 dari MK Dons.",
+      "Starting XI paling mewakili paruh kedua musim: De Gea; Valencia, Smalling, Jones atau Rojo, Blind; Carrick atau Blind, Herrera, Fellaini; Mata, Rooney, Young.",
+      "Versi dengan nama besar di awal musim: De Gea; Valencia atau Rafael, Smalling, Rojo, Shaw atau Blind; Blind atau Carrick, Herrera; Di Maria, Mata, Rooney; Van Persie atau Falcao.",
+      "Musim ini menjadi musim terakhir Di Maria, Falcao, Van Persie, Rafael, Evans, dan Nani dalam lintasan skuad United sebelum perubahan besar berikutnya pada 2015/16."
+    ],
+    featured: false
+  },
+  {
+    id: "2025-26",
+    label: "2025/26",
+    title: "Manchester United Musim 2025/26",
+    era: "Era awal Michael Carrick",
+    managers: ["Ruben Amorim", "Darren Fletcher", "Michael Carrick"],
+    competitions: ["Premier League", "FA Cup", "EFL Cup"],
+    leaguePosition: "3rd Premier League",
+    trophies: [],
+    summary:
+      "Musim 2025/26 menjadi musim comeback Manchester United setelah periode kacau. United tidak menjuarai apa pun dan tersingkir cepat dari dua cup domestik, tetapi finis ketiga Premier League dengan 71 poin, kembali ke Champions League 2026/27, dan memasuki Era awal Michael Carrick setelah Ruben Amorim pergi pada Januari 2026.",
+    story: [
+      "United memasuki musim ini tanpa kompetisi Eropa setelah musim 2024/25 yang buruk. Fokusnya hanya Premier League, FA Cup, dan EFL Cup, tetapi tekanan tetap besar karena skuad sudah dirombak cukup mahal.",
+      "Ruben Amorim memulai musim dengan ide 3-4-3 / 3-4-2-1. United membeli Matheus Cunha, Bryan Mbeumo, Benjamin Sesko, dan Senne Lammens sebagai wajah baru utama, tetapi struktur tim belum stabil dan hasil cup langsung merusak suasana.",
+      "Amorim meninggalkan jabatan pada 5 Januari 2026 setelah 14 bulan menangani United. Darren Fletcher menjadi interim singkat pada 5-13 Januari, lalu Michael Carrick kembali dan ditunjuk sebagai head coach.",
+      "Carrick menyederhanakan bentuk tim ke struktur empat bek yang lebih seimbang. Kobbie Mainoo kembali lebih sering masuk tim, Bruno Fernandes tetap menjadi pusat kreativitas, dan trio Cunha-Mbeumo-Sesko memberi ancaman yang lebih jelas di lini depan.",
+      "Perubahan arah terasa kuat pada paruh kedua musim. United mengalahkan Manchester City, Arsenal, Chelsea, Liverpool, dan menutup musim dengan kemenangan 3-0 di Brighton.",
+      "Bruno Fernandes menjadi cerita individual terbesar: ia mencatat 21 assist Premier League, memecahkan rekor assist satu musim Premier League yang sebelumnya dipegang Thierry Henry dan Kevin De Bruyne dengan 20 assist."
+    ],
+    squad: [
+      { name: "Altay Bayindir", shirtNumber: 1, position: "Kiper", age: 27, country: "Turkey", appearances: 6, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Diogo Dalot", shirtNumber: 2, position: "Bek kanan/bek kiri", age: 26, country: "Portugal", appearances: 36, goals: 1, assists: 2, status: "Pemain utama" },
+      { name: "Noussair Mazraoui", shirtNumber: 3, position: "Bek kanan/bek kiri/bek tengah", age: 27, country: "Morocco", appearances: 20, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Matthijs de Ligt", shirtNumber: 4, position: "Bek tengah", age: 26, country: "Netherlands", appearances: 14, goals: 1, assists: 0, status: "Pemain rotasi" },
+      { name: "Harry Maguire", shirtNumber: 5, position: "Bek tengah", age: 32, country: "England", appearances: 25, goals: 2, assists: 1, status: "Pemain utama" },
+      { name: "Lisandro Martinez", shirtNumber: 6, position: "Bek tengah", age: 27, country: "Argentina", appearances: 19, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Mason Mount", shirtNumber: 7, position: "Gelandang serang/gelandang tengah", age: 26, country: "England", appearances: 25, goals: 3, assists: 2, status: "Pemain rotasi" },
+      { name: "Bruno Fernandes", shirtNumber: 8, position: "Gelandang serang/gelandang tengah, kapten", age: 30, country: "Portugal", appearances: 37, goals: 9, assists: 21, status: "Pemain utama" },
+      { name: "Rasmus Hojlund", shirtNumber: 9, position: "Striker", age: 22, country: "Denmark", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Cadangan" },
+      { name: "Matheus Cunha", shirtNumber: 10, position: "Forward/winger kiri/second striker", age: 26, country: "Brazil", appearances: 35, goals: 10, assists: 4, status: "Pemain utama" },
+      { name: "Joshua Zirkzee", shirtNumber: 11, position: "Striker/second striker", age: 24, country: "Netherlands", appearances: 26, goals: 2, assists: 1, status: "Pemain rotasi" },
+      { name: "Tyrell Malacia", shirtNumber: 12, position: "Bek kiri", age: 25, country: "Netherlands", appearances: 3, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Patrick Dorgu", shirtNumber: 13, position: "Wing-back kiri/bek kiri/winger kiri", age: 20, country: "Denmark", appearances: 28, goals: 4, assists: 1, status: "Pemain utama" },
+      { name: "Leny Yoro", shirtNumber: 15, position: "Bek tengah", age: 19, country: "France", appearances: 33, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Amad Diallo", shirtNumber: 16, position: "Winger kanan/wing-back kanan", age: 23, country: "Ivory Coast", appearances: 33, goals: 2, assists: 3, status: "Pemain rotasi" },
+      { name: "Casemiro", shirtNumber: 18, position: "Gelandang bertahan/gelandang tengah", age: 33, country: "Brazil", appearances: 35, goals: 9, assists: 1, status: "Pemain utama" },
+      { name: "Bryan Mbeumo", shirtNumber: 19, position: "Winger kanan/forward", age: 26, country: "Cameroon", appearances: 34, goals: 12, assists: 4, status: "Pemain utama" },
+      { name: "Tom Heaton", shirtNumber: 22, position: "Kiper", age: 39, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain senior" },
+      { name: "Luke Shaw", shirtNumber: 23, position: "Bek kiri/bek tengah kiri", age: 30, country: "England", appearances: 38, goals: 1, assists: 1, status: "Pemain utama" },
+      { name: "Andre Onana", shirtNumber: 24, position: "Kiper", age: 29, country: "Cameroon", appearances: 1, goals: 0, assists: 0, status: "Cadangan" },
+      { name: "Manuel Ugarte", shirtNumber: 25, position: "Gelandang bertahan", age: 24, country: "Uruguay", appearances: 24, goals: 0, assists: 0, status: "Pemain rotasi" },
+      { name: "Ayden Heaven", shirtNumber: 26, position: "Bek tengah", age: 18, country: "England", appearances: 18, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Benjamin Sesko", shirtNumber: 30, position: "Striker", age: 22, country: "Slovenia", appearances: 32, goals: 12, assists: 1, status: "Pemain utama" },
+      { name: "Senne Lammens", shirtNumber: 31, position: "Kiper", age: 23, country: "Belgium", appearances: 33, goals: 0, assists: 0, status: "Pemain utama" },
+      { name: "Chido Obi", shirtNumber: 32, position: "Striker", age: 17, country: "Denmark", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Tyler Fredricson", shirtNumber: 33, position: "Bek tengah", age: 20, country: "England", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Diego Leon", shirtNumber: 35, position: "Bek kiri", age: 18, country: "Paraguay", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Kobbie Mainoo", shirtNumber: 37, position: "Gelandang tengah", age: 20, country: "England", appearances: 30, goals: 1, assists: 1, status: "Pemain utama" },
+      { name: "Jack Fletcher", shirtNumber: 38, position: "Gelandang serang/gelandang tengah", age: 18, country: "England", appearances: 3, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Tyler Fletcher", shirtNumber: 39, position: "Gelandang tengah", age: 18, country: "Scotland", appearances: 2, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Harry Amass", shirtNumber: 41, position: "Bek kiri", age: 18, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Toby Collyer", shirtNumber: 43, position: "Gelandang bertahan", age: 21, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Jack Moorhouse", shirtNumber: 48, position: "Gelandang tengah", age: 19, country: "Republic of Ireland", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Shea Lacey", shirtNumber: 61, position: "Winger kanan", age: 18, country: "England", appearances: 4, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Bendito Mantato", shirtNumber: 70, position: "Winger kanan", age: 17, country: "England", appearances: 1, goals: 0, assists: 0, status: "Pemain muda" },
+      { name: "Godwill Kukonki", shirtNumber: 72, position: "Bek tengah", age: 17, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" },
+      { name: "Jim Thwaites", shirtNumber: 77, position: "Gelandang tengah", age: 17, country: "England", appearances: 0, goals: 0, assists: NOT_AVAILABLE, status: "Pemain muda" }
+    ],
+    transfersIn: [
+      { player: "Matheus Cunha", from: "Wolverhampton Wanderers", fee: "EUR 74.20m", date: "12 Juni 2025", note: "Transfermarkt mencatat EUR 74.20m; laporan Inggris menyebut sekitar GBP 62.5m." },
+      { player: "Diego Leon", from: "Cerro Porteno", fee: "Undisclosed", date: "5 Juli 2025", note: "Bek kiri muda Paraguay; United By Numbers mencatat ia awalnya diberi nomor 30 lalu beralih ke 35." },
+      { player: "Enzo Kana-Biyik", from: "Le Havre", fee: "Free transfer", date: "10 Juli 2025", note: "Forward muda yang datang gratis dan langsung diarahkan ke jalur pengembangan/pinjaman." },
+      { player: "Bryan Mbeumo", from: "Brentford", fee: "EUR 75.00m", date: "21 Juli 2025", note: "Transfermarkt mencatat EUR 75.00m; laporan Inggris menyebut sekitar GBP 65m plus add-ons." },
+      { player: "Harley Emsden-James", from: "Southampton", fee: "Free transfer", date: "29 Juli 2025", note: "Bek muda yang masuk struktur akademi." },
+      { player: "Benjamin Sesko", from: "RB Leipzig", fee: "EUR 76.50m", date: "9 Agustus 2025", note: "Transfermarkt mencatat EUR 76.50m; laporan Inggris menyebut sekitar GBP 74m termasuk add-ons." },
+      { player: "Senne Lammens", from: "Royal Antwerp", fee: "EUR 21.00m", date: "1 September 2025", note: "Kiper Belgia yang kemudian menjadi pilihan utama setelah Onana dipinjamkan." },
+      { player: "Chido Obi", from: "Manchester United U18", fee: "-", date: "2025/26", note: "Promosi ke daftar skuad senior dengan nomor 32." },
+      { player: "Harry Amass", from: "Sheffield Wednesday", fee: "End of loan", date: "23 Januari 2026", note: "Kembali dari pinjaman sebelum kemudian dipinjamkan lagi ke Norwich City." },
+      { player: "Toby Collyer", from: "West Bromwich Albion", fee: "End of loan", date: "1 Januari 2026", note: "Kembali dari West Brom sebelum kemudian menyelesaikan pinjaman baru ke Hull City." }
+    ],
+    transfersOut: [
+      { player: "Jonny Evans", to: "Retired", fee: "-", date: "25 Mei 2025", note: "Pensiun dan mengakhiri keberadaan pemain yang pernah bermain untuk United di bawah Sir Alex Ferguson." },
+      { player: "Christian Eriksen", to: "Unattached", fee: "-", date: "25 Mei 2025", note: "Dilepas setelah kontraknya habis." },
+      { player: "Victor Lindelof", to: "Aston Villa", fee: "Free transfer", date: "1 September 2025", note: "Dilepas lalu bergabung dengan Aston Villa." },
+      { player: "Marcus Rashford", to: "Barcelona", fee: "Loan transfer", date: "23 Juli 2025", note: "Dipinjamkan ke Barcelona setelah masa sulit di United." },
+      { player: "Alejandro Garnacho", to: "Chelsea", fee: "EUR 46.20m", date: "30 Agustus 2025", note: "Transfermarkt mencatat EUR 46.20m; salah satu penjualan terbesar United musim ini." },
+      { player: "Rasmus Hojlund", to: "Napoli", fee: "Loan fee: EUR 6.00m", date: "1 September 2025", note: "Dipinjamkan ke Napoli; Transfermarkt mencatat loan fee EUR 6.00m." },
+      { player: "Antony", to: "Real Betis", fee: "EUR 22.00m", date: "1 September 2025", note: "Transfermarkt mencatat EUR 22.00m setelah sebelumnya sempat dipinjamkan ke Betis." },
+      { player: "Jadon Sancho", to: "Aston Villa", fee: "Loan transfer", date: "1 September 2025", note: "Dipinjamkan ke Aston Villa setelah kembali dari masa pinjaman sebelumnya." },
+      { player: "Andre Onana", to: "Trabzonspor", fee: "Loan transfer", date: "12 September 2025", note: "Dipinjamkan setelah Senne Lammens datang dan mengambil peran kiper utama." },
+      { player: "Harry Amass", to: "Sheffield Wednesday", fee: "Loan transfer", date: "1 September 2025", note: "Dipinjamkan untuk menit senior di Championship." },
+      { player: "Harry Amass", to: "Norwich City", fee: "Loan transfer", date: "24 Januari 2026", note: "Pinjaman baru setelah kembali dari Sheffield Wednesday." },
+      { player: "Toby Collyer", to: "West Bromwich Albion", fee: "Loan transfer", date: "15 Agustus 2025", note: "Dipinjamkan ke Championship pada paruh awal musim." },
+      { player: "Toby Collyer", to: "Hull City", fee: "Loan transfer", date: "30 Januari 2026", note: "Menyelesaikan pinjaman baru ke Hull City pada bursa Januari." },
+      { player: "Sam Mather", to: "Kayserispor", fee: "Undisclosed", date: "17 Januari 2026", note: "Transfer permanen ke Turki." },
+      { player: "Joe Hugill", to: "Kilmarnock", fee: "Undisclosed", date: "30 Januari 2026", note: "Transfer permanen setelah beberapa periode pinjaman." },
+      { player: "Rhys Bennett", to: "Fleetwood Town", fee: "Undisclosed", date: "31 Januari 2026", note: "Transfer permanen pada bursa Januari." },
+      { player: "Ethan Wheatley", to: "Northampton Town", fee: "Loan transfer", date: "1 Agustus 2025", note: "Dipinjamkan ke League One." },
+      { player: "Ethan Wheatley", to: "Bradford City", fee: "Loan transfer", date: "Januari 2026", note: "Pinjaman lanjutan setelah kembali dari Northampton." }
+    ],
+    commonStartingXI: {
+      formation: "4-2-3-1 / 4-3-3",
+      players: {
+        GK: "Senne Lammens",
+        RB: "Diogo Dalot",
+        CB1: "Harry Maguire",
+        CB2: "Leny Yoro",
+        LB: "Luke Shaw",
+        RM: "Bryan Mbeumo",
+        CM1: "Casemiro",
+        CM2: "Kobbie Mainoo",
+        LM: "Matheus Cunha",
+        ST1: "Bruno Fernandes",
+        ST2: "Benjamin Sesko"
+      }
+    },
+    keyPlayers: [
+      { name: "Michael Carrick", position: "Head coach", contribution: "Mengangkat United dari periode tidak stabil ke finis ketiga Premier League", story: "Carrick kembali sebagai tokoh penyelamat. Ia membuat struktur lebih sederhana, menghidupkan kembali Mainoo, dan membuat tim lebih cocok dengan kekuatan Bruno, Mbeumo, Cunha, dan Sesko." },
+      { name: "Bruno Fernandes", position: "Kapten, gelandang serang", contribution: "37 main, 9 gol semua kompetisi, 21 assist Premier League", story: "Bruno menjadi pusat kreativitas United dan memecahkan rekor assist satu musim Premier League dengan 21 assist." },
+      { name: "Senne Lammens", position: "Kiper", contribution: "33 main semua kompetisi", story: "Lammens menjadi kiper utama setelah Onana dipinjamkan dan memberi stabilitas baru di belakang." },
+      { name: "Bryan Mbeumo", position: "Winger kanan/forward", contribution: "34 main, 12 gol semua kompetisi", story: "Mbeumo langsung memberi ancaman kanan yang konsisten dan menjadi top skor bersama Sesko di semua kompetisi." },
+      { name: "Benjamin Sesko", position: "Striker", contribution: "32 main, 12 gol semua kompetisi", story: "Sesko tidak selalu starter, tetapi gol-golnya bernilai besar dalam fase Carrick, termasuk laga-laga penting perebutan Champions League." },
+      { name: "Matheus Cunha", position: "Forward/winger kiri", contribution: "35 main, 10 gol semua kompetisi", story: "Cunha memberi mobilitas dari kiri ke tengah dan menjadi pemain momen besar dalam beberapa kemenangan penting." },
+      { name: "Kobbie Mainoo", position: "Gelandang tengah", contribution: "30 main, 1 gol semua kompetisi", story: "Mainoo sempat kehilangan tempat di bawah Amorim, tetapi kembali menjadi bagian penting setelah Carrick datang." },
+      { name: "Harry Maguire", position: "Bek tengah", contribution: "25 main, 2 gol semua kompetisi", story: "Maguire mendapat kehidupan baru di bawah Carrick dan kembali dipercaya dalam laga-laga besar." },
+      { name: "Patrick Dorgu", position: "Sisi kiri", contribution: "28 main, 4 gol semua kompetisi", story: "Dorgu berkembang dari wing-back menjadi ancaman sisi kiri yang lebih langsung, termasuk mencetak gol penting di derby dan laga penutup." },
+      { name: "Casemiro", position: "Gelandang bertahan", contribution: "35 main, 9 gol semua kompetisi", story: "Mobilitasnya tidak lagi seperti masa puncak, tetapi gol bola mati dan pengalaman laga besarnya masih sangat berharga." }
+    ],
+    statistics: {
+      leaguePosition: "3rd Premier League",
+      matches: 40,
+      wins: 20,
+      draws: 12,
+      losses: 8,
+      goalsFor: 72,
+      goalsAgainst: 54,
+      topScorer: "Benjamin Sesko dan Bryan Mbeumo (12 gol semua kompetisi / 11 gol Premier League)",
+      topAssist: "Bruno Fernandes (21 assist Premier League)",
+      mostAppearances: "Luke Shaw (38 main), Bruno Fernandes (36+1), Diogo Dalot (31+5), Casemiro (33+2), Matheus Cunha (31+4), Bryan Mbeumo (31+3), Senne Lammens dan Amad Diallo (33)"
+    },
+    importantMoments: [
+      { month: "12 Juni 2025", title: "Matheus Cunha datang dari Wolves", description: "United memulai rebuild serangan dengan membeli Cunha dari Wolverhampton Wanderers.", impact: "Menjadi awal belanja besar lini depan 2025/26." },
+      { month: "21 Juli 2025", title: "Bryan Mbeumo bergabung", description: "Mbeumo datang dari Brentford dan mengambil nomor 19.", impact: "Memberi United ancaman kanan yang selama beberapa musim tidak stabil." },
+      { month: "9 Agustus 2025", title: "Benjamin Sesko menjadi striker baru", description: "United menyelesaikan transfer Sesko dari RB Leipzig.", impact: "Menambah profil nomor sembilan muda yang kemudian menjadi top skor bersama klub." },
+      { month: "27 Agustus 2025", title: "Tersingkir memalukan dari Grimsby", description: "United kalah adu penalti 11-12 dari Grimsby Town setelah bermain 2-2 di EFL Cup.", impact: "Membuat tekanan terhadap proyek Amorim membesar sangat cepat." },
+      { month: "1 September 2025", title: "Deadline day besar", description: "Senne Lammens datang, sementara Hojlund, Antony, Sancho, Garnacho, dan beberapa pemain lain keluar atau dipinjamkan.", impact: "Mengubah wajah skuad secara drastis." },
+      { month: "5 Januari 2026", title: "Ruben Amorim pergi", description: "United mengumumkan Amorim meninggalkan peran head coach dengan segera.", impact: "Mengakhiri proyek 3 bek Amorim dan membuka jalan untuk era baru." },
+      { month: "13 Januari 2026", title: "Michael Carrick kembali", description: "Carrick ditunjuk sebagai head coach setelah masa interim singkat Darren Fletcher.", impact: "Memulai Era awal Michael Carrick." },
+      { month: "17 Januari 2026", title: "United 2-0 Manchester City", description: "Mbeumo dan Dorgu mencetak gol saat United mengalahkan City.", impact: "Menjadi sinyal awal bahwa Carrick bisa membalikkan musim." },
+      { month: "Maret 2026", title: "United masuk kembali ke jalur Champions League", description: "Rangkaian hasil kuat di bawah Carrick membawa United naik ke zona tiga besar.", impact: "Mengubah target musim dari damage control menjadi finis top three." },
+      { month: "24 Mei 2026", title: "Bruno memecahkan rekor assist Premier League", description: "Bruno memberi assist ke-21 musim ini saat United menang 3-0 di Brighton.", impact: "Menjadi pencapaian individual terbesar United musim ini." },
+      { month: "24 Mei 2026", title: "Finis ketiga dipastikan", description: "United mengakhiri Premier League dengan rekor 20 menang, 11 seri, 7 kalah, dan 71 poin.", impact: "United kembali ke Champions League 2026/27." }
+    ],
+    additionalInfo: [
+      "Rekor liga United: 38 pertandingan, 20 menang, 11 seri, 7 kalah, gol 69:50, 71 poin, finis ketiga.",
+      "Rekor semua kompetisi: 40 pertandingan, 20 menang, 12 seri, 8 kalah, gol 72:54.",
+      "Rincian hasil semua kompetisi: Premier League 20-11-7, FA Cup 0-0-1, EFL Cup 0-1-0 secara 90 menit sebelum kalah adu penalti.",
+      "United tidak bermain di kompetisi Eropa pada 2025/26, sehingga musim kompetitif hanya berisi Premier League, FA Cup, dan EFL Cup.",
+      "Statistik penampilan dan gol skuad mengikuti tabel musim 2025/26 semua kompetisi: Shaw 38, Bruno 36+1, Dalot 31+5, Cunha 31+4, Mbeumo 31+3, Sesko 19+13, Lammens 33, dan Casemiro 33+2.",
+      "Assist pada tabel skuad memakai angka Premier League publik yang tersedia. PremierLeague.com mencatat Bruno Fernandes 21 assist, rekor satu musim liga; angka assist pemain lain mengikuti sumber statistik musim publik dan catatan yang diberikan.",
+      "Nomor skuad 2025/26 mengikuti United By Numbers: Bayindir 1, Dalot 2, Mazraoui 3, De Ligt 4, Maguire 5, Martinez 6, Mount 7, Bruno 8, Hojlund 9, Cunha 10, Zirkzee 11, Malacia 12, Dorgu 13, Yoro 15, Amad 16, Casemiro 18, Mbeumo 19, Heaton 22, Shaw 23, Onana 24, Ugarte 25, Heaven 26, Sesko 30, Lammens 31, Chido Obi 32, Mainoo 37, dan beberapa pemain akademi bernomor 38 ke atas.",
+      "Transfermarkt mencatat pengeluaran United 2025/26 sebesar EUR 246.70m dan pemasukan EUR 74.20m, sehingga neraca transfer sekitar EUR -172.50m.",
+      "Nilai transfer utama dalam euro: Sesko EUR 76.50m, Mbeumo EUR 75.00m, Cunha EUR 74.20m, dan Lammens EUR 21.00m.",
+      "Nilai keluar utama dalam euro: Garnacho EUR 46.20m, Antony EUR 22.00m, dan loan fee Hojlund EUR 6.00m.",
+      "FA Cup berakhir pada ronde ketiga setelah kalah 1-2 dari Brighton di Old Trafford.",
+      "EFL Cup berakhir pada ronde kedua setelah kalah adu penalti dari Grimsby Town.",
+      "Starting XI paling mewakili era Carrick: Lammens; Dalot, Maguire, Shaw atau Yoro, Dorgu atau Shaw; Casemiro, Mainoo; Mbeumo, Bruno, Cunha; Sesko.",
+      "Musim ini adalah musim pertama dalam data proyek yang ditempatkan di Era awal Michael Carrick."
+    ],
+    featured: true
   }
 ];
 
@@ -10413,22 +13653,55 @@ export const eraGroups: EraGroup[] = [
   {
     name: "Era Newton Heath",
     description: "Periode awal klub sebelum menjadi Manchester United.",
-    seasonIds: []
+    seasonIds: ["1878-79"]
+  },
+  {
+    name: "Era Ernest Mangnall",
+    description:
+      "Era awal kejayaan Manchester United dengan gelar liga pertama, FA Cup pertama, dan fondasi klub modern.",
+    seasonIds: ["1907-08"]
+  },
+  {
+    name: "Era masa sulit sebelum Busby",
+    description:
+      "Periode naik-turun klub sebelum kedatangan Matt Busby, termasuk krisis finansial, degradasi, dan masa perang.",
+    seasonIds: ["1930-31"]
+  },
+    {
+    name: "Era Busby Babes & Tragedi Munich",
+    description:
+      "Era generasi muda legendaris Busby Babes, ditandai tragedi Munich 1958 dan awal kebangkitan emosional klub.",
+    seasonIds: ["1957-58"]
   },
   {
     name: "Era Matt Busby",
-    description: "Fondasi identitas besar klub, Busby Babes, dan kejayaan Eropa.",
-    seasonIds: []
+    description:
+      "Fondasi identitas besar klub, Busby Babes, tragedi Munich, dan kejayaan Eropa.",
+    seasonIds: ["1967-68"]
+  },
+  {
+    name: "Era transisi pasca-Busby",
+    description:
+      "Masa sulit setelah Matt Busby mundur, ketika klub mencari penerus dan arah baru.",
+    seasonIds: ["1970-71"]
   },
   {
     name: "Era Tommy Docherty",
-    description: "Periode pembangunan ulang dan perubahan besar setelah masa Busby.",
-    seasonIds: []
+    description:
+      "Periode pembangunan ulang dan perubahan besar setelah masa Busby, termasuk promosi kembali dan FA Cup 1977.",
+    seasonIds: ["1976-77"]
+  },
+  {
+    name: "Era Dave Sexton",
+    description:
+      "Era stabilisasi setelah Tommy Docherty, dengan gaya bermain lebih hati-hati namun tanpa trofi besar.",
+    seasonIds: ["1979-80"]
   },
   {
     name: "Era Ron Atkinson",
-    description: "Era sebelum transisi ke kepemimpinan Sir Alex Ferguson.",
-    seasonIds: []
+    description:
+      "Era terakhir sebelum transisi ke kepemimpinan Sir Alex Ferguson, dengan dua gelar FA Cup.",
+    seasonIds: ["1984-85"]
   },
   {
     name: "Era awal Sir Alex Ferguson",
@@ -10455,18 +13728,35 @@ export const eraGroups: EraGroup[] = [
   },
   {
     name: "Era Ronaldo & Rooney",
-    description: "Era transisi menuju skuad juara Eropa 2008 dan akhir periode pertama Ronaldo.",
-    seasonIds: ["2001-02", "2002-03", "2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10"]
+    description:
+      "Era transisi menuju skuad juara Eropa 2008 dan akhir periode pertama Ronaldo.",
+    seasonIds: [
+      "2001-02",
+      "2002-03",
+      "2003-04",
+      "2004-05",
+      "2005-06",
+      "2006-07",
+      "2007-08",
+      "2008-09",
+      "2009-10"
+    ]
+  },
+  {
+    name: "Era akhir Sir Alex Ferguson",
+    description:
+      "Periode terakhir kepemimpinan Sir Alex Ferguson, ditutup dengan gelar Premier League 2012/13.",
+    seasonIds: ["2010-11", "2011-12", "2012-13"]
   },
   {
     name: "Era pasca Sir Alex Ferguson",
     description: "Masa pencarian identitas baru setelah 2012/13.",
-    seasonIds: []
+    seasonIds: ["2013-14", "2014-15"]
   },
   {
-    name: "Era modern",
-    description: "Periode kontemporer yang datanya bisa ditambahkan bertahap.",
-    seasonIds: []
+    name: "Era awal Michael Carrick",
+    description: "Masa berakhirnya kepelatihan Ruben Amorim dan digantikan oleh Michael Carrick.",
+    seasonIds: ["2025-26"]
   }
 ];
 
