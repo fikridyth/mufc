@@ -25,21 +25,21 @@ export function SeasonStatGrid({ statistics }: SeasonStatGridProps) {
     <>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {items.map(([label, value]) => (
-          <div key={label} className="rounded-lg border bg-white p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+          <div key={label} className="min-w-0 rounded-lg border bg-white p-4">
+            <p className="break-words text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
               {label}
             </p>
-            <p className="mt-2 text-lg font-black text-united-black">{value}</p>
+            <p className="mt-2 break-words text-lg font-black text-united-black">{value}</p>
           </div>
         ))}
       </div>
       <div className="grid gap-3 sm:grid-cols-1 lg:grid-cols-3">
         {itemsSecond.map(([label, value]) => (
-          <div key={label} className="rounded-lg border bg-white p-4">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
+          <div key={label} className="min-w-0 rounded-lg border bg-white p-4">
+            <p className="break-words text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
               {label}
             </p>
-            <p className="mt-2 text-base font-black text-united-black">{value}</p>
+            <p className="mt-2 break-words text-base font-black text-united-black">{value}</p>
           </div>
         ))}
       </div>

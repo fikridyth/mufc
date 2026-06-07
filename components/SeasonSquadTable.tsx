@@ -82,7 +82,7 @@ export function SeasonSquadTable({ players }: SeasonSquadTableProps) {
   }
 
   return (
-    <div className="max-h-[520px] overflow-auto rounded-lg border bg-card shadow-sm">
+    <div className="max-h-[520px] w-full max-w-full overflow-auto rounded-lg border bg-card shadow-sm">
       <Table className="min-w-[980px]">
         <TableHeader>
           <TableRow className="bg-muted/70 hover:bg-muted/70">

@@ -14,13 +14,13 @@ export function DetailSection({
   children
 }: DetailSectionProps) {
   return (
-    <section id={id} className="scroll-mt-20 space-y-5">
-      <div className="space-y-2">
+    <section id={id} className="min-w-0 scroll-mt-20 space-y-5 overflow-hidden">
+      <div className="min-w-0 space-y-2">
         <h2 className="text-2xl font-black text-united-black md:text-3xl">
           {title}
         </h2>
         {description ? (
-          <p className="max-w-3xl text-sm leading-6 text-muted-foreground">
+          <p className="max-w-3xl break-words text-sm leading-6 text-muted-foreground">
             {description}
           </p>
         ) : null}

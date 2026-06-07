@@ -88,9 +88,10 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
             </a>
           ))}
         </nav>
-        <div>
+        <div className="hidden shrink-0 sm:block">
           <p 
             className={[
+              "text-sm font-semibold",
               isLight
                 ? "hover:bg-muted hover:text-foreground"
                 : "hover:bg-white/10 hover:text-white"

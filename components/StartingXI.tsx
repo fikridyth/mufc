@@ -241,7 +241,7 @@ const positions = [
 
 export function StartingXI({ data }: StartingXIProps) {
   return (
-    <div className="overflow-hidden rounded-lg border bg-united-black text-white shadow-archive">
+    <div className="w-full max-w-full overflow-hidden rounded-lg border bg-united-black text-white shadow-archive">
       <div className="flex flex-col gap-3 border-b border-white/10 bg-[linear-gradient(135deg,#0b0b0d,#7f0611)] p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-united-gold">
@@ -254,7 +254,44 @@ export function StartingXI({ data }: StartingXIProps) {
         </Badge>
       </div>
 
-      <div className="overflow-x-auto bg-[#0d5c32] p-4 sm:p-6">
+      <div className="w-full max-w-full bg-[#0d5c32] p-3 sm:hidden">
+        <div className="grid gap-2">
+          {positions.map((position) => {
+            const playerName = data.players[position.key];
+            const photo = playerPhotos[playerName];
+
+            return (
+              <div
+                key={position.key}
+                className="flex min-w-0 items-center gap-3 rounded-md border border-white/15 bg-united-black/78 p-3 shadow-sm ring-1 ring-white/10"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-united-gold/70 bg-white/12 text-united-gold shadow-inner">
+                  {photo ? (
+                    <img
+                      src={photo}
+                      alt={playerName}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <UserRound className="h-5 w-5" />
+                  )}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <Badge variant="gold" className="bg-united-gold text-united-black">
+                    {labels[position.key]}
+                  </Badge>
+                  <p className="mt-1 truncate text-sm font-bold">
+                    {playerName}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="hidden overflow-x-auto bg-[#0d5c32] p-4 sm:block sm:p-6">
         <div className="relative aspect-[16/9] min-w-[960px] overflow-hidden rounded-lg bg-[linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.09)_0_18%,transparent_18%_36%,rgba(255,255,255,0.08)_36%_54%,transparent_54%_72%,rgba(255,255,255,0.08)_72%_100%),linear-gradient(90deg,#146b3a,#0b552f)] bg-[size:46px_46px,100%_100%,100%_100%]">
           <div className="absolute inset-4 rounded-lg border-2 border-white/28" />
           <div className="absolute inset-y-4 left-1/2 w-0.5 -translate-x-1/2 bg-white/25" />

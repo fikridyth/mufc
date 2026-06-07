@@ -57,7 +57,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
   }
 
   return (
-    <div className="max-h-[360px] overflow-auto rounded-lg border bg-card shadow-sm">
+    <div className="max-h-[360px] w-full max-w-full overflow-auto rounded-lg border bg-card shadow-sm">
       <Table className="min-w-[740px]">
         <TableHeader>
           <TableRow className="bg-muted/70 hover:bg-muted/70">

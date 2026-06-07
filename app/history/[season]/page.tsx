@@ -76,7 +76,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
       : undefined;
 
   return (
-    <main className="bg-background pb-28">
+    <main className="overflow-x-hidden bg-background pb-28">
       <HistoryFixedHeader seasonLabel={season.label} seasonEra={season.era} />
 
       <section className="relative mb-2 overflow-hidden bg-united-black text-white">
@@ -86,8 +86,8 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
         <div className="absolute -right-4 top-28 h-44 w-44 rounded-full border border-united-gold/25" />
 
         <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-16 sm:px-6 lg:px-8">
-          <div className="grid gap-8 py-10 lg:grid-cols-[1fr_390px] lg:items-end">
-            <div className="space-y-7">
+          <div className="grid min-w-0 gap-8 py-10 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-end">
+            <div className="min-w-0 space-y-7">
               <div className="flex flex-wrap gap-2">
                 {season.trophies.length ? (
                   season.trophies.map((trophy) => (
@@ -102,14 +102,14 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 )}
               </div>
               <div className="space-y-4">
-                <p className="inline-flex items-center gap-2 text-base font-bold uppercase tracking-[0.22em] text-united-gold">
+                <p className="inline-flex max-w-full items-center gap-2 break-words text-base font-bold uppercase tracking-[0.16em] text-united-gold sm:tracking-[0.22em]">
                   <Sparkles className="h-4 w-4" />
                   {season.era}
                 </p>
-                <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
+                <h1 className="max-w-3xl break-words text-3xl font-black leading-tight tracking-tight md:text-5xl">
                   {season.title}
                 </h1>
-                <p className="max-w-3xl text-lg leading-8 text-white/76">
+                <p className="max-w-3xl break-words text-lg leading-8 text-white/76">
                   {season.summary}
                 </p>
               </div>
@@ -162,7 +162,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto grid min-w-0 max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:px-8">
         <DetailSection
           id="statistik"
           title="Statistik musim"
@@ -184,12 +184,12 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                   className="overflow-hidden border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-archive"
                 >
                   <div className="h-1 bg-gradient-to-r from-united-red to-united-gold" />
-                  <CardContent className="flex gap-4 p-5">
+                  <CardContent className="flex min-w-0 gap-4 p-5">
                     <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-united-gold/20 text-united-red">
                       <BookOpenText className="h-4 w-4" />
                     </span>
-                    <div>
-                      <p className="text-sm leading-6 text-foreground/80">
+                    <div className="min-w-0">
+                      <p className="break-words text-sm leading-6 text-foreground/80">
                         {index + 1}. {story}
                       </p>
                     </div>
@@ -253,10 +253,12 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                       {player.position}
                     </Badge>
                     <CardTitle>{player.name}</CardTitle>
-                    <CardDescription>{player.contribution}</CardDescription>
+                    <CardDescription className="break-words">
+                      {player.contribution}
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm leading-6 text-muted-foreground">
+                    <p className="break-words text-sm leading-6 text-muted-foreground">
                       {player.story}
                     </p>
                   </CardContent>
@@ -274,16 +276,16 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
               {season.additionalInfo.map((info, index) => (
                 <div
                   key={`${index}-${info}`}
-                  className="flex gap-4 rounded-lg border bg-card p-5 text-sm leading-6 shadow-sm"
+                  className="flex min-w-0 gap-4 rounded-lg border bg-card p-5 text-sm leading-6 shadow-sm"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-united-gold/20 text-united-red">
                     <Star className="h-4 w-4" />
                   </span>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                       Trivia {index + 1}
                     </p>
-                    <p className="mt-1 text-foreground/80">
+                    <p className="mt-1 break-words text-foreground/80">
                       {info}
                     </p>
                   </div>
@@ -297,10 +299,10 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
 
       </div>
 
-      <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-united-gold/25 bg-gradient-to-r from-united-black/95 via-united-red/95 to-united-black/95 px-3 py-3 shadow-[0_-14px_38px_rgba(10,10,12,0.34)] backdrop-blur-xl">
+      <footer className="fixed inset-x-0 bottom-0 z-50 border-t border-united-gold/25 bg-gradient-to-r from-united-black/95 via-united-red/95 to-united-black/95 px-2 py-3 shadow-[0_-14px_38px_rgba(10,10,12,0.34)] backdrop-blur-xl sm:px-3">
         <nav
           aria-label="Navigasi musim"
-          className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3"
+          className="mx-auto grid w-full min-w-0 max-w-7xl grid-cols-[6.25rem_minmax(0,1fr)_6.25rem] items-center gap-1 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] sm:gap-3"
         >
           <div className="flex justify-start">
             {previousSeason ? (
@@ -308,12 +310,16 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 asChild
                 variant="outline"
                 size="sm"
-                className="max-w-[42vw] justify-start rounded-full border-white/20 bg-white/10 px-3 text-left font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:px-4"
+                className="h-9 w-full min-w-0 justify-center overflow-hidden rounded-full border-white/20 bg-white/10 px-1.5 text-left font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:w-auto sm:max-w-[42vw] sm:justify-start sm:px-4"
               >
-                <Link href={`/history/${previousSeason.id}`}>
+                <Link
+                  href={`/history/${previousSeason.id}`}
+                  aria-label={`Musim sebelumnya: ${previousSeason.label}`}
+                >
                   <ArrowLeft className="h-4 w-4 shrink-0" />
-                  <span className="min-w-0 truncate">
-                    Sebelumnya - {previousSeason.label}
+                  <span className="whitespace-nowrap text-[11px] sm:min-w-0 sm:truncate sm:text-sm">
+                    <span className="hidden sm:inline">Sebelumnya - </span>
+                    {previousSeason.label}
                   </span>
                 </Link>
               </Button>
@@ -322,7 +328,8 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 variant="outline"
                 size="sm"
                 disabled
-                className="justify-start rounded-full border-white/10 bg-white/5 px-3 text-left text-white/50 sm:px-4"
+                aria-label="Tidak ada musim sebelumnya"
+                className="h-9 w-full justify-center overflow-hidden rounded-full border-white/10 bg-white/5 px-1.5 text-left text-white/50 sm:w-auto sm:justify-start sm:px-4"
               >
                 <ArrowLeft className="h-4 w-4 shrink-0" />
                 <span className="hidden sm:inline">Sebelumnya</span>
@@ -330,7 +337,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
             )}
           </div>
 
-          <p className="rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-center text-xs font-black uppercase tracking-[0.22em] text-united-gold shadow-sm">
+          <p className="min-w-0 justify-self-center rounded-full border border-white/15 bg-white/10 px-2 py-1.5 text-center text-[11px] font-black uppercase tracking-[0.08em] text-united-gold shadow-sm sm:px-4 sm:text-xs sm:tracking-[0.22em]">
             @beta
           </p>
 
@@ -340,11 +347,15 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 asChild
                 variant="outline"
                 size="sm"
-                className="max-w-[42vw] justify-end rounded-full border-white/20 bg-white/10 px-3 text-right font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:px-4"
+                className="h-9 w-full min-w-0 justify-center overflow-hidden rounded-full border-white/20 bg-white/10 px-1.5 text-right font-bold text-white shadow-sm hover:border-united-gold/60 hover:bg-white/20 hover:text-united-gold sm:w-auto sm:max-w-[42vw] sm:justify-end sm:px-4"
               >
-                <Link href={`/history/${nextSeason.id}`}>
-                  <span className="min-w-0 truncate">
-                    Selanjutnya - {nextSeason.label}
+                <Link
+                  href={`/history/${nextSeason.id}`}
+                  aria-label={`Musim selanjutnya: ${nextSeason.label}`}
+                >
+                  <span className="whitespace-nowrap text-[11px] sm:min-w-0 sm:truncate sm:text-sm">
+                    <span className="hidden sm:inline">Selanjutnya - </span>
+                    {nextSeason.label}
                   </span>
                   <ArrowRight className="h-4 w-4 shrink-0" />
                 </Link>
@@ -354,7 +365,8 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
                 variant="outline"
                 size="sm"
                 disabled
-                className="justify-end rounded-full border-white/10 bg-white/5 px-3 text-right text-white/50 sm:px-4"
+                aria-label="Tidak ada musim selanjutnya"
+                className="h-9 w-full justify-center overflow-hidden rounded-full border-white/10 bg-white/5 px-1.5 text-right text-white/50 sm:w-auto sm:justify-end sm:px-4"
               >
                 <span className="hidden sm:inline">Selanjutnya</span>
                 <ArrowRight className="h-4 w-4 shrink-0" />
