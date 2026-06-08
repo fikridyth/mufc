@@ -29,7 +29,7 @@ export function SeasonStatGrid({ statistics }: SeasonStatGridProps) {
             <p className="break-words text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">
               {label}
             </p>
-            <p className="mt-2 break-words text-lg font-black text-united-black">{value}</p>
+            <p className="mt-2 break-words text-lg font-black text-united-black">{String(value) ?? ""}</p>
           </div>
         ))}
       </div>

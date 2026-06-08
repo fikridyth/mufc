@@ -58,13 +58,13 @@ export function TransferTable({ records, type }: TransferTableProps) {
 
   return (
     <div className="max-h-[360px] w-full max-w-full overflow-auto rounded-lg border bg-card shadow-sm">
-      <Table className="min-w-[740px]">
+      <Table className="min-w-[980px]">
         <TableHeader>
           <TableRow className="bg-muted/70 hover:bg-muted/70">
-            <TableHead className="sticky top-0 z-20 w-16 bg-muted">
+            <TableHead className="sticky left-0 top-0 z-40 w-16 bg-muted">
               No
             </TableHead>
-            <TableHead className="sticky top-0 z-20 bg-muted">
+            <TableHead className="sticky left-0 top-0 z-40 min-w-42 bg-muted">
               <SortableHeader
                 active={sortKey === "player"}
                 direction={sortDirection}
@@ -72,7 +72,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("player")}
               />
             </TableHead>
-            <TableHead className="sticky top-0 z-20 bg-muted">
+            <TableHead className="sticky top-0 z-30 bg-muted">
               <SortableHeader
                 active={sortKey === "club"}
                 direction={sortDirection}
@@ -80,7 +80,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("club")}
               />
             </TableHead>
-            <TableHead className="sticky top-0 z-20 bg-muted">
+            <TableHead className="sticky top-0 z-30 bg-muted">
               <SortableHeader
                 active={sortKey === "fee"}
                 direction={sortDirection}
@@ -88,7 +88,7 @@ export function TransferTable({ records, type }: TransferTableProps) {
                 onClick={() => handleSort("fee")}
               />
             </TableHead>
-            <TableHead className="sticky top-0 z-20 bg-muted">
+            <TableHead className="sticky top-0 z-30 min-w-80 bg-muted">
               <SortableHeader
                 active={sortKey === "note"}
                 direction={sortDirection}
@@ -100,20 +100,19 @@ export function TransferTable({ records, type }: TransferTableProps) {
         </TableHeader>
         <TableBody>
           {sortedRecords.map((record, index) => (
-            <TableRow key={`${record.player}-${record.date}-${record.note}`}>
-              <TableCell className="font-medium text-muted-foreground">
+            <TableRow
+              key={`${record.player}-${record.date}-${record.note}`}
+              className="group"
+            >
+              <TableCell className="sticky left-0 z-20 w-16 bg-card font-medium text-muted-foreground group-hover:bg-muted/50">
                 {index + 1}
               </TableCell>
-              <TableCell className="font-semibold text-foreground">
+              <TableCell className="sticky left-0 z-20 min-w-42 bg-card font-semibold text-foreground group-hover:bg-muted/50">
                 {record.player}
               </TableCell>
-              <TableCell>
-                {formatTableValue(type === "in" ? record.from : record.to)}
-              </TableCell>
+              <TableCell>{formatTableValue(type === "in" ? record.from : record.to)}</TableCell>
               <TableCell>{formatFee(record.fee)}</TableCell>
-              <TableCell className="max-w-md text-muted-foreground">
-                {formatTableValue(record.note)}
-              </TableCell>
+              <TableCell className="max-w-24">{formatTableValue(record.note)}</TableCell>
             </TableRow>
           ))}
         </TableBody>

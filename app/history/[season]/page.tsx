@@ -223,7 +223,7 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           title="Transfer"
           description="Transfer masuk dan keluar."
         >
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="space-y-3">
               <h3 className="text-lg font-black text-foreground">Transfer masuk</h3>
               <TransferTable records={season.transfersIn} type="in" />
