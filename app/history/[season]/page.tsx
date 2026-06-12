@@ -207,7 +207,11 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           title="Starting eleven"
           description="Susunan visual berdasarkan pola starter yang paling kuat sepanjang musim."
         >
-          <StartingXI data={season.commonStartingXI} />
+          <StartingXI
+            data={season.commonStartingXI}
+            seasonId={season.id}
+            squad={season.squad}
+          />
         </DetailSection>
 
         <DetailSection

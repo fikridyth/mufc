@@ -13700,7 +13700,7 @@ export const seasons: Season[] = [
       { player: "Eric Bailly", from: "Villarreal", fee: "Undisclosed", date: "6 Juni 2016", note: "Pembelian pertama Mourinho; bek cepat dan agresif yang langsung terlihat menjanjikan." },
       { player: "Zlatan Ibrahimovic", from: "Paris Saint-Germain", fee: "Free transfer", date: "1 Juli 2016", note: "Datang gratis tetapi menjadi top skor klub dan figur pemimpin utama." },
       { player: "Henrikh Mkhitaryan", from: "Borussia Dortmund", fee: "Undisclosed", date: "6 Juli 2016", note: "Playmaker Armenia yang kemudian mencetak gol di final Europa League." },
-      { player: "Paul Pogba", from: "Juventus", fee: "GBP 89m", date: "9 Agustus 2016", note: "Kembali ke United sebagai pemain termahal dunia saat itu." },
+      { player: "Paul Pogba", from: "Juventus", fee: "EUR 105.00m", date: "9 Agustus 2016", note: "Transfermarkt mencatat EUR 105.00m; sumber Inggris saat itu menyebut sekitar GBP 89m." },
       { player: "Joel Pereira", from: "Belenenses", fee: "End of loan", date: "Januari 2017", note: "Kembali dari pinjaman dan mendapat menit senior pada akhir musim." },
       { player: "Axel Tuanzebe", from: "Manchester United Academy", fee: "-", date: "2016/17", note: "Bek akademi yang mendapat debut senior di bawah Mourinho." },
       { player: "Scott McTominay", from: "Manchester United Academy", fee: "-", date: "2016/17", note: "Gelandang akademi yang mulai masuk tim utama pada akhir musim." },
@@ -14315,7 +14315,7 @@ export const seasons: Season[] = [
     commonStartingXI: {
       formation: "4-2-3-1",
       players: {
-        GK: "David de Gea / Dean Henderson",
+        GK: "David de Gea",
         RB: "Aaron Wan-Bissaka",
         CB1: "Victor Lindelof",
         CB2: "Harry Maguire",
@@ -14323,9 +14323,9 @@ export const seasons: Season[] = [
         RM: "Mason Greenwood",
         CM1: "Fred",
         CM2: "Scott McTominay",
-        LM: "Marcus Rashford / Paul Pogba",
+        LM: "Marcus Rashford",
         ST1: "Bruno Fernandes",
-        ST2: "Edinson Cavani / Anthony Martial"
+        ST2: "Edinson Cavani"
       }
     },
     keyPlayers: [
@@ -14460,14 +14460,14 @@ export const seasons: Season[] = [
       formation: "4-2-3-1 / 4-3-3",
       players: {
         GK: "David de Gea",
-        RB: "Diogo Dalot / Aaron Wan-Bissaka",
+        RB: "Diogo Dalot",
         CB1: "Raphael Varane",
-        CB2: "Harry Maguire / Victor Lindelof",
-        LB: "Luke Shaw / Alex Telles",
+        CB2: "Harry Maguire",
+        LB: "Luke Shaw",
         RM: "Jadon Sancho",
         CM1: "Scott McTominay",
         CM2: "Fred",
-        LM: "Anthony Elanga / Marcus Rashford",
+        LM: "Anthony Elanga",
         ST1: "Bruno Fernandes",
         ST2: "Cristiano Ronaldo"
       }
@@ -14621,7 +14621,7 @@ export const seasons: Season[] = [
       formation: "4-2-3-1",
       players: {
         GK: "David de Gea",
-        RB: "Diogo Dalot / Aaron Wan-Bissaka",
+        RB: "Diogo Dalot",
         CB1: "Raphael Varane",
         CB2: "Lisandro Martinez",
         LB: "Luke Shaw",
@@ -14630,7 +14630,7 @@ export const seasons: Season[] = [
         CM2: "Christian Eriksen",
         LM: "Marcus Rashford",
         ST1: "Bruno Fernandes",
-        ST2: "Anthony Martial / Wout Weghorst"
+        ST2: "Anthony Martial"
       }
     },
     keyPlayers: [
@@ -14784,16 +14784,16 @@ export const seasons: Season[] = [
       formation: "4-2-3-1",
       players: {
         GK: "Andre Onana",
-        RB: "Diogo Dalot / Aaron Wan-Bissaka",
-        CB1: "Harry Maguire / Raphael Varane",
-        CB2: "Lisandro Martinez / Jonny Evans",
-        LB: "Luke Shaw / Aaron Wan-Bissaka",
-        RM: "Alejandro Garnacho / Antony",
-        CM1: "Casemiro / Sofyan Amrabat",
+        RB: "Diogo Dalot",
+        CB1: "Harry Maguire",
+        CB2: "Lisandro Martinez",
+        LB: "Luke Shaw",
+        RM: "Alejandro Garnacho",
+        CM1: "Casemiro",
         CM2: "Kobbie Mainoo",
-        LM: "Marcus Rashford / Alejandro Garnacho",
+        LM: "Marcus Rashford",
         ST1: "Bruno Fernandes",
-        ST2: "Rasmus Hojlund / Scott McTominay"
+        ST2: "Rasmus Hojlund"
       }
     },
     keyPlayers: [
@@ -14910,14 +14910,14 @@ export const seasons: Season[] = [
       { name: "Chido Obi", shirtNumber: 56, position: "Striker", age: 17, country: "Denmark", appearances: 8, goals: 0, assists: 0, status: "Pemain muda" }
     ],
     transfersIn: [
-      { player: "Joshua Zirkzee", from: "Bologna", fee: "GBP 36.5m", date: "14 Juli 2024", note: "Forward teknikal yang bisa bermain sebagai striker atau second striker." },
-      { player: "Leny Yoro", from: "Lille", fee: "GBP 52m", date: "18 Juli 2024", note: "Bek muda jangka panjang; cedera pramusim membuat adaptasinya tertunda." },
-      { player: "Matthijs de Ligt", from: "Bayern Munich", fee: "GBP 42m", date: "13 Agustus 2024", note: "Bek tengah berpengalaman yang pernah bekerja dengan Ten Hag di Ajax." },
-      { player: "Noussair Mazraoui", from: "Bayern Munich", fee: "GBP 15m", date: "13 Agustus 2024", note: "Full-back fleksibel yang kemudian sering dimainkan sebagai wing-back atau bek sisi kanan." },
-      { player: "Manuel Ugarte", from: "Paris Saint-Germain", fee: "GBP 51m", date: "30 Agustus 2024", note: "Gelandang bertahan agresif untuk memberi duel dan ball-winning di tengah." },
+      { player: "Joshua Zirkzee", from: "Bologna", fee: "EUR 42.50m", date: "14 Juli 2024", note: "Transfermarkt mencatat EUR 42.50m; forward teknikal yang bisa bermain sebagai striker atau second striker." },
+      { player: "Leny Yoro", from: "Lille", fee: "EUR 62.00m", date: "18 Juli 2024", note: "Transfermarkt mencatat EUR 62.00m; bek muda jangka panjang yang sempat terganggu cedera pramusim." },
+      { player: "Matthijs de Ligt", from: "Bayern Munich", fee: "EUR 45.00m", date: "13 Agustus 2024", note: "Transfermarkt mencatat EUR 45.00m; bek tengah berpengalaman yang pernah bekerja dengan Ten Hag di Ajax." },
+      { player: "Noussair Mazraoui", from: "Bayern Munich", fee: "EUR 15.00m", date: "13 Agustus 2024", note: "Transfermarkt mencatat EUR 15.00m; full-back fleksibel yang kemudian sering dimainkan sebagai wing-back atau bek sisi kanan." },
+      { player: "Manuel Ugarte", from: "Paris Saint-Germain", fee: "EUR 50.00m", date: "30 Agustus 2024", note: "Transfermarkt mencatat EUR 50.00m; gelandang bertahan agresif untuk memberi duel dan ball-winning di tengah." },
       { player: "Sekou Kone", from: "Guidars FC", fee: "Undisclosed", date: "30 Agustus 2024", note: "Gelandang muda Mali untuk jalur pengembangan." },
-      { player: "Ayden Heaven", from: "Arsenal", fee: "GBP 1.5m", date: "1 Februari 2025", note: "Bek tengah muda yang datang pada bursa Januari." },
-      { player: "Patrick Dorgu", from: "Lecce", fee: "GBP 25m", date: "2 Februari 2025", note: "Wing-back kiri yang profilnya cocok untuk sistem Amorim." },
+      { player: "Ayden Heaven", from: "Arsenal", fee: "EUR 1.80m", date: "1 Februari 2025", note: "Transfermarkt mencatat sekitar EUR 1.80m; bek tengah muda yang datang pada bursa Januari." },
+      { player: "Patrick Dorgu", from: "Lecce", fee: "EUR 30.00m", date: "2 Februari 2025", note: "Transfermarkt mencatat EUR 30.00m; wing-back kiri yang profilnya cocok untuk sistem Amorim." },
       { player: "Chido Obi", from: "Arsenal Academy", fee: "-", date: "2024/25", note: "Striker muda produktif yang masuk jalur akademi dan mendapat menit senior." }
     ],
     transfersOut: [
@@ -14941,16 +14941,16 @@ export const seasons: Season[] = [
       formation: "3-4-2-1 / 4-2-3-1",
       players: {
         GK: "Andre Onana",
-        RB: "Noussair Mazraoui / Leny Yoro",
+        RB: "Noussair Mazraoui",
         CB1: "Matthijs de Ligt",
-        CB2: "Lisandro Martinez / Harry Maguire",
-        LB: "Diogo Dalot / Patrick Dorgu",
-        RM: "Amad Diallo / Noussair Mazraoui",
+        CB2: "Lisandro Martinez",
+        LB: "Diogo Dalot",
+        RM: "Amad Diallo",
         CM1: "Manuel Ugarte",
-        CM2: "Kobbie Mainoo / Bruno Fernandes",
-        LM: "Patrick Dorgu / Diogo Dalot",
-        ST1: "Bruno Fernandes / Alejandro Garnacho",
-        ST2: "Rasmus Hojlund / Joshua Zirkzee"
+        CM2: "Kobbie Mainoo",
+        LM: "Patrick Dorgu",
+        ST1: "Bruno Fernandes",
+        ST2: "Rasmus Hojlund"
       }
     },
     keyPlayers: [

@@ -1,9 +1,11 @@
-import type { StartingXI as StartingXIType } from "@/data/seasons";
+import type { SquadPlayer, StartingXI as StartingXIType } from "@/data/seasons";
 import { UserRound } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface StartingXIProps {
   data: StartingXIType;
+  seasonId: string;
+  squad: SquadPlayer[];
 }
 
 const labels: Record<string, string> = {
@@ -201,6 +203,64 @@ const playerPhotos: Record<string, string> = {
     "https://img.a.transfermarkt.technology/portrait/header/39679-1549036391.jpg?lm=1",
   "Angel Di Maria":
     "https://img.a.transfermarkt.technology/portrait/header/45320-1700648952.jpg?lm=1",
+  "Zlatan Ibrahimovic":
+    "https://img.a.transfermarkt.technology/portrait/header/3455-1579506060.jpg?lm=1",
+  "Paul Pogba":
+    "https://img.a.transfermarkt.technology/portrait/header/122153-1764059298.jpg?lm=1",
+  "Marcus Rashford":
+    "https://img.a.transfermarkt.technology/portrait/header/258923-1674473054.jpg?lm=1",
+  "Anthony Martial":
+    "https://img.a.transfermarkt.technology/portrait/header/182877-1716885173.jpg?lm=1",
+  "Edinson Cavani":
+    "https://img.a.transfermarkt.technology/portrait/header/48280-1739899618.jpg?lm=1",
+  "Eric Bailly":
+    "https://img.a.transfermarkt.technology/portrait/header/286384-1696075364.png?lm=1",
+  "Jesse Lingard":
+    "https://img.a.transfermarkt.technology/portrait/header/141660-1697878438.jpg?lm=1",
+  "Romelu Lukaku":
+    "https://img.a.transfermarkt.technology/portrait/header/96341-1661780981.jpg?lm=1",
+  "Nemanja Matic":
+    "https://img.a.transfermarkt.technology/portrait/header/74683-1655212906.jpg?lm=1",
+  "Victor Lindelof":
+    "https://img.a.transfermarkt.technology/portrait/header/184573-1695244778.jpg?lm=1",
+  "Scott McTominay":
+    "https://img.a.transfermarkt.technology/portrait/header/315969-1780932470.jpg?lm=1",
+  "Matteo Darmian":
+    "https://img.a.transfermarkt.technology/portrait/header/54906-1695027410.jpg?lm=1",
+  "Morgan Schneiderlin":
+    "https://img.a.transfermarkt.technology/portrait/header/56818-1664978433.jpg?lm=1",
+  "Fred":
+    "https://img.a.transfermarkt.technology/portrait/header/191614-1765458332.png?lm=1",
+  "Christian Eriksen":
+    "https://img.a.transfermarkt.technology/portrait/header/69633-1718628122.jpg?lm=1",
+  "Aaron Wan-Bissaka":
+    "https://img.a.transfermarkt.technology/portrait/header/477758-1769112496.jpg?lm=1",
+  "Jadon Sancho":
+    "https://img.a.transfermarkt.technology/portrait/header/401173-1688564217.jpg?lm=1",
+  "Mason Greenwood":
+    "https://img.a.transfermarkt.technology/portrait/header/532826-1693987766.jpg?lm=1",
+  "Antony":
+    "https://img.a.transfermarkt.technology/portrait/header/602105-1758783018.jpg?lm=1",
+  "Andre Onana":
+    "https://img.a.transfermarkt.technology/portrait/header/234509-1769612568.jpg?lm=1",
+  "Raphael Varane":
+    "https://img.a.transfermarkt.technology/portrait/header/164770-1727257324.jpg?lm=1",
+  "Lisandro Martinez":
+    "https://img.a.transfermarkt.technology/portrait/header/480762-1680681507.jpg?lm=1",
+  "Rasmus Hojlund":
+    "https://img.a.transfermarkt.technology/portrait/header/610442-1757931324.jpg?lm=1",
+  "Anthony Elanga":
+    "https://img.a.transfermarkt.technology/portrait/header/583189-1700739021.jpg?lm=1",
+  "Amad Diallo":
+    "https://img.a.transfermarkt.technology/portrait/header/536835-1747857754.jpg?lm=1",
+  "Alejandro Garnacho":
+    "https://img.a.transfermarkt.technology/portrait/header/811779-1703629085.jpg?lm=1",
+  "Manuel Ugarte":
+    "https://img.a.transfermarkt.technology/portrait/header/476701-1715107512.jpg?lm=1",
+  "Matthijs de Ligt":
+    "https://img.a.transfermarkt.technology/portrait/header/326031-1700659567.jpg?lm=1",
+  "Noussair Mazraoui":
+    "https://img.a.transfermarkt.technology/portrait/header/340456-1700207898.jpg?lm=1",
   "Senne Lammens":
     "https://img.a.transfermarkt.technology/portrait/header/503883-1755675220.jpg?lm=1",
   "Luke Shaw":
@@ -222,7 +282,9 @@ const playerPhotos: Record<string, string> = {
   "Bruno Fernandes":
     "https://img.a.transfermarkt.technology/portrait/header/240306-1683882766.jpg?lm=1",
   "Benjamin Sesko":
-    "https://img.a.transfermarkt.technology/portrait/header/627442-1779803478.jpg?lm=1"
+    "https://img.a.transfermarkt.technology/portrait/header/627442-1779803478.jpg?lm=1",
+  "Patrick Dorgu":
+    "https://img.a.transfermarkt.technology/portrait/header/926952-1747857569.jpg?lm=1"
 };
 
 const positions = [
@@ -239,7 +301,39 @@ const positions = [
   { key: "ST2", x: 82, y: 64 }
 ] as const;
 
-export function StartingXI({ data }: StartingXIProps) {
+const positions2 = [
+  { key: "GK", x: 8, y: 50 },
+  { key: "LB", x: 28, y: 14 },
+  { key: "CB1", x: 28, y: 38 },
+  { key: "CB2", x: 28, y: 62 },
+  { key: "RB", x: 28, y: 86 },
+  { key: "CM1", x: 47, y: 30 },
+  { key: "CM2", x: 47, y: 70 },
+  { key: "ST1", x: 64, y: 50 },
+  { key: "LM", x: 80, y: 18 },
+  { key: "ST2", x: 84, y: 50 },
+  { key: "RM", x: 80, y: 82 }
+] as const;
+
+const labels2: Record<string, string> = {
+  ...labels,
+  ST1: "CAM",
+  LM: "LW",
+  RM: "RW"
+};
+
+function getShirtNumber(shirtNumber: SquadPlayer["shirtNumber"] | undefined, index: number) {
+  return shirtNumber && shirtNumber !== "-" ? shirtNumber : index + 1;
+}
+
+export function StartingXI({ data, seasonId, squad }: StartingXIProps) {
+  const seasonStartYear = Number(seasonId.split("-")[0]);
+  const activePositions = seasonStartYear >= 2007 ? positions2 : positions;
+  const activeLabels = seasonStartYear >= 2007 ? labels2 : labels;
+  const shirtNumbers = new Map(
+    squad.map((player) => [player.name, player.shirtNumber])
+  );
+
   return (
     <div className="w-full max-w-full overflow-hidden rounded-lg border bg-united-black text-white shadow-archive">
       <div className="flex flex-col gap-3 border-b border-white/10 bg-[linear-gradient(135deg,#0b0b0d,#7f0611)] p-5 sm:flex-row sm:items-center sm:justify-between">
@@ -256,9 +350,10 @@ export function StartingXI({ data }: StartingXIProps) {
 
       <div className="w-full max-w-full bg-[#0d5c32] p-3 sm:hidden">
         <div className="grid gap-2">
-          {positions.map((position) => {
+          {activePositions.map((position, index) => {
             const playerName = data.players[position.key];
             const photo = playerPhotos[playerName];
+            const shirtNumber = getShirtNumber(shirtNumbers.get(playerName), index);
 
             return (
               <div
@@ -278,9 +373,16 @@ export function StartingXI({ data }: StartingXIProps) {
                   )}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <Badge variant="gold" className="bg-united-gold text-united-black">
-                    {labels[position.key]}
-                  </Badge>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="gold" className="bg-united-gold text-united-black">
+                      {activeLabels[position.key]}
+                    </Badge>
+                    {shirtNumber ? (
+                      <Badge variant="gold" className="bg-united-gold text-united-black">
+                        #{shirtNumber}
+                      </Badge>
+                    ) : null}
+                  </div>
                   <p className="mt-1 truncate text-sm font-bold">
                     {playerName}
                   </p>
@@ -299,9 +401,10 @@ export function StartingXI({ data }: StartingXIProps) {
           <div className="absolute bottom-1/2 left-4 h-44 w-20 translate-y-1/2 rounded-r-lg border-y-2 border-r-2 border-white/25" />
           <div className="absolute bottom-1/2 right-4 h-44 w-20 translate-y-1/2 rounded-l-lg border-y-2 border-l-2 border-white/25" />
 
-          {positions.map((position) => {
+          {activePositions.map((position, index) => {
             const playerName = data.players[position.key];
             const photo = playerPhotos[playerName];
+            const shirtNumber = getShirtNumber(shirtNumbers.get(playerName), index);
 
             return (
               <div
@@ -322,9 +425,16 @@ export function StartingXI({ data }: StartingXIProps) {
                       <UserRound className="h-6 w-6" />
                     )}
                   </span>
-                  <span className="mt-3 rounded-full bg-united-gold px-2 py-0.5 text-[10px] font-black text-united-black">
-                    {labels[position.key]}
-                  </span>
+                  <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5">
+                    <span className="rounded-full bg-united-gold px-2 py-0.5 text-[10px] font-black text-united-black">
+                      {activeLabels[position.key]}
+                    </span>
+                    {shirtNumber ? (
+                      <span className="rounded-full bg-united-gold px-2 py-0.5 text-[10px] font-black text-united-black">
+                        #{shirtNumber}
+                      </span>
+                    ) : null}
+                  </div>
                 </div>
                 <p className="mt-3 text-sm font-bold leading-5">
                   {playerName}
