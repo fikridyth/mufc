@@ -18,6 +18,7 @@ export function SearchAndFilter({ seasons, eras }: SearchAndFilterProps) {
   const [query, setQuery] = useState("");
   const [selectedEra, setSelectedEra] = useState<SeasonEra | "Semua">("Semua");
   const [isLoading, setIsLoading] = useState(false);
+  const hasActiveSearch = query.trim().length > 0 || selectedEra !== "Semua";
 
   useEffect(() => {
     setIsLoading(true);
@@ -94,7 +95,11 @@ export function SearchAndFilter({ seasons, eras }: SearchAndFilterProps) {
         </div>
         <div className="mt-4 flex items-center justify-between gap-4 text-sm text-muted-foreground">
           <span>
-            {isLoading ? "Memfilter data..." : `${filteredSeasons.length} musim ditemukan`}
+            {hasActiveSearch
+              ? isLoading
+                ? "Memfilter data..."
+                : `${filteredSeasons.length} musim ditemukan`
+              : "Lakukan search atau pilih filter untuk menampilkan arsip."}
           </span>
           {selectedEra !== "Semua" ? (
             <Badge variant="gold">{selectedEra}</Badge>
@@ -102,7 +107,14 @@ export function SearchAndFilter({ seasons, eras }: SearchAndFilterProps) {
         </div>
       </div>
 
-      {filteredSeasons.length ? (
+      {!hasActiveSearch ? (
+        <div className="mt-8 rounded-lg border border-dashed bg-white p-10 text-center">
+          <p className="text-lg font-bold">Cari atau filter arsip musim</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Masukkan kata kunci atau pilih kategori era untuk melihat data musim.
+          </p>
+        </div>
+      ) : filteredSeasons.length ? (
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {filteredSeasons.map((season) => (
             <SeasonCard key={season.id} season={season} />

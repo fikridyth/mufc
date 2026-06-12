@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import type { Season } from "@/data/seasons";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/SectionHeader";
 
 interface SeasonTimelineProps {
@@ -8,6 +12,10 @@ interface SeasonTimelineProps {
 }
 
 export function SeasonTimeline({ seasons }: SeasonTimelineProps) {
+  const [visibleCount, setVisibleCount] = useState(3);
+  const visibleSeasons = seasons.slice(0, visibleCount);
+  const hasMore = visibleCount < seasons.length;
+
   return (
     <section className="bg-white py-16" id="timeline">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -17,7 +25,7 @@ export function SeasonTimeline({ seasons }: SeasonTimelineProps) {
           description="Setiap kartu mengarah ke halaman detail musim. Musim baru cukup ditambahkan ke data lokal."
         />
         <div className="mt-10 space-y-5 border-l-2 border-united-red/25 pl-5">
-          {seasons.map((season) => (
+          {visibleSeasons.map((season) => (
             <Link
               key={season.id}
               href={`/history/${season.id}`}
@@ -48,6 +56,17 @@ export function SeasonTimeline({ seasons }: SeasonTimelineProps) {
             </Link>
           ))}
         </div>
+        {hasMore ? (
+          <div className="mt-8 flex justify-center">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setVisibleCount((count) => count + 3)}
+            >
+              Load more
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   );

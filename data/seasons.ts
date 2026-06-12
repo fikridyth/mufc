@@ -13640,7 +13640,7 @@ export const seasons: Season[] = [
       "Versi final FA Cup: De Gea; Valencia, Smalling, Blind, Rojo; Carrick, Fellaini; Mata, Rooney, Martial; Rashford.",
       "Musim ini menjadi musim terakhir Louis van Gaal di Manchester United serta musim breakthrough Marcus Rashford dan musim debut penting Anthony Martial."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2016-17",
@@ -13938,7 +13938,7 @@ export const seasons: Season[] = [
       "Versi laga besar Mourinho: De Gea; Valencia, Smalling, Jones, Young; Matic, Herrera, Pogba; Lingard atau Mata, Alexis atau Rashford, Lukaku.",
       "Musim ini adalah musim terakhir Michael Carrick sebagai pemain. Setelah pensiun, ia langsung masuk staf kepelatihan United."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2018-19",
@@ -14085,7 +14085,7 @@ export const seasons: Season[] = [
       "Starting XI era Solskjaer awal: De Gea; Young, Lindelof, Smalling, Shaw; Herrera, Matic, Pogba; Lingard, Rashford, Martial.",
       "Musim ini menjadi akhir lintasan United untuk Valencia dan Herrera, serta menjadi musim terakhir Lukaku, Alexis, Darmian, dan Smalling sebelum keluar atau dipinjamkan pada musim panas 2019."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2019-20",
@@ -14223,7 +14223,7 @@ export const seasons: Season[] = [
       "Starting XI fase akhir terbaik: De Gea; Wan-Bissaka, Lindelof, Maguire, Shaw; Matic, Pogba; Greenwood, Bruno, Rashford; Martial.",
       "Musim ini menjadi musim ketika trio Rashford-Martial-Greenwood meledak, Bruno menghidupkan kreativitas, dan Solskjaer mendapat bentuk tim paling jelas."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2020-21",
@@ -14380,7 +14380,7 @@ export const seasons: Season[] = [
       "Luke Shaw terpilih sebagai Players' Player of the Year klub dan masuk PFA Team of the Year Premier League 2020/21.",
       "Musim ini menjadi musim penuh pertama Bruno Fernandes di United dan musim pertamanya sebagai top skor klub semua kompetisi."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2021-22",
@@ -14528,7 +14528,7 @@ export const seasons: Season[] = [
       "Starting XI era Rangnick: De Gea; Dalot, Varane, Maguire atau Lindelof, Telles atau Shaw; McTominay, Fred; Sancho, Bruno, Elanga atau Rashford; Ronaldo.",
       "Musim ini menjadi musim terakhir Paul Pogba, Jesse Lingard, Nemanja Matic, Juan Mata, Edinson Cavani, dan Lee Grant dalam skuad United."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2022-23",
@@ -14849,7 +14849,7 @@ export const seasons: Season[] = [
       "Jadon Sancho dipinjamkan ke Borussia Dortmund pada Januari setelah konflik terbuka dengan Ten Hag.",
       "Sir Jim Ratcliffe/INEOS menyelesaikan investasi minoritas pada Februari 2024 dan mulai mengambil alih operasi sepak bola klub."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2024-25",
@@ -15006,7 +15006,7 @@ export const seasons: Season[] = [
       "Starting XI paling mewakili era Amorim: Onana; Yoro atau Mazraoui, De Ligt, Lisandro atau Maguire; Mazraoui atau Dalot, Ugarte, Mainoo atau Bruno, Dorgu atau Dalot; Amad, Bruno atau Garnacho; Hojlund atau Zirkzee.",
       "Musim ini menjadi musim penuh pertama struktur sepak bola INEOS, tetapi hasil instan belum terlihat."
     ],
-    featured: true
+    featured: false
   },
   {
     id: "2025-26",
