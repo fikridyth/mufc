@@ -239,11 +239,11 @@ export default async function SeasonDetailPage({ params }: SeasonPageProps) {
           </div>
         </DetailSection>
 
-        <DetailSection title="Momen penting">
+        <DetailSection id="momen" title="Momen penting">
           <ImportantMoments moments={season.importantMoments} />
         </DetailSection>
 
-        <DetailSection title="Pemain kunci">
+        <DetailSection id="player" title="Pemain kunci">
           {season.keyPlayers.length ? (
             <div className="grid gap-5 md:grid-cols-2">
               {season.keyPlayers.map((player) => (

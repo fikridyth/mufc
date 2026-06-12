@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-interface DashboardFixedHeaderProps {
-  seasonLabel: string;
-  seasonEra: string;
+interface OtherFixedHeaderProps {
+  title: string;
 }
 
-export function DashboardFixedHeader() {
+export function OtherFixedHeader({ title }: OtherFixedHeaderProps) {
   const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
@@ -50,6 +49,14 @@ export function DashboardFixedHeader() {
             <Link href="/" className="hover:text-current">
               Beranda
             </Link>
+            <span>/</span>
+            <Link href="/#other-information" className="hover:text-current">
+              Other
+            </Link>
+            <span>/</span>
+            <span className={isLight ? "truncate text-foreground" : "truncate text-white"}>
+              {title}
+            </span>
           </nav>
         </div>
         <nav
@@ -59,13 +66,11 @@ export function DashboardFixedHeader() {
           ].join(" ")}
         >
           {[
-            ["#featured-season", "Highlight"],
-            ["#arsip-musim", "Arsip Musim"],
-            ["#timeline", "Timeline"],
-            ["#era", "Kategori Era"],
-            ["#other-information", "Informasi Lain"]
+            ["/other/managers", "Managers"],
+            ["/other/trophies", "Trophies"],
+            ["/other/players", "Players"]
           ].map(([href, label]) => (
-            <a
+            <Link
               key={href}
               href={href}
               className={[
@@ -76,18 +81,19 @@ export function DashboardFixedHeader() {
               ].join(" ")}
             >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <div>
-          <p 
+        <div className="hidden shrink-0 sm:block">
+          <p
             className={[
+              "text-sm font-semibold",
               isLight
                 ? "hover:bg-muted hover:text-foreground"
                 : "hover:bg-white/10 hover:text-white"
             ].join(" ")}
           >
-            Manchester United
+            Informasi Lain
           </p>
         </div>
       </div>

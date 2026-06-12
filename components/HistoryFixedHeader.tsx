@@ -62,7 +62,7 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
         </div>
         <nav
           className={[
-            "absolute left-1/2 hidden -translate-x-[58%] items-center gap-1 text-sm font-bold md:flex",
+            "absolute left-1/2 hidden -translate-x-[50%] items-center gap-1 text-sm font-bold md:flex",
             isLight ? "text-foreground" : "text-white/78"
           ].join(" ")}
         >
@@ -72,6 +72,8 @@ export function HistoryFixedHeader({ seasonLabel, seasonEra }: HistoryFixedHeade
             ["#starting-xi", "XI"],
             ["#skuad", "Skuad"],
             ["#transfer", "Transfer"],
+            ["#momen", "Momen"],
+            ["#player", "Player"],
             ["#trivia", "Trivia"]
           ].map(([href, label]) => (
             <a
